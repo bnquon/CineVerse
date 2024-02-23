@@ -1,19 +1,19 @@
 .nav-container {
-    background-color: lightgreen;
+    background-color: #000000;
     position: absolute;
     width: 100vw;
-    height: 6vh;
+    height: 8vh;
     min-height: 50px;
     left: 0;
     top: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     font-size: 1.8rem;
+    color: white;
 }
 
 .left {
     height: 100%;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -23,7 +23,6 @@
 
 .center {
     height: 100%;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,9 +30,9 @@
 }
 
 .center input {
-    font-size: 1rem;
-    width: 35%;
-    padding: 0.7rem 0.5rem;
+    font-size: 1.5rem;
+    width: 30%;
+    padding: 0.35rem 0.5rem;
     border: 2px solid transparent;
     border-radius: 1rem;
     outline: none;
@@ -42,7 +41,7 @@
 
 .center .input:focus, .center input:hover {
     outline: none;
-    border-color: red;
+    border-color: #FCA311;
     background-color: #fff;
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }

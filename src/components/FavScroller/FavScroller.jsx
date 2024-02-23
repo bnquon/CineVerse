@@ -27,10 +27,10 @@ export const FavScroller = () => {
     return (
         <div className="scroller">
             <div className="scroller_inner">
-                <img src="https://placehold.co/100x200" alt="" />
-                <img src="https://placehold.co/100x200" alt="" />
-                <img src="https://placehold.co/100x200" alt="" />
-                <img src="https://placehold.co/100x200" alt="" />
+                <img src="https://placehold.co/175x300/orange/white" alt="" />
+                <img src="https://placehold.co/175x300/orange/white" alt="" />
+                <img src="https://placehold.co/175x300/orange/white" alt="" />
+                <img src="https://placehold.co/175x300/orange/white" alt="" />
             </div>
         </div>
     );
