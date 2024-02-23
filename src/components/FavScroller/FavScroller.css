@@ -2,7 +2,7 @@
     position: absolute;
     max-height: 80vh;
     bottom: 2%;
-    right: 10%;
+    right: 15%;
 }
 
 .scroller_inner {
@@ -15,8 +15,8 @@
 
 .scroller[data-animated="true"] {
     overflow: hidden;
-    -webkit-mask: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
-    mask: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
+    -webkit-mask: linear-gradient(180deg, transparent, white 5%, white 90%, transparent);
+    mask: linear-gradient(180deg, transparent, white 5%, white 90%, transparent);
 }
 
 
