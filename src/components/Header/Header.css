@@ -1,8 +1,8 @@
 .nav-container {
-    background-color: #000000;
+    background-color: #252422;
     position: absolute;
     width: 100vw;
-    height: 8vh;
+    height: 7vh;
     min-height: 50px;
     left: 0;
     top: 0;
@@ -19,6 +19,7 @@
     justify-content: start;
     padding-left: 4rem;
     font-weight: 700;
+    font-style: italic;
 }
 
 .center {
@@ -53,7 +54,6 @@
 
 .right {
     height: 100%;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: end;
