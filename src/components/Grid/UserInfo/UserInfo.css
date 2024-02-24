@@ -33,6 +33,7 @@
     text-align: center;
     height: 55px;
     overflow-y: hidden;
+    border: 1px solid transparent;
 }
 
 #bio-container textarea:hover {
