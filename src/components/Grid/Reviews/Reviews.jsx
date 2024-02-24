@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Reviews.css"
 import { Card } from './Card/Card.jsx'
+import placeholder from "../../../assets/inception.jpg"
 
 export const Reviews = () => {
 
@@ -9,8 +10,8 @@ export const Reviews = () => {
       <h1 id="title">Reviews</h1>
 
         <div className="review-grid">
-          <Card/>
-          <Card/>
+          <Card poster = {placeholder}/>
+          <Card poster = {placeholder}/>
         </div>
 
     </div>

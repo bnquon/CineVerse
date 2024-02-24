@@ -1,10 +1,11 @@
 import React from 'react'
 import "./Card.css"
-import inception from "../../../../assets/inception.jpg"
-export const Card = () => {
+
+
+export const Card = (props) => {
   return (
     <div className='card-container'>
-        <img src={inception} alt="" />    
+        <img src={props.poster} alt="" />    
     </div>
   )
 }
