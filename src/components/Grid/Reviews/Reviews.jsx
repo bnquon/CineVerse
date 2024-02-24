@@ -11,7 +11,6 @@ export const Reviews = () => {
         <div className="review-grid">
           <Card/>
           <Card/>
-          <Card/>
         </div>
 
     </div>
