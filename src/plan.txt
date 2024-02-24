@@ -3,3 +3,5 @@ https://coolors.co/visualizer/fffcf2-ccc5b9-403d39-252422-eb5e28
 - Box shadows ->
 https://getcssscan.com/css-box-shadow-examples
 
+Review slider ->
+https://www.youtube.com/watch?v=Kx8XlKRBZx8
