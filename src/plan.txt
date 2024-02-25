@@ -7,6 +7,8 @@ Review slider ->
 https://www.youtube.com/watch?v=Kx8XlKRBZx8
 
 using new api to get poster image ->
+https://www.themoviedb.org/
 full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
 
 ADD ARROW BUTTON TO SCROLL TO USER REVIEWS
+
