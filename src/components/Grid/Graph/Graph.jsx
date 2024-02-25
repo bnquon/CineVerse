@@ -37,6 +37,11 @@ return (
                 },
               },
               y: {
+                ticks: {
+                  font: {
+                    size: 14,
+                  },
+                },
                 grid: {
                   display: false,
                 },
