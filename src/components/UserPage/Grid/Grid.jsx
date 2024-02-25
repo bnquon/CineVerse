@@ -1,17 +1,19 @@
-import React from 'react'
-import { Profile } from './Profile/Profile.jsx'
-import { Graph } from './Graph/Graph.jsx'
-import { UserInfo } from './UserInfo/UserInfo.jsx'
-import { Reviews } from './Reviews/Reviews.jsx'
-import "./Grid.css"
+import React from 'react';
+import { Profile } from './Profile/Profile';
+import { Graph } from './Graph/Graph';
+import { UserInfo } from './UserInfo/UserInfo';
+import { Reviews } from './Reviews/Reviews';
+import "./Grid.css";
 
-export const Grid = () => {
+function Grid() {
   return (
     <div className="grid-container">
-        <Profile/>
-        <Graph/>
-        <UserInfo/>
-        <Reviews/>
+        <Profile />
+        <Graph />
+        <UserInfo />
+        <Reviews />
     </div>
   );
 }
+
+export default Grid;

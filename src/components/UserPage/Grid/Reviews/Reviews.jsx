@@ -1,9 +1,9 @@
-import React from 'react'
-import "./Reviews.css"
-import { Card } from './Card/Card.jsx'
-import placeholder from "../../../../assets/inception.jpg"
+import React from 'react';
+import "./Reviews.css";
+import Card from './Card/Card';
+import placeholder from "../../../../assets/inception.jpg";
 
-export const Reviews = () => {
+function Reviews() {
 
   return (
     <div className='review-container'>
@@ -17,3 +17,5 @@ export const Reviews = () => {
     </div>
   );
 }
+
+export default Reviews;

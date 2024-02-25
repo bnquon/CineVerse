@@ -1,11 +1,11 @@
-import React from 'react'
-import "./Graph.css"
+import React from 'react';
+import "./Graph.css";
 import { Chart as Chartjs, Legend, defaults} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
 defaults.maintainAspectRatio = false;
 
-export const Graph = () => {
+function Graph () {
 
 return (
     <div className='graph-container'>
@@ -61,3 +61,5 @@ return (
     </div>
   );
 }
+
+export default Graph;
