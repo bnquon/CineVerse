@@ -1,0 +1,85 @@
+.info-container {
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#bio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 0.5rem;
+}
+
+#bio-container h3 {
+    margin-bottom: 0.25rem;
+}
+
+#bio-container textarea {
+    border: unset;
+    font-size: 1rem;
+    padding: 0.4rem;
+    width: 80%;
+    outline: none;
+    resize: none;
+    text-align: center;
+    height: 55px;
+    overflow-y: hidden;
+    border: 1px solid transparent;
+}
+
+#bio-container textarea:hover {
+    overflow-y: auto;
+    border: 1px solid black;
+}
+
+#bio-container textarea:focus {
+    border: 1px solid black;
+}
+
+#top3,
+#overrated {
+    padding-top: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 30%;
+}
+
+#top3 h3,
+#overrated h3 {
+    margin-bottom: 0;
+}
+
+#top3 ol,
+#overrated ol {
+    position: relative;
+    margin-top: 0.35rem;
+    
+}
+
+#top3 ol li,
+#overrated ol li {
+    margin-bottom: 0.25rem;
+    transform: translateX(-5%);
+}
+
+#top3 ol li input,
+#overrated ol li input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-size: 1.1rem;
+    padding: 0.2rem 0 0.2rem 0.2rem;
+    width: 100%;
+}
