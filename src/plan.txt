@@ -11,4 +11,4 @@ https://www.themoviedb.org/
 full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
 
 ADD ARROW BUTTON TO SCROLL TO USER REVIEWS
-
+  ^ ^ ^ implement the functionality of this and the design of the user review section
