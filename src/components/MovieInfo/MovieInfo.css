@@ -3,14 +3,14 @@
 } */
 
 .movieinfo-container {
+    border: 1px solid red;
     position: absolute;
-    left: 20%;
+    left: 17.5%;
     top: 12.5%;
-    width: 60vw;
+    width: 65vw;
     display: grid;
     grid-template-columns: 0.75fr 2fr;
-    grid-template-rows: 1fr 4fr 1fr; /* 2nd row takes up both column spaces */
-    height: 50vh;
+    grid-template-rows: 0.5fr 4fr 1fr; /* 2nd row takes up both column spaces */
     column-gap: 0.5rem;
 }
 
