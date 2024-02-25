@@ -17,7 +17,7 @@ return (
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [
               {
-                data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                data: [1/55, 2/55, 3/55, 4/55, 5/55, 6/55, 7/55, 8/55, 9/55, 10/55],
                 backgroundColor: 'hsl(17, 83%, 64%)',
                 borderWidth: 3,
                 borderColor: 'hsl(0, 100%, 50%)',
@@ -37,6 +37,8 @@ return (
                 },
               },
               y: {
+                min: 0,
+                max: 1,
                 ticks: {
                   font: {
                     size: 14,
