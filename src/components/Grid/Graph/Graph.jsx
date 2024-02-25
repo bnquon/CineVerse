@@ -18,12 +18,20 @@ return (
             datasets: [
               {
                 data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                backgroundColor: 'hsl(17, 83%, 64%)',
+                borderWidth: 3,
+                borderColor: 'hsl(0, 100%, 50%)',
               },
             ],
           }}
           options={{
             scales: {
               x: {
+                ticks: {
+                  font: {
+                    size: 18,
+                  },
+                },
                 grid: {
                   display: false,
                 },
