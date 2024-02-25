@@ -1,0 +1,48 @@
+/* *{
+    border: 1px solid red;
+} */
+
+.movieinfo-container {
+    position: absolute;
+    left: 20%;
+    top: 12.5%;
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 0.75fr 2fr;
+    grid-template-rows: 1fr 4fr 1fr; /* 2nd row takes up both column spaces */
+    height: 50vh;
+    column-gap: 0.5rem;
+}
+
+#movie-title {
+    grid-column: span 2;
+    font-size: 4rem;
+}
+
+.movieinfo-container #poster,
+.movieinfo-container #backdrop {
+    width: 100%;
+    height: 100%;
+}
+
+.movieinfo-container #poster img, 
+.movieinfo-container #backdrop img {
+    width: 100%;
+    height: 100%;
+}
+
+#movie-info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    grid-column: span 2; /* This will make the div span both columns */
+    line-height: 1.5rem;
+    font-weight: 500;
+    font-size: 1.6vh;
+}
+
+#movie-info #description {
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+

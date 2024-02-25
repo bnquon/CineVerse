@@ -12,7 +12,7 @@
     max-height: 250px;
     float: left;
     margin: 0.5rem;
-    aspect-ratio: 140 / 209
+    aspect-ratio: 140 / 209;
 }
 
 .card-container span > h2 {
