@@ -16,8 +16,6 @@
 }
 
 .card-container span > h2 {
-    border: 1px solid red;
-    height: fit-content;
     margin-bottom: 0.25rem;
 }
 
