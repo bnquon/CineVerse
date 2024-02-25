@@ -5,3 +5,6 @@ https://getcssscan.com/css-box-shadow-examples
 
 Review slider ->
 https://www.youtube.com/watch?v=Kx8XlKRBZx8
+
+using new api to get poster image ->
+full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
