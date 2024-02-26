@@ -4,7 +4,7 @@
 
 .movieinfo-container {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     left: 17.5%;
     top: 12.5%;
     width: 65vw;

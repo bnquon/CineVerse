@@ -1,8 +1,8 @@
 #container {
-    position: absolute;
-    top: 100vh;
+    position: relative;
+    top: 0;
     left: 0;
-    background-color: red;
+    background-color: lightgray;
     width: 100vw;
-    height: 88vh;
+    height: 100%;
 }
