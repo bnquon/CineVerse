@@ -14,6 +14,7 @@ export const DisplayUserReviews = () => {
       <ArrowIcon state = {inView}/>
       <div ref={ref} id='container'>
         <MovieGraph/>
+        
       </div>
     </>
   );

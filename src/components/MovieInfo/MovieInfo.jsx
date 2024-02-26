@@ -19,7 +19,7 @@ export const MovieInfo = () => {
         fontSize: '1.2rem',
         fontWeight: 600,
         marginLeft: 'auto',
-        height: '80%',
+        height: '70%',
         transition: '250ms linear',
         backgroundColor: isFavorite ? 'red': '#f5c518',
         border: '2px solid black',
