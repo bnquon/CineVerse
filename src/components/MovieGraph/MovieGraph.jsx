@@ -14,26 +14,31 @@ export const MovieGraph = () => {
             <div id='graph-Container'>
                 <Bar 
                     data={{
-                        labels: ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"],
+                        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                         datasets: [
                         {
                             data: [10, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                             backgroundColor: 'hsl(17, 83%, 64%)',
                             borderWidth: 3,
                             borderColor: 'hsl(0, 100%, 50%)',
+                            barPercentage: 0.7,
                         },
                         ],
                     }}
                     options={{
-                        indexAxis: 'y',
                         scales: {
                             x: {                        
                                 ticks: {
-                                    display: false,
+                                    color: 'black', 
+                                    font: {
+                                        size: 18,
+                                        weight: 'bold',
+                                    },
+                                    display: true,
                                 },
                                 title: { 
                                     display: true,
-                                    text: 'Count',
+                                    text: 'Rating',
                                     color: 'black', 
                                     font: {
                                         size: 22,
@@ -50,7 +55,7 @@ export const MovieGraph = () => {
                             y: {
                                 title: { 
                                     display: true,
-                                    text: 'Rating',
+                                    text: 'Count',
                                     color: 'black', 
                                     font: {
                                         size: 22,
@@ -58,11 +63,7 @@ export const MovieGraph = () => {
                                     },
                                 },
                                 ticks: {
-                                    color: 'black', 
-                                    font: {
-                                        size: 18,
-                                        weight: 'bold',
-                                    }
+                                    display: false,
                                 },
                                 grid: {
                                     display: false,

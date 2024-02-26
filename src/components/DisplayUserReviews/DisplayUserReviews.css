@@ -6,5 +6,5 @@
     width: 99.2vw;
     height: 82vh;
     display: grid;
-    grid-template-columns: 2.5fr 3fr;
+    grid-template-columns: 2fr 3fr;
 }
