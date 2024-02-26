@@ -1,0 +1,20 @@
+#movieReview-Grid {
+    position: relative;
+    top: 0%;
+    height: 93%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto;
+    overflow-y: auto;
+    margin-right: 2rem;
+}
+
+.movie-review-item {
+    background-color: white;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    position: relative;
+    padding: 0.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
