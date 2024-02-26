@@ -21,38 +21,50 @@ export const MovieGraph = () => {
             options={{
                 indexAxis: 'y',
                 scales: {
-                    x: {
+                    x: {                        
                         ticks: {
                             display: false,
                         },
                         title: { 
                             display: true,
                             text: 'Frequency',
+                            color: 'black', 
                             font: {
                                 size: 20,
+                                weight: 'bold',
                             },
                         },
                         grid: {
                             display: false,
-                        }
+                        },
+                        border: {
+                            display: false,
+                        },
                     },
                     y: {
                         title: { 
                             display: true,
                             text: 'Rating',
+                            color: 'black', 
                             font: {
                                 size: 20,
+                                weight: 'bold',                               
                             },
                         },
                         ticks: {
+                            color: 'black', 
                             font: {
                                 size: 15,
+                                weight: 'bold',
                             }
                         },
                         grid: {
                             display: false,
-                        }
-                    }
+                        },
+                        border: {
+                            display: false,
+                        },
+                    },
                 },
                 plugins: {
                     legend: {
