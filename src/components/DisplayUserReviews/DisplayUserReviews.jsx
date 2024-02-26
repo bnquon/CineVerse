@@ -5,7 +5,7 @@ import { ArrowIcon } from '../ArrowIcon/ArrowIcon';
 import { MovieGraph } from '../MovieGraph/MovieGraph';
 
 export const DisplayUserReviews = () => {
-  const {ref, inView, entry} = useInView({
+  const {ref, inView} = useInView({
     threshold: 0.75,
   });
 
