@@ -12,9 +12,8 @@ export const MoviePage = () => {
       <div id="page-1">
         <Header/>
         <MovieInfo/>
-        <ArrowIcon/>
       </div>
-      
+
       <div id="page-2">
         <DisplayUserReviews/>
         <Footer/>
