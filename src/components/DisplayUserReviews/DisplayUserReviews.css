@@ -5,7 +5,6 @@
     left: 0;
     width: 99.2vw;
     height: 82vh;
-    padding-top: 2rem;
     display: grid;
     grid-template-columns: 2.5fr 3fr;
 }
