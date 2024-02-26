@@ -21,6 +21,7 @@
     box-sizing: border-box;
     position: relative;
     padding: 0.5rem;
+    padding-right: 1rem;
     width: 90%;
     height: 65%;
     border-radius: 20px;

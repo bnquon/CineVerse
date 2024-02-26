@@ -17,7 +17,7 @@ export const MovieGraph = () => {
                         labels: ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"],
                         datasets: [
                         {
-                            data: [1/55, 2/55, 3/55, 4/55, 5/55, 6/55, 7/55, 8/55, 9/55, 10/55],
+                            data: [10, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                             backgroundColor: 'hsl(17, 83%, 64%)',
                             borderWidth: 3,
                             borderColor: 'hsl(0, 100%, 50%)',
@@ -33,10 +33,10 @@ export const MovieGraph = () => {
                                 },
                                 title: { 
                                     display: true,
-                                    text: 'Frequency',
+                                    text: 'Count',
                                     color: 'black', 
                                     font: {
-                                        size: 20,
+                                        size: 22,
                                         weight: 'bold',
                                     },
                                 },
@@ -53,14 +53,14 @@ export const MovieGraph = () => {
                                     text: 'Rating',
                                     color: 'black', 
                                     font: {
-                                        size: 20,
+                                        size: 22,
                                         weight: 'bold',                               
                                     },
                                 },
                                 ticks: {
                                     color: 'black', 
                                     font: {
-                                        size: 15,
+                                        size: 18,
                                         weight: 'bold',
                                     }
                                 },
