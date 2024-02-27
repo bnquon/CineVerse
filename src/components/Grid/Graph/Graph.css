@@ -18,9 +18,8 @@
 }
 
 .graph-container #chart-container {
-    /* border: 1px solid red; */
-    margin-top: 0;
     display: flex;
-    width: 80%;
-    height: 85%;
+    margin-top: 0.5rem;
+    width: 90%;
+    height: 80%;
 }

@@ -17,10 +17,11 @@ return (
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [
               {
-                data: [1/55, 2/55, 3/55, 4/55, 5/55, 6/55, 7/55, 8/55, 9/55, 10/55],
+                data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                 backgroundColor: 'hsl(17, 83%, 64%)',
                 borderWidth: 3,
                 borderColor: 'hsl(0, 100%, 50%)',
+                barPercentage: 0.8,
               },
             ],
           }}
@@ -28,24 +29,44 @@ return (
             scales: {
               x: {
                 ticks: {
+                  color: 'black',
                   font: {
                     size: 18,
+                    weight: 'bold',
                   },
                 },
                 grid: {
                   display: false,
+                },
+                title: { 
+                  display: true,
+                  text: 'Rating',
+                  color: 'black', 
+                  font: {
+                      size: 18,
+                      weight: 'bold',
+                  },
                 },
               },
               y: {
-                min: 0,
-                max: 1,
                 ticks: {
+                  color: 'black',
                   font: {
                     size: 14,
+                    weight: 'bold',
                   },
                 },
                 grid: {
                   display: false,
+                },
+                title: { 
+                  display: true,
+                  text: 'Count',
+                  color: 'black', 
+                  font: {
+                      size: 18,
+                      weight: 'bold',                               
+                  },
                 },
               },
             },
