@@ -31,6 +31,12 @@ async function createTables() {
         rating INT NOT NULL,
         review TEXT
       );
+
+      CREATE TABLE IF NOT EXISTS favorites (
+        favoriteID SERIAL PRIMARY KEY,
+        user_ID INT REFERENCES users(userID) NOT NULL,
+        favoriteMovieName VARCHAR(255) NOT NULL
+      );
     `;
     // Execute the query
     await client.query(createTablesQuery);
@@ -43,5 +49,12 @@ async function createTables() {
     client.release();  
   }
 }
+
+// async function updateTable() {
+//   const client = await pool.connect();
+//   try {
+
+//   }
+// }
 
 createTables();
