@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      {/* <UserPage /> */}
-      <MoviePage />
+      <UserPage />
+      {/* <MoviePage /> */}
     </>
   );
 }

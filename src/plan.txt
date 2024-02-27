@@ -10,5 +10,11 @@ using new api to get poster image ->
 https://www.themoviedb.org/
 full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
 
-ADD ARROW BUTTON TO SCROLL TO USER REVIEWS
-  ^ ^ ^ implement the functionality of this and the design of the user review section
+Movie table->
+int movieid, varchar movie title, movieid float average rating, 
+
+User table->
+int userid, varchar username, **user pfp but not sure how to do** ,varchar bio, var char top3 list
+
+Review table->
+int reviewid, int userid, int movieid, int rating (between 1-10), text comment
