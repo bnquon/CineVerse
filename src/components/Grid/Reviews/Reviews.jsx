@@ -12,6 +12,9 @@ export const Reviews = () => {
         <div className="review-grid">
           <Card poster = {placeholder}/>
           <Card poster = {placeholder}/>
+          <Card poster = {placeholder}/>
+          <Card poster = {placeholder}/>
+          <Card poster = {placeholder}/>
         </div>
 
     </div>

@@ -18,3 +18,11 @@ int userid, varchar username, **user pfp but not sure how to do** ,varchar bio, 
 
 Review table->
 int reviewid, int userid, int movieid, int rating (between 1-10), text comment
+
+user page needed fetches {
+    create/alter user fetch,
+    alter user info fetch,
+    favourite movie poster fetch,
+    ratings fetch,
+    review fetch,
+}
