@@ -1,5 +1,7 @@
 const { Pool } = require('pg');
 require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
