@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 require('dotenv').config();
 
 const pool = new Pool({
-  connectionString: "postgres://default:O7RCgpb6slGX@ep-sparkling-frost-a6q5ioje-pooler.us-west-2.aws.neon.tech:5432/verceldb?sslmode=require",
+  connectionString: process.env.POSTGRES_URL,
 });
 
 async function createTables() {
