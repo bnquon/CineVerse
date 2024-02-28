@@ -1,37 +1,43 @@
 .info-container {
     background-color: white;
+    box-sizing: border-box;
     border-radius: 20px;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 1.5fr;
+    height: 100%;
     width: 100%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    overflow-y: auto;
 }
 
 #bio-container {
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
-    position: relative;
-    width: 100%;
     height: fit-content;
-    padding-bottom: 0.5rem;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0.75rem;
+    flex-shrink: 2;
 }
 
-#bio-container h3 {
-    margin-bottom: 0.25rem;
+#bio-container > h3 {
+    margin-bottom: 0.5rem;
 }
 
 #bio-container textarea {
+    position: relative;
     border: unset;
     font-size: 1rem;
     padding: 0.4rem;
     width: 80%;
+    height: 52%;
     outline: none;
     resize: none;
     text-align: center;
-    height: 55px;
     overflow-y: hidden;
     border: 1px solid transparent;
 }
@@ -47,39 +53,36 @@
 
 #top3,
 #overrated {
-    padding-top: 0;
-    position: relative;
+    overflow: auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    max-height: 30%;
+    height: 100%;
 }
 
-#top3 h3,
-#overrated h3 {
-    margin-bottom: 0;
+#top3 > h3,
+#overrated > h3 {
+    margin-bottom: 0rem;
+    margin-top: 0;
 }
 
-#top3 ol,
-#overrated ol {
-    position: relative;
-    margin-top: 0.35rem;
-    
+#top3 > ol,
+#overrated > ol {
+    margin-top: 0.5rem;
 }
 
-#top3 ol li,
-#overrated ol li {
-    margin-bottom: 0.25rem;
-    transform: translateX(-5%);
+#top3 > ol > li,
+#overrated > ol > li {
+    margin-bottom: 0.5rem;
 }
 
-#top3 ol li input,
-#overrated ol li input {
+#top3 > ol > li input[type=text],
+#overrated > ol > li input[type=text] {
     border: none;
-    outline: none;
+    font-size: 1rem;
     border-bottom: 1px solid black;
-    font-size: 1.1rem;
-    padding: 0.2rem 0 0.2rem 0.2rem;
-    width: 100%;
+    outline: none;
+    padding: 0.25rem;
 }
