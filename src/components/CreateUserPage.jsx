@@ -7,6 +7,8 @@ export const CreateUserPage = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
+        const input = document.getElementById('loginUsername').value;
+        sessionStorage.setItem('username', input);
         navigate("./user");
     }
 
@@ -14,8 +16,8 @@ export const CreateUserPage = () => {
         <>    
             <div id="page-container">
                 <div id='form-container'>
-                    USERNAME
-                    <input type="text" />
+                    <h1>Username</h1>
+                    <input id='loginUsername' type="text" />
                     <button type='submit' onClick={handleClick}>SUBMIT</button>
                 </div>
             </div>

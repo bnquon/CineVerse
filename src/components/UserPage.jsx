@@ -4,6 +4,8 @@ import { FavScroller } from "./FavScroller/FavScroller.jsx";
 import { Grid } from "./Grid/Grid.jsx";
 
 export const UserPage = () => {
+  const storedValue = sessionStorage.getItem('username');
+  console.log(storedValue);
   return (
     <>
         <Header/>
