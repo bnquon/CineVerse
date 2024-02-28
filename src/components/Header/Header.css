@@ -42,7 +42,7 @@
 
 .center .input:focus, .center input:hover {
     outline: none;
-    border-color: #FCA311;
+    border-color: red;
     background-color: #fff;
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }
@@ -50,6 +50,19 @@
 .center input:focus {
     outline: none;
 
+}
+
+.center #searchIcon, 
+.center #searchMovie, 
+.center #searchUser {
+    transition: 300ms;
+}
+
+.center #searchIcon:hover,
+.center #searchMovie:hover, 
+.center #searchUser:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .right {
