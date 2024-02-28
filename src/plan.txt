@@ -19,6 +19,10 @@ int userid, varchar username, **user pfp but not sure how to do** ,varchar bio, 
 Review table->
 int reviewid, int userid, int movieid, int rating (between 1-10), text comment
 
+
+
+make login page not able to go navigate back to
+
 user page needed fetch {
     create/alter user fetch,
     alter user info fetch,
