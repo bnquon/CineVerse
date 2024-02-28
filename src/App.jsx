@@ -1,20 +1,20 @@
-// import { Header } from "./components/Header/Header.jsx";
-// import { FavScroller } from "./components/FavScroller/FavScroller.jsx";
-// import { Grid } from "./components/Grid/Grid.jsx";
-import { UserPage } from "./components/UserPage";
-import { MoviePage } from "./components/MoviePage";
-
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CreateUserPage } from './components/CreateUserPage';
+import { UserPage } from './components/UserPage';
+import { MoviePage } from './components/MoviePage';
+import './App.css';
 
 function App() {
-
   return (
-    <>
-
-      {/* <UserPage /> */}
-      {/* <MoviePage /> */}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/user" element={<UserPage />} />
+        <Route path="/movie" element={<MoviePage />} />
+        <Route path="/" element={<CreateUserPage />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App
+export default App;
