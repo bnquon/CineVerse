@@ -13,7 +13,7 @@ export const CreateUserPage = () => {
     return (
         <>    
             <div id="page-container">
-                <div id='container'>
+                <div id='form-container'>
                     USERNAME
                     <input type="text" />
                     <button type='submit' onClick={handleClick}>SUBMIT</button>
