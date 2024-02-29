@@ -1,5 +1,7 @@
 const { Pool } = require('pg');
 require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
@@ -70,3 +72,33 @@ createTables();
 
 // // Call the testing function to insert the user
 // testing();
+
+const app = express();
+app.use(bodyParser.json());
+
+// Define an API endpoint for user creation
+app.post('/api/createUser', async (req, res) => {
+  try {
+    const { username } = req.body;
+
+    if (!username) {
+      return res.status(400).json({ error: 'Username is required' });
+    }
+
+    const client = await pool.connect();
+    const query = `INSERT INTO users (username) VALUES ($1)`;
+    await client.query(query, [username]);
+    client.release();
+
+    return res.status(200).json({ message: 'User inserted successfully' });
+  } catch (error) {
+    console.error('Error inserting user:', error.message);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Start the server
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

@@ -4,13 +4,38 @@ import "./CreateUserPage.css"
 
 export const CreateUserPage = () => {
 
+
     const navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleClick = async () => {
         const input = document.getElementById('loginUsername').value;
-        sessionStorage.setItem('username', input);
-        navigate("./user");
+
+        try {
+            const response = await fetch('/api/createUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username: input }),
+            });
+
+            if (response.ok) {
+                sessionStorage.setItem('username', input);
+                navigate("./user");
+            } else {
+                console.error('Failed to create user:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error creating user:', error.message);
+        }
     }
+    // const navigate = useNavigate();
+
+    // const handleClick = () => {
+    //     const input = document.getElementById('loginUsername').value;
+    //     sessionStorage.setItem('username', input);
+    //     navigate("./user");
+    // }
 
     return (
         <>    
