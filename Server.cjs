@@ -80,7 +80,7 @@ app.use(bodyParser.json());
 app.post('/api/createUser', async (req, res) => {
   try {
     const { username } = req.body;
-
+    console.log('Received request with username:', username);
     if (!username) {
       return res.status(400).json({ error: 'Username is required' });
     }
