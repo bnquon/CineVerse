@@ -4,6 +4,10 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
+
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
 });
@@ -74,12 +78,9 @@ createTables();
 // // Call the testing function to insert the user
 // testing();
 
-const app = express();
-app.use(bodyParser.json());
-app.use(cors());
 
 // Define an API endpoint for user creation
-app.post('/api/createUser', async (req, res) => {
+app.post('https://bquoncineverse.vercel.app/api/createUser', async (req, res) => {
   try {
     const { username } = req.body;
     console.log('Received request with username:', username);
