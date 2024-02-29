@@ -20,7 +20,12 @@ export const CreateUserPage = () => {
             });
 
             if (response.ok) {
-                sessionStorage.setItem('username', input);
+                const responseData = await response.json(); // Parse response body as JSON
+                const newUser = responseData.username;
+                const newUserID = responseData.userID;
+                sessionStorage.setItem('username', newUser);
+                sessionStorage.setItem('userID', newUserID);
+                console.log(newUser + ' ' + newUserID);
                 navigate("./user");
             } else {
                 console.error('Failed to create user:', response.statusText);
