@@ -7,7 +7,7 @@ import { faFilm, faUsers, faSearch } from '@fortawesome/free-solid-svg-icons'
 // maybe make home nav element
 // make icon switcher to search for movies or users
 
-export const Header = () => {
+export const Header = (props) => {
 
     const [searchType, setSearchType] = useState("movie");
 
@@ -30,7 +30,7 @@ export const Header = () => {
             <FontAwesomeIcon id='searchIcon' icon={faSearch} />
         </div>
         
-        <div className="right">USERNAME</div>
+        <div className="right">{props.username}</div>
     </div>
   )
 }

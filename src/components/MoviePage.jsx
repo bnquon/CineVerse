@@ -6,10 +6,13 @@ import { Footer } from './Footer/Footer'
 import "./MoviePage.css"
 
 export const MoviePage = () => {
+
+  const storedValue = sessionStorage.getItem('username');
+
   return (
     <>
       <div id="page-1">
-        <Header/>
+        <Header username={storedValue}/>
         <MovieInfo/>
       </div>
 

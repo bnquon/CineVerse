@@ -8,7 +8,7 @@ export const UserPage = () => {
   console.log(storedValue);
   return (
     <>
-        <Header/>
+        <Header username = {storedValue}/>
         <Grid/>
         <FavScroller/>
     </>
