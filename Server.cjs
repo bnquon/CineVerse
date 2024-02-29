@@ -1,7 +1,5 @@
 const { Pool } = require('pg');
 require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
@@ -49,12 +47,26 @@ async function createTables() {
     client.release();  
   }
 }
+createTables();
 
-// async function updateTable() {
+// async function testing() {
 //   const client = await pool.connect();
-//   try {
 
+//   try {
+//     const query = `
+//       INSERT INTO users (username) 
+//       VALUES ('bquon')
+//     `;
+//     await client.query(query);
+
+//     console.log('User inserted successfully!');
+//   } catch (error) {
+//     console.error('Error inserting user:', error.message);
+//   } finally {
+//     // Release the client back to the pool
+//     client.release();  
 //   }
 // }
 
-createTables();
+// // Call the testing function to insert the user
+// testing();
