@@ -9,7 +9,8 @@ export const CreateUserPage = () => {
     const handleClick = () => {
         const input = document.getElementById('loginUsername').value;
         sessionStorage.setItem('username', input);
-        navigate("./user");
+        // change back to user after implementing add review button
+        navigate("./movie");
     }
 
     return (
