@@ -11,7 +11,7 @@ export const CreateUserPage = () => {
         const input = document.getElementById('loginUsername').value;
 
         try {
-            const response = await fetch('/api/createUser', {
+            const response = await fetch('https://bquoncineverse.vercel.app/api/createUser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
