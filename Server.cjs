@@ -80,7 +80,7 @@ createTables();
 
 
 // Define an API endpoint for user creation
-app.post('https://bquoncineverse.vercel.app/api/createUser', async (req, res) => {
+app.post('/api/createUser', async (req, res) => {
   try {
     const { username } = req.body;
     console.log('Received request with username:', username);
