@@ -1,27 +1,60 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import "./CreateUserPage.css"
+const { Pool } = require('pg');
+require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
 
-export const CreateUserPage = () => {
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+});
 
-    const navigate = useNavigate();
+async function createTables() {
+  const client = await pool.connect();
 
-    const handleClick = () => {
-        const input = document.getElementById('loginUsername').value;
-        sessionStorage.setItem('username', input);
-        // change back to user after implementing add review button
-        navigate("./movie");
-    }
+  try {
+    const createTablesQuery = `
+      CREATE TABLE IF NOT EXISTS users (
+        userID SERIAL PRIMARY KEY,
+        username VARCHAR(255) NOT NULL,
+        bio TEXT 
+      );
 
-    return (
-        <>    
-            <div id="page-container">
-                <div id='form-container'>
-                    <h1>Username</h1>
-                    <input id='loginUsername' type="text" />
-                    <button type='submit' onClick={handleClick}>SUBMIT</button>
-                </div>
-            </div>
-        </>
-    )
+      CREATE TABLE IF NOT EXISTS movies (
+        movieID SERIAL PRIMARY KEY,
+        movieName VARCHAR(255) NOT NULL,
+        averageRating FLOAT
+      );
+      
+      CREATE TABLE IF NOT EXISTS reviews (
+        reviewID SERIAL PRIMARY KEY,
+        user_ID INT REFERENCES users(userID) NOT NULL,
+        movie INT REFERENCES movies(movieID) NOT NULL,
+        rating INT NOT NULL,
+        review TEXT
+      );
+
+      CREATE TABLE IF NOT EXISTS favorites (
+        favoriteID SERIAL PRIMARY KEY,
+        user_ID INT REFERENCES users(userID) NOT NULL,
+        favoriteMovieName VARCHAR(255) NOT NULL
+      );
+    `;
+    // Execute the query
+    await client.query(createTablesQuery);
+
+    console.log('Tables created successfully!');
+  } catch (error) {
+    console.error('Error creating tables:', error.message);
+  } finally {
+    // Release the client back to the pool
+    client.release();  
+  }
 }
+
+// async function updateTable() {
+//   const client = await pool.connect();
+//   try {
+
+//   }
+// }
+
+createTables();
