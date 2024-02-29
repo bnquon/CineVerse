@@ -41,3 +41,5 @@ movie page fetch {
     all reviews,
     all the ratings,
 }
+
+I HAVE FINALLY CONNECTED IT TO TEH BACKEND OFEDNSOFNDOSHJFOSDJFIOSDF
