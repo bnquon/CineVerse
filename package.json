@@ -16,6 +16,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@vercel/postgres": "^0.7.2",
     "chart.js": "^4.4.1",
     "dotenv": "^16.4.5",
     "react": "^18.2.0",
