@@ -1,6 +1,7 @@
 import { db } from '@vercel/postgres';
 
 export default async function handler(request, response) {
+    const client = await db.connect();
     try {
         // Assuming you expect JSON data in the request body
         const { username } = request.body;
@@ -10,10 +11,10 @@ export default async function handler(request, response) {
         }
 
         // Use the sql template tag to safely insert data into the database
-        await sql`INSERT INTO users (username) VALUES (${username});`;
+        await client.sql`INSERT INTO users (username) VALUES (${username});`;
 
         // Assuming you want to return the newly created user or some confirmation
-        const newUser = await sql`SELECT * FROM users WHERE username = ${username};`;
+        const newUser = await client.sql`SELECT * FROM users WHERE username = ${username};`;
 
         return response.status(200).json({ user: newUser.rows[0] });
     } catch (error) {
