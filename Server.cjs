@@ -1,6 +1,7 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const pool = new Pool({
@@ -75,6 +76,7 @@ createTables();
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 // Define an API endpoint for user creation
 app.post('/api/createUser', async (req, res) => {
