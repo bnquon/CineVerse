@@ -30,7 +30,7 @@ export const Header = (props) => {
             <FontAwesomeIcon id='searchIcon' icon={faSearch} />
         </div>
         
-        <div className="right">{props.username}</div>
+        <div className="right">Logged in as:&nbsp;<span style={{fontWeight:"700"}}>{props.username}</span></div>
     </div>
   )
 }
