@@ -10,7 +10,15 @@ export default async function handler(request, response) {
             throw new Error('Username is required');
         }
 
-        // Use the sql template tag to safely insert data into the database
+        // Check if the username already exists
+        const existingUser = await client.sql`SELECT * FROM users WHERE username = ${username};`;
+
+        if (existingUser.rows.length > 0) {
+            // Username already exists, return a 200 status with a message
+            return response.status(200).json({ message: 'Username already taken' });
+        }
+
+        // Username doesn't exist, proceed with inserting the new user
         await client.sql`INSERT INTO users (username) VALUES (${username});`;
 
         // Assuming you want to return the newly created user or some confirmation
