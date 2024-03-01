@@ -21,16 +21,18 @@ export const Header = (props) => {
 
     const search = async () => {
       const item = document.getElementById('searchBar').value;
-      try {
-        const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${item}&api_key=221c1bc4eb253a3e2e281a0820503ced` , {
-          method: 'GET',
-        });
-        if (response.ok) {
-          const data = await response.json();
-          console.log(data.results[0]);
-        } else console.error('Failed to fetch search results: ', response.statusText);
-      } catch (error) {
-        console.error('Error fetching search results: ', error.message);
+      if (searchType === 'movie') {
+        try {
+          const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${item}&api_key=221c1bc4eb253a3e2e281a0820503ced` , {
+            method: 'GET',
+          });
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data.results[0]);
+          } else console.error('Failed to fetch search results: ', response.statusText);
+        } catch (error) {
+          console.error('Error fetching search results: ', error.message);
+        }
       }
     }
 
