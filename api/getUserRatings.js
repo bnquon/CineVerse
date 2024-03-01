@@ -20,7 +20,7 @@ export default async function handler(request, response) {
             FROM 
                 reviews
             WHERE 
-                user_ID = ${userID};`;
+                userID = ${userID};`;
         
         return response.status(200).json({ratingDistribution : listOfRatings.rows[0]});
 
