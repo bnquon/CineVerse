@@ -16,9 +16,8 @@ export const Reviews = () => {
           const data = await response.json();
           console.log(data);
           setUserReviews(data.reviews);
-        } else {
-          console.error('Failed to fetch user reviews: ', response.statusText);
-        }
+        } else console.error('Failed to fetch user reviews: ', response.statusText);
+          
       } catch (error) {
         console.error('Error fetching user reviews: ', error.message);
       }
