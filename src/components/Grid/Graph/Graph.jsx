@@ -21,10 +21,9 @@ export const Graph = () => {
           const data = await response.json();
           // console.log('DATA DISTRIBUTION IS: ', data.ratingDistribution);
           const temp = data.ratingDistribution;
-          temp.array.forEach(element => {
-            console.log(element);
-          });
-
+          const valuesArray = Object.values(temp);
+          setRatingCount(valuesArray);
+          console.log('RATING COUNT STATE IS NOW: ', ratingCount);
         } else console.error('Failed to fetch user ratings: ', response.statusText);
 
       } catch (error) {
