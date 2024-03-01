@@ -32,7 +32,7 @@ export const Reviews = () => {
 
         <div className="review-grid">
           {userReviews.map(review => (
-            <Card movieName={review.movieName} rating={review.rating} text={review.review} poster={placeholder}></Card>
+            <Card movieName={review.moviename} rating={review.rating} text={review.review} poster={placeholder}></Card>
           ))}
           {/* <Card poster = {placeholder}/>
           <Card poster = {placeholder}/>
