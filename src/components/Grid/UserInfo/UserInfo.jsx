@@ -68,18 +68,18 @@ export const UserInfo = () => {
       <div id="top3">
         <h3>Top 3 All Time List</h3>
         <ol>
-          <li><input type="text" placeholder="Enter Here..." /></li>
-          <li><input type="text" placeholder="Enter Here..." /></li>
-          <li><input type="text" placeholder="Enter Here..." /></li>
+          <li><input type="text" placeholder="Enter Here..." id='top3_1'/></li>
+          <li><input type="text" placeholder="Enter Here..." id='top3_2'/></li>
+          <li><input type="text" placeholder="Enter Here..." id='top3_3' /></li>
         </ol>
       </div>
 
       <div id="overrated">
         <h3>Top 3 Overrated List</h3>
         <ol>
-          <li><input type="text" placeholder="Enter Here..." /></li>
-          <li><input type="text" placeholder="Enter Here..." /></li>
-          <li><input type="text" placeholder="Enter Here..." /></li>
+          <li><input type="text" placeholder="Enter Here..." id='overrated_1'/></li>
+          <li><input type="text" placeholder="Enter Here..." id='overrated_2' /></li>
+          <li><input type="text" placeholder="Enter Here..." id='overrated_3' /></li>
         </ol>
       </div>
     </div>
