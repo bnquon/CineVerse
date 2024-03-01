@@ -16,7 +16,7 @@ export const UserInfo = () => {
           if (response.ok) {
             const data = await response.json();
             console.log(data.bio);
-            setBioValue(data.bio || '');
+            setBioValue(data.bio);
           } else {
             console.error('Failed to fetch user bio: ', response.statusText);
           }
