@@ -19,13 +19,7 @@ export const Graph = () => {
 
         if (response.ok) {
           const data = await response.json();
-          const updatedRatingCount = (data.ratingDistribution).map((count, index) => ({
-            label: (index + 1).toString(),
-            count,
-          }));
-          setRatingCount(updatedRatingCount);
-          console.log('RATINGCOUNT IS: ', ratingCount);
-
+          console.log('DATA DISTRIBUTION IS: ',data.ratingDistribution);
         } else console.error('Failed to fetch user ratings: ', response.statusText);
 
       } catch (error) {
