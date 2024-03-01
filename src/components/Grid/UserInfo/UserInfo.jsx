@@ -1,9 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './UserInfo.css';
+
+const userID = sessionStorage.getItem('userID');
+
 
 export const UserInfo = () => {
   const [bioValue, setBioValue] = useState('');
-  const userID = sessionStorage.getItem('userID');
+
+  useEffect(() => {
+    const getUserBio = async () => {
+        try {
+          const response = await fetch(`/api/getUserBio?userID=${userID}`, {
+            method: 'GET',
+          });
+          if (response.ok) {
+            const data = await response.json();
+            setBioValue(data.bio || '');
+          } else {
+            console.error('Failed to fetch user bio: ', response.statusText);
+          }
+        } catch (error) {
+          console.error('Error fetching user bio: ', error.message);
+        }
+      }
+
+    getUserBio();
+  }, []);
+
   const handleBioChange = (event) => {
     setBioValue(event.target.value);
     // console.log(event.target.value);
