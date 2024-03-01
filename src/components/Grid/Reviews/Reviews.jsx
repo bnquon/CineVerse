@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import "./Reviews.css"
 import { Card } from './Card/Card.jsx'
-import placeholder from "../../../assets/inception.jpg"
+// import placeholder from "../../../assets/inception.jpg"
 
 export const Reviews = () => {
+
   const userID = sessionStorage.getItem('userID');
   const [userReviews, setUserReviews] = useState([]);
   useEffect(() => {
@@ -32,12 +33,8 @@ export const Reviews = () => {
 
         <div className="review-grid">
           {userReviews.map(review => (
-            <Card movieName={review.moviename} rating={review.rating} text={review.review} poster={placeholder}></Card>
+            <Card movieName={review.moviename} rating={review.rating} text={review.review} poster={review.moviePosterURL}></Card>
           ))}
-          {/* <Card poster = {placeholder}/>
-          <Card poster = {placeholder}/>
-          <Card poster = {placeholder}/>
-          <Card poster = {placeholder}/> */}
         </div>
 
     </div>
