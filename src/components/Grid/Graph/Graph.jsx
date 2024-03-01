@@ -11,15 +11,23 @@ export const Graph = () => {
   const [ratingCount, setRatingCount] = useState([]);
   useEffect(() => {
     const getUserRatings = async () => {
+
       try {
         const response = await fetch(`/api/getUserRatings?userID=${userID}`, {
           method: 'GET',
         });
+
         if (response.ok) {
           const data = await response.json();
-          setRatingCount(data.ratingDistribution);
-          console.log('USESTATE rating distribution is: ', ratingCount);
+          const updatedRatingCount = (data.ratingDistribution).map((count, index) => ({
+            label: (index + 1).toString(),
+            count,
+          }));
+          setRatingCount(updatedRatingCount);
+          console.log('RATINGCOUNT IS: ', ratingCount);
+
         } else console.error('Failed to fetch user ratings: ', response.statusText);
+
       } catch (error) {
         console.error('Error fetching user ratings: ', error.message);
       }
