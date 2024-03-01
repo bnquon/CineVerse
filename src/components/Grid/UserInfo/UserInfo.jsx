@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './UserInfo.css';
 
-const userID = sessionStorage.getItem('userID');
-console.log(userID);
 
 export const UserInfo = () => {
+  const userID = sessionStorage.getItem('userID');
+
   const [bioValue, setBioValue] = useState('');
 
   useEffect(() => {
