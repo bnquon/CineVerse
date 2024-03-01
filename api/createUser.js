@@ -15,7 +15,7 @@ export default async function handler(request, response) {
 
         if (existingUser) {
             // Username already exists, return a 200 status with a message
-            return response.status(200).json({ message: 'Username already taken' });
+            return response.status(200).json({ user: existingUser.rows[0] });
         }
 
         // Username doesn't exist, proceed with inserting the new user
