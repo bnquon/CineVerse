@@ -17,7 +17,8 @@ export const Graph = () => {
         });
         if (response.ok) {
           const data = await response.json();
-          console.log(data.ratingDistribution);
+          setRatingCount(data.ratingDistribution);
+          console.log('USESTATE rating distribution is: ', ratingCount);
         } else console.error('Failed to fetch user ratings: ', response.statusText);
       } catch (error) {
         console.error('Error fetching user ratings: ', error.message);
@@ -26,7 +27,7 @@ export const Graph = () => {
 
     getUserRatings();
   }, []);
-
+  
   return (
       <div className='graph-container'>
 
