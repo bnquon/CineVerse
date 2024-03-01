@@ -15,7 +15,7 @@ export const Reviews = () => {
         });
         if (response.ok) {
           const data = await response.json();
-          console.log(data.reviews);
+          console.log(data.reviews.movieposterurl);
           setUserReviews(data.reviews);
         } else console.error('Failed to fetch user reviews: ', response.statusText);
           
@@ -33,7 +33,7 @@ export const Reviews = () => {
 
         <div className="review-grid">
           {userReviews.map(review => (
-            <Card movieName={review.moviename} rating={review.rating} text={review.review} poster={review.moviePosterURL}></Card>
+            <Card movieName={review.moviename} rating={review.rating} text={review.review} poster={review.movieposterurl}></Card>
           ))}
         </div>
 
