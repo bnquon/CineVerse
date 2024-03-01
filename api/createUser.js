@@ -13,9 +13,10 @@ export default async function handler(request, response) {
         // Check if the username already exists
         const existingUser = await client.sql`SELECT 1 FROM users WHERE username = ${username};`;
 
-        if (existingUser) {
+        if (existingUser.rows.length > 0) {
             // Username already exists, return a 200 status with a message
-            return response.status(200).json({ user: existingUser.rows[0] });
+            const existingUserData = existingUser.rows[0];
+            return response.status(200).json({ user: existingUserData });
         }
 
         // Username doesn't exist, proceed with inserting the new user
