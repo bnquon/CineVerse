@@ -20,7 +20,7 @@ export const Profile = (props) => {
 
   return (
     <div className="profile-container">
-        <input type="file" accept='image/*' multiple='false' id="pfp" ref={imageUploader} onChange={handleImageUpload} style={{display: 'none'}} />
+        <input type="file" accept='image/*' multiple={false} id="pfp" ref={imageUploader} onChange={handleImageUpload} style={{display: 'none'}} />
         <div id="image-container" onClick={() => imageUploader.current.click()}>
           <img ref={uploadedImage} src={noPFP} />
         </div>
