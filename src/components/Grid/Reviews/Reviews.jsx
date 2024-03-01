@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Reviews.css"
 import { Card } from './Card/Card.jsx'
 import placeholder from "../../../assets/inception.jpg"
 
 export const Reviews = () => {
   const userID = sessionStorage.getItem('userID');
-
+  const [userReviews, setUserReviews] = useState([]);
   useEffect(() => {
     const getUserReviews = async () => {
       try {
@@ -15,7 +15,7 @@ export const Reviews = () => {
         if (response.ok) {
           const data = await response.json();
           console.log(data);
-
+          setUserReviews(data);
         } else {
           console.error('Failed to fetch user reviews: ', response.statusText);
         }
@@ -32,7 +32,7 @@ export const Reviews = () => {
       <h1 id="title">Reviews</h1>
 
         <div className="review-grid">
-          {data.map(review => (
+          {userReviews.map(review => (
             <Card movieName={review.movie} text={review.review} poster={placeholder}></Card>
           ))}
           {/* <Card poster = {placeholder}/>
