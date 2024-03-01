@@ -17,7 +17,7 @@ export const Graph = () => {
         });
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+          console.log(data.ratingDistribution);
         } else console.error('Failed to fetch user ratings: ', response.statusText);
       } catch (error) {
         console.error('Error fetching user ratings: ', error.message);

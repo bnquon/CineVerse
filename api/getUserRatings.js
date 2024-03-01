@@ -21,7 +21,7 @@ export default async function handler(request, response) {
             FROM 
                 reviews
             WHERE 
-                userID = ${userID};`;
+                user_ID = ${userID};`;
         
         return response.status(200).json({ratingDistribution : listOfRatings.rows});
 
