@@ -11,9 +11,9 @@ export default async function handler(request, response) {
         }
 
         // Check if the username already exists
-        const existingUser = await client.sql`SELECT * FROM users WHERE username = ${username};`;
+        const existingUser = await client.sql`SELECT 1 FROM users WHERE username = ${username};`;
 
-        if (existingUser && existingUser.rows && existingUser.rows.length > 0) {
+        if (existingUser) {
             // Username already exists, return a 200 status with a message
             return response.status(200).json({ message: 'Username already taken' });
         }
