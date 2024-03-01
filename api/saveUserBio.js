@@ -11,9 +11,7 @@ export default async function handler(request, response) {
 
         // Use the sql template tag to safely insert data into the database
         await client.sql`INSERT INTO userInfo (userID, bio)
-                        VALUES (${userID}, ${bio})
-                        ON CONFLICT (userID)
-                        DO UPDATE SET (bio) = ${bio};`;
+                        VALUES (${userID}, ${bio});`;
 
         return response.status(200).json();
     } catch (error) {
