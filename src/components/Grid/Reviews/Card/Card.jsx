@@ -10,18 +10,9 @@ export const Card = (props) => {
         </div>
         <div className="text">
           <span>
-            <h2>float float float float float float</h2>
-            <h3>⭐10/10</h3>
-            <p>float float float float float floatfloat float floatfloat float 
-              floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat floatfloat floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat float floatfloat 
-              float floatfloat float floatfloat float floatfloat float
+            <h2>{props.movieName}</h2>
+            <h3>⭐{props.rating}/10</h3>
+            <p> {props.text}
             </p>
           </span>
         </div>
