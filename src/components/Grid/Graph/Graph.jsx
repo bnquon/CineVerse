@@ -22,8 +22,9 @@ export const Graph = () => {
           // console.log('DATA DISTRIBUTION IS: ', data.ratingDistribution);
           const temp = data.ratingDistribution;
           const valuesArray = Object.values(temp);
+          console.log('VALUES ARRAY:', valuesArray);
           setRatingCount(valuesArray);
-          console.log('RATING COUNT STATE IS NOW: ', ratingCount);
+          
         } else console.error('Failed to fetch user ratings: ', response.statusText);
 
       } catch (error) {
