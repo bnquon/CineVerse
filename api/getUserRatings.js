@@ -23,7 +23,7 @@ export default async function handler(request, response) {
             WHERE 
                 user_ID = ${userID};`;
         
-        return response.status(200).json({ratingDistribution : listOfRatings.rows});
+        return response.status(200).json({ratingDistribution : listOfRatings.rows[0]});
 
     } catch (error) {
         console.error('Error getting user ratings:', error);
