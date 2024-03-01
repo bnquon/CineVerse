@@ -19,7 +19,12 @@ export const Graph = () => {
 
         if (response.ok) {
           const data = await response.json();
-          console.log('DATA DISTRIBUTION IS: ', data.ratingDistribution);
+          // console.log('DATA DISTRIBUTION IS: ', data.ratingDistribution);
+          const temp = data.ratingDistribution;
+          temp.array.forEach(element => {
+            console.log(element);
+          });
+
         } else console.error('Failed to fetch user ratings: ', response.statusText);
 
       } catch (error) {
