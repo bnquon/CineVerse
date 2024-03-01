@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilm, faUsers, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { response } from 'express';
 
 // add variable to store username and push through to this div 
 // maybe make home nav element
