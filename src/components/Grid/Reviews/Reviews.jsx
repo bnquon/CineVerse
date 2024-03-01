@@ -14,7 +14,7 @@ export const Reviews = () => {
         });
         if (response.ok) {
           const data = await response.json();
-          console.log(data.reviews.movieName);
+          console.log(data.reviews);
           setUserReviews(data.reviews);
         } else console.error('Failed to fetch user reviews: ', response.statusText);
           
