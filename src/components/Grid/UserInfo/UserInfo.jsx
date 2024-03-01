@@ -10,8 +10,6 @@ export const UserInfo = () => {
   };
 
   const handleBioBlur = async () => {
-    alert('Bio changed: ' + bioValue);
-
     try {
       const response = await fetch(`/api/saveUserBio?userID=${userID}`, {
         method: 'POST',
