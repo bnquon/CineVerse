@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./Graph.css"
-import { Chart as Chartjs, Legend, defaults} from "chart.js/auto";
+import { Chart as Chartjs, Legend, defaults, elements} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
 defaults.maintainAspectRatio = false;
@@ -23,8 +23,9 @@ export const Graph = () => {
           const temp = data.ratingDistribution;
           const valuesArray = Object.values(temp);
           console.log('VALUES ARRAY:', valuesArray);
-          setRatingCount(valuesArray);
-          
+          setRatingCount(empty => [...empty, ...valuesArray]);
+
+
         } else console.error('Failed to fetch user ratings: ', response.statusText);
 
       } catch (error) {
@@ -45,7 +46,9 @@ export const Graph = () => {
               labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
               datasets: [
                 {
-                  data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                  data: [ratingCount[0], ratingCount[1], ratingCount[2],
+                  ratingCount[3], ratingCount[4], ratingCount[5], 
+                  ratingCount[6], ratingCount[7], ratingCount[8], ratingCount[9]],
                   backgroundColor: 'hsl(17, 83%, 64%)',
                   borderWidth: 3,
                   borderColor: 'hsl(0, 100%, 50%)',

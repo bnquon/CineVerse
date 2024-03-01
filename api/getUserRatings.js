@@ -7,7 +7,6 @@ export default async function handler(request, response) {
     try {
         const listOfRatings = await client.sql`
             SELECT
-                SUM(CASE WHEN rating = 0 THEN 1 ELSE 0 END) AS n0,
                 SUM(CASE WHEN rating = 1 THEN 1 ELSE 0 END) AS n1,
                 SUM(CASE WHEN rating = 2 THEN 1 ELSE 0 END) AS n2,
                 SUM(CASE WHEN rating = 3 THEN 1 ELSE 0 END) AS n3,
