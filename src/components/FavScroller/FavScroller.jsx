@@ -55,7 +55,7 @@ export const FavScroller = (props) => {
         } else {
             setDifferenceList([]);
         }
-    }, [favoriteList]);
+    }, []);
     
     return (
         <div className="scroller">
