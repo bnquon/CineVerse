@@ -16,6 +16,14 @@ export const FavScroller = (props) => {
                 const data = await response.json();
                 const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
                 console.log(listOfFavorites.length);
+
+                if (listOfFavorites.length < 4) {
+                    for (let i = 0; i < (4 - listOfFavorites.length); i++) {
+                        console.log("For loop to push placeholders, i : ", i);
+                        listOfFavorites.push(placeholder);
+                    }
+                }
+
                 setFavoriteList(listOfFavorites);
 
             } else console.error('Failed to fetch favorite movies: ', response.statusText);
@@ -68,9 +76,9 @@ export const FavScroller = (props) => {
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
-                {favoriteList.map((element, index) => (
+                {/* {favoriteList.map((element, index) => (
                     <img key={index+2} src={element} alt="" width='175' height='275'/>
-                ))}
+                ))} */}
                 {/* {differenceList.map((element, index) => (
                     <img key={index + favoriteList.length} src={element}/>
                 ))} */}
