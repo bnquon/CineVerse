@@ -2,11 +2,11 @@ import React, {useState} from 'react'
 import "./MovieInfo.css"
 
 export const MovieInfo = (props) => {
-    const userID = sessionStorage.getItem('username');
+    const userID = sessionStorage.getItem('userID');
 
     const posterURL = "https://image.tmdb.org/t/p/w500" + props.poster;
     const backdropURL = "https://image.tmdb.org/t/p/w500" + props.backdrop;
-    
+
     let [isFavorite, setFavorite] = useState(false);
     let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
 
