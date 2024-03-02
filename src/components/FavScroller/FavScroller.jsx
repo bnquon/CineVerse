@@ -15,7 +15,7 @@ export const FavScroller = (props) => {
             if (response.ok) {
                 const data = await response.json();
                 const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
-                console.log(listOfFavorites);
+                console.log(listOfFavorites.length);
                 
                 if (listOfFavorites.length < 4) {
                     for (let i = 0; i < (4-listOfFavorites.length); i++) {
@@ -32,7 +32,7 @@ export const FavScroller = (props) => {
 
     useEffect(() => {  
         populateScroller();
-        
+
         const scrollers = document.querySelectorAll(".scroller");
         
         function addAnimation() {
