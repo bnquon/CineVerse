@@ -3,6 +3,10 @@ import "./MovieInfo.css"
 
 export const MovieInfo = (props) => {
     const userID = sessionStorage.getItem('username');
+
+    const posterURL = "https://image.tmdb.org/t/p/w500" + props.poster;
+    const backdropURL = "https://image.tmdb.org/t/p/w500" + props.backdrop;
+    
     let [isFavorite, setFavorite] = useState(false);
     let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
 
@@ -49,8 +53,6 @@ export const MovieInfo = (props) => {
         padding: '0.5rem 1rem',
     };
 
-    const posterURL = "https://image.tmdb.org/t/p/w500" + props.poster;
-    const backdropURL = "https://image.tmdb.org/t/p/w500" + props.backdrop;
 
     return (
         <div className="movieinfo-container">
