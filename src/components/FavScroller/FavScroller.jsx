@@ -20,7 +20,7 @@ export const FavScroller = (props) => {
                 if (listOfFavorites.length < 4) {
                     for (let i = 0; i < (4 - listOfFavorites.length); i++) {
                         console.log("For loop to push placeholders, i : ", i);
-                        listOfFavorites.push(placeholder);
+                        listOfFavorites.push({placeholder});
                     }
                 }
 
@@ -51,7 +51,7 @@ export const FavScroller = (props) => {
             
             scrollerContent.forEach((item) => {
                 const duplicateItem = item.cloneNode(true);
-                console.log(duplicateItem);
+                console.log('Duplicate: ', duplicateItem);
                 duplicateItem.setAttribute("aria-hidden", true);
                 scrollerInner.appendChild(duplicateItem);
             });
