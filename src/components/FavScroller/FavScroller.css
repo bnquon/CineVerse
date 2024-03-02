@@ -1,6 +1,7 @@
 .scroller {
+    border: 1px solid red;
     position: absolute;
-    height: 80vh;
+    max-height: 80vh;
     bottom: 2%;
     right: 15%;
 }
