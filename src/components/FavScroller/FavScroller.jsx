@@ -20,6 +20,7 @@ export const FavScroller = (props) => {
                 if (listOfFavorites.length < 4) {
                     for (let i = 0; i < (4-listOfFavorites.length); i++) {
                         listOfFavorites.push(placeholder);
+                        listOfFavorites.push(placeholder);
                     }
                 }
                 setFavoriteList(listOfFavorites);
