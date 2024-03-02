@@ -17,7 +17,7 @@ export const FavScroller = (props) => {
                 const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
                 console.log(listOfFavorites);
                 
-                if (listOfFavorites.lenth < 4) {
+                if (listOfFavorites.length < 4) {
                     for (let i = 0; i < (4-listOfFavorites.length); i++) {
                         listOfFavorites.push(placeholder);
                     }
