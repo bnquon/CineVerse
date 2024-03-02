@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilm, faUsers, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 
 // add variable to store username and push through to this div 
 // maybe make home nav element
@@ -29,6 +30,7 @@ export const Header = (props) => {
           if (response.ok) {
             const data = await response.json();
             console.log(data.results[0]);
+            useNavigate('./movie')
           } else console.error('Failed to fetch search results: ', response.statusText);
         } catch (error) {
           console.error('Error fetching search results: ', error.message);
