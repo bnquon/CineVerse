@@ -1,6 +1,6 @@
 .scroller {
     position: absolute;
-    max-height: 80vh;
+    height: 80vh;
     bottom: 2%;
     right: 15%;
 }
