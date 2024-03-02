@@ -20,7 +20,7 @@ export const FavScroller = (props) => {
                 let updatedFavorites = [...listOfFavorites];
 
                 if (updatedFavorites.length < 4) {
-                    for (let i = 0; i < (4 - updatedFavorites.length); i++) {
+                    for (let i = 0; i < (5 - updatedFavorites.length); i++) {
                         console.log("For loop to push placeholders, i : ", i);
                         updatedFavorites.push(placeholder);
                     }
