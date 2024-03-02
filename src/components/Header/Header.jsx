@@ -3,7 +3,7 @@ import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilm, faUsers, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
-
+import { MoviePage } from '../MoviePage';
 // add variable to store username and push through to this div 
 // maybe make home nav element
 // make icon switcher to search for movies or users
@@ -33,7 +33,7 @@ export const Header = (props) => {
             const data = await response.json();
             const movieInfo = data.results[0];
             console.log(data.results[0]);
-            navigate('../movie');
+            <MoviePage/>
           } else console.error('Failed to fetch search results: ', response.statusText);
         } catch (error) {
           console.error('Error fetching search results: ', error.message);
