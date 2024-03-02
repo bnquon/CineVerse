@@ -15,7 +15,14 @@ export const MoviePage = () => {
     <>
       <div id="page-1">
         <Header username={storedValue}/>
-        <MovieInfo title={movieInfo.title} description={movieInfo.overview} date={MovieInfo.release_date}/>
+
+        <MovieInfo 
+        title={movieInfo.title} 
+        description={movieInfo.overview} 
+        date={movieInfo.release_date}
+        poster={movieInfo.poster_path}
+        backdrop={movieInfo.backdrop_path}
+        />
       </div>
 
       <div id="page-2">

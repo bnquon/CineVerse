@@ -1,8 +1,5 @@
 import React, {useState} from 'react'
 import "./MovieInfo.css"
-import poster from "../../assets/drivePoster.jpg"
-import backdrop from "../../assets/driveBackdrop.jpg"
-
 
 export const MovieInfo = (props) => {
 
@@ -26,6 +23,9 @@ export const MovieInfo = (props) => {
         padding: '0.5rem 1rem',
     };
 
+    const posterURL = "https://image.tmdb.org/t/p/w500" + props.poster;
+    const backdropURL = "https://image.tmdb.org/t/p/w500" + props.backdrop;
+
     return (
         <div className="movieinfo-container">
 
@@ -36,10 +36,10 @@ export const MovieInfo = (props) => {
                 </button>
             </div>
             <div id="poster">
-                <img src={poster} alt="" />
+                <img src={posterURL} alt="" />
             </div>
             <div id="backdrop">
-                <img src={backdrop} alt="" />
+                <img src={backdropURL} alt="" />
             </div>
             <div id="movie-info">
                 <span>
