@@ -17,28 +17,30 @@ export const FavScroller = (props) => {
                 const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
                 console.log(listOfFavorites.length);
 
-                if (listOfFavorites.length < 4) {
-                    for (let i = 0; i < (4 - listOfFavorites.length); i++) {
+                let updatedFavorites = [...listOfFavorites];
+
+                if (updatedFavorites.length < 4) {
+                    for (let i = 0; i < (4 - updatedFavorites.length); i++) {
                         console.log("For loop to push placeholders, i : ", i);
-                        listOfFavorites.push({placeholder});
+                        updatedFavorites.push(placeholder);
                     }
                 }
 
-                setFavoriteList(listOfFavorites);
-
+                setFavoriteList(updatedFavorites);
+                addAnimation();
             } else console.error('Failed to fetch favorite movies: ', response.statusText);
         } catch (error) {
             console.error('Error fetching favoritemovies: ', error.message);
         }
     };
 
-    useEffect(() => {
-        const fetchDataAndAnimate = async () => {
-            await populateScroller();
-            addAnimation();
-        }
-        fetchDataAndAnimate();
-    }, []);
+    // useEffect(() => {
+    //     const fetchDataAndAnimate = async () => {
+    //         await populateScroller();
+    //         addAnimation();
+    //     }
+    //     fetchDataAndAnimate();
+    // }, []);
 
     
     function addAnimation() {
