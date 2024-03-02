@@ -23,6 +23,17 @@ export const FavScroller = (props) => {
         }
     };
 
+    useEffect(() => {
+        if (favoriteList.length < 4) {
+            const tempDifferences = [];
+            for (let i = 0; i < (4 - favoriteList.length); i++) {
+                tempDifferences.push(placeholder);
+            }
+            setDifferenceList(tempDifferences);
+        } else {
+            setDifferenceList([]);
+        }
+    }, []);
     
     useEffect(() => {
         
@@ -49,17 +60,6 @@ export const FavScroller = (props) => {
         addAnimation();
     }, []);
 
-    useEffect(() => {
-        if (favoriteList.length < 4) {
-            const tempDifferences = [];
-            for (let i = 0; i < (4 - favoriteList.length); i++) {
-                tempDifferences.push(placeholder);
-            }
-            setDifferenceList(tempDifferences);
-        } else {
-            setDifferenceList([]);
-        }
-    }, []);
     
     return (
         <div className="scroller">
