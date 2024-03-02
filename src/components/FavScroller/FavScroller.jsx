@@ -30,10 +30,14 @@ export const FavScroller = (props) => {
         function addAnimation() {
             scrollers.forEach((scroller) => {
                 scroller.setAttribute("data-animated", true);
-
+        
                 const scrollerInner = scroller.querySelector(".scroller_inner");
+        
+                // Clear existing content
+                scrollerInner.innerHTML = '';
+        
                 const scrollerContent = Array.from(scrollerInner.children);
-
+        
                 scrollerContent.forEach((item) => {
                     const duplicateItem = item.cloneNode(true);
                     duplicateItem.setAttribute("aria-hidden", true);
@@ -55,7 +59,7 @@ export const FavScroller = (props) => {
         } else {
             setDifferenceList([]);
         }
-    }, []);
+    }, [favoriteList]);
     
     return (
         <div className="scroller">
