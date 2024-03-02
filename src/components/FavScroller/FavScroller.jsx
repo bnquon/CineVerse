@@ -24,29 +24,31 @@ export const FavScroller = (props) => {
         }
     };
 
-    useEffect(() => {  
-        
-        const scrollers = document.querySelectorAll(".scroller");
-        
-        function addAnimation() {
-            scrollers.forEach((scroller) => {
-                scroller.setAttribute("data-animated", true);
-                
-                const scrollerInner = scroller.querySelector(".scroller_inner");
-                const scrollerContent = Array.from(scrollerInner.children);
-                
-                scrollerContent.forEach((item) => {
-                    const duplicateItem = item.cloneNode(true);
-                    console.log(duplicateItem);
-                    duplicateItem.setAttribute("aria-hidden", true);
-                    scrollerInner.appendChild(duplicateItem);
-                });
-            });
+    useEffect(() => {
+        const fetchDataAndAnimate = async () => {
+            await populateScroller();
+            addAnimation();
         }
-        
-        populateScroller();
-        addAnimation();
+        fetchDataAndAnimate();
     }, []);
+
+    
+    function addAnimation() {
+        const scrollers = document.querySelectorAll(".scroller");
+        scrollers.forEach((scroller) => {
+            scroller.setAttribute("data-animated", true);
+            
+            const scrollerInner = scroller.querySelector(".scroller_inner");
+            const scrollerContent = Array.from(scrollerInner.children);
+            
+            scrollerContent.forEach((item) => {
+                const duplicateItem = item.cloneNode(true);
+                console.log(duplicateItem);
+                duplicateItem.setAttribute("aria-hidden", true);
+                scrollerInner.appendChild(duplicateItem);
+            });
+        });
+    }
 
     // useEffect(() => {
     //     if (favoriteList.length < 4) {
