@@ -43,7 +43,7 @@ export const FavScroller = (props) => {
         }
         populateScroller();
         addAnimation();
-    }, [populateScroller]);
+    }, []);
 
     useEffect(() => {
         if (favoriteList.length < 4) {
@@ -55,7 +55,7 @@ export const FavScroller = (props) => {
         } else {
             setDifferenceList([]);
         }
-    }, [favoriteList]);
+    }, []);
     
     return (
         <div className="scroller">
