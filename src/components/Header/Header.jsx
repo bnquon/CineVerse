@@ -7,10 +7,8 @@ import { useNavigate } from 'react-router-dom'
 // add variable to store username and push through to this div 
 // maybe make home nav element
 // make icon switcher to search for movies or users
-require('dotenv').config();
 
 export const Header = (props) => {
-    const API_KEY = process.env.API_KEY
     const navigate = useNavigate();
 
     const [searchType, setSearchType] = useState("movie");
@@ -27,7 +25,7 @@ export const Header = (props) => {
       const item = document.getElementById('searchBar').value;
       if (searchType === 'movie') {
         try {
-          const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${item}&api_key=${API_KEY}` , {
+          const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${item}&api_key=221c1bc4eb253a3e2e281a0820503ced` , {
             method: 'GET',
           });
           if (response.ok) {
