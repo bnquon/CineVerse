@@ -24,20 +24,20 @@ export const FavScroller = (props) => {
     };
 
     useEffect(() => {
-
+        // This code will run after the component has been mounted
         const scrollers = document.querySelectorAll(".scroller");
 
         function addAnimation() {
             scrollers.forEach((scroller) => {
                 scroller.setAttribute("data-animated", true);
-        
+
                 const scrollerInner = scroller.querySelector(".scroller_inner");
-        
+
                 // Clear existing content
                 scrollerInner.innerHTML = '';
-        
+
                 const scrollerContent = Array.from(scrollerInner.children);
-        
+
                 scrollerContent.forEach((item) => {
                     const duplicateItem = item.cloneNode(true);
                     duplicateItem.setAttribute("aria-hidden", true);
@@ -45,30 +45,28 @@ export const FavScroller = (props) => {
                 });
             });
         }
+
         populateScroller();
         addAnimation();
-    }, [populateScroller]);
+    }, [populateScroller]); // Run once after initial render
 
     useEffect(() => {
         if (favoriteList.length < 4) {
-            const tempDifferences = [];
-            for (let i = 0; i < (4 - favoriteList.length); i++) {
-                tempDifferences.push(placeholder);
-            }
+            const tempDifferences = Array.from({ length: 4 - favoriteList.length }, (_, index) => placeholder);
             setDifferenceList(tempDifferences);
         } else {
             setDifferenceList([]);
         }
     }, [favoriteList]);
-    
+
     return (
         <div className="scroller">
             <div className="scroller_inner">
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
-                {differenceList.map((element, index) => (
-                    <img key={index + favoriteList.length} src={element}/>
+                {differenceList.map((placeholder, index) => (
+                    <img key={index + favoriteList.length} src={placeholder} alt="" width='175' height='275'/>
                 ))}
             </div>
         </div>
