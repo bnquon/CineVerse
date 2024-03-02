@@ -30,16 +30,18 @@ export const FavScroller = (props) => {
         
         function addAnimation() {
             scrollers.forEach((scroller) => {
-                scroller.setAttribute("data-animated", true);
-                
-                const scrollerInner = scroller.querySelector(".scroller_inner");
-                const scrollerContent = Array.from(scrollerInner.children);
-                
-                scrollerContent.forEach((item) => {
-                    const duplicateItem = item.cloneNode(true);
-                    duplicateItem.setAttribute("aria-hidden", true);
-                    scrollerInner.appendChild(duplicateItem);
-                });
+                if (!scroller.getAttribute("data-animated")) {
+                    scroller.setAttribute("data-animated", true);
+        
+                    const scrollerInner = scroller.querySelector(".scroller_inner");
+                    const scrollerContent = Array.from(scrollerInner.children);
+        
+                    scrollerContent.forEach((item) => {
+                        const duplicateItem = item.cloneNode(true);
+                        duplicateItem.setAttribute("aria-hidden", true);
+                        scrollerInner.appendChild(duplicateItem);
+                    });
+                }
             });
         }
         
