@@ -1,8 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./FavScroller.css";
 
-export const FavScroller = () => {
+export const FavScroller = (props) => {
+
+    const [favoriteList, setFavoriteList] = useState([]);
+
     useEffect(() => {
+
+        const populateScroller = async () => {
+            try {
+                const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
+                    method: 'GET',
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data);
+                } else console.error('Failed to fetch favorite movies: ', response.statusText);
+            } catch (error) {
+                console.error('Error fetching favorite movies: ', error.message);
+            }
+        };
+
         // This code will run after the component has been mounted
         const scrollers = document.querySelectorAll(".scroller");
 
@@ -20,7 +38,7 @@ export const FavScroller = () => {
                 });
             });
         }
-
+        populateScroller();
         addAnimation();
     }, []); // The empty dependency array ensures that the effect runs once after the initial render
 

@@ -5,11 +5,12 @@ import { Grid } from "./Grid/Grid.jsx";
 
 export const UserPage = () => {
   const storedUsername = sessionStorage.getItem('username');
+  const userID = sessionStorage.getItem('userID');
   return (
     <>
-        <Header username = {storedUsername}/>
+        <Header username={storedUsername}/>
         <Grid/>
-        <FavScroller/>
+        <FavScroller userID={userID}/>
     </>
   )
 }
