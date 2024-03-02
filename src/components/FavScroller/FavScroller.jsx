@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./FavScroller.css";
-import { elements } from 'chart.js';
+import placeholder from "../../assets/posterPlaceholder.png"
 
 export const FavScroller = (props) => {
 
@@ -45,9 +45,14 @@ export const FavScroller = (props) => {
         addAnimation();
     }, []); // The empty dependency array ensures that the effect runs once after the initial render
 
+    const difference = favoriteList.length; 
+    
     return (
         <div className="scroller">
             <div className="scroller_inner">
+                <img src={placeholder} alt="" />
+                <img src={placeholder} alt="" />
+                <img src={placeholder} alt="" />
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
