@@ -23,6 +23,28 @@ export const FavScroller = (props) => {
         }
     };
 
+    useEffect(() => {  
+        const scrollers = document.querySelectorAll(".scroller");
+        
+        function addAnimation() {
+            scrollers.forEach((scroller) => {
+                scroller.setAttribute("data-animated", true);
+
+                const scrollerInner = scroller.querySelector(".scroller_inner");
+                const scrollerContent = Array.from(scrollerInner.children);
+
+                scrollerContent.forEach((item) => {
+                    const duplicateItem = item.cloneNode(true);
+                    duplicateItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicateItem);
+                });
+            });
+        }
+        
+        populateScroller();
+        addAnimation();
+    }, []);
+
     useEffect(() => {
         if (favoriteList.length < 4) {
             const tempDifferences = [];
@@ -35,41 +57,15 @@ export const FavScroller = (props) => {
         }
     }, []);
     
-    useEffect(() => {
-        
-        const scrollers = document.querySelectorAll(".scroller");
-        
-        function addAnimation() {
-            scrollers.forEach((scroller) => {
-                if (!scroller.getAttribute("data-animated")) {
-                    scroller.setAttribute("data-animated", true);
-        
-                    const scrollerInner = scroller.querySelector(".scroller_inner");
-                    const scrollerContent = Array.from(scrollerInner.children);
-        
-                    scrollerContent.forEach((item) => {
-                        const duplicateItem = item.cloneNode(true);
-                        duplicateItem.setAttribute("aria-hidden", true);
-                        scrollerInner.appendChild(duplicateItem);
-                    });
-                }
-            });
-        }
-        
-        populateScroller();
-        addAnimation();
-    }, []);
-
-    
     return (
         <div className="scroller">
             <div className="scroller_inner">
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
-                {differenceList.map((element, index) => (
+                {/* {differenceList.map((element, index) => (
                     <img key={index + favoriteList.length} src={element}/>
-                ))}
+                ))} */}
             </div>
         </div>
     );
