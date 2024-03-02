@@ -16,8 +16,8 @@ export const MovieInfo = (props) => {
         var operation = '';
 
         if (add) {
-            operation = 'INSERT';
-        } else operation = 'REMOVE';
+            operation = 'REMOVE';
+        } else operation = 'INSERT';
 
         try {
             const response = await fetch (`/api/handleFavorites?userID=${userID}&operation=${operation}`, {
