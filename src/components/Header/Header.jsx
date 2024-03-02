@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 // make icon switcher to search for movies or users
 
 export const Header = (props) => {
-
+    const API_KEY = process.env.API_KEY
     const navigate = useNavigate();
 
     const [searchType, setSearchType] = useState("movie");
@@ -26,7 +26,7 @@ export const Header = (props) => {
       const item = document.getElementById('searchBar').value;
       if (searchType === 'movie') {
         try {
-          const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${item}&api_key=221c1bc4eb253a3e2e281a0820503ced` , {
+          const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${item}&api_key=${API_KEY}` , {
             method: 'GET',
           });
           if (response.ok) {
