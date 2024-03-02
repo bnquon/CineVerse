@@ -4,7 +4,7 @@ import poster from "../../assets/drivePoster.jpg"
 import backdrop from "../../assets/driveBackdrop.jpg"
 
 
-export const MovieInfo = () => {
+export const MovieInfo = (props) => {
 
     let [isFavorite, setFavorite] = useState(false);
     let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
@@ -30,7 +30,7 @@ export const MovieInfo = () => {
         <div className="movieinfo-container">
 
             <div id="movie-title">
-                DRIVE
+                {props.title}
                 <button onClick={toggleFavorite} style={buttonStyles}>
                     {favoriteMsg}
                 </button>
@@ -43,12 +43,8 @@ export const MovieInfo = () => {
             </div>
             <div id="movie-info">
                 <span>
-                    <h2 id='description'>Released 2011-09-15</h2>
-                    Driver is a skilled Hollywood stuntman who moonlights as a getaway driver for criminals. 
-                    Though he projects an icy exterior, lately he's been warming up to a pretty neighbor named 
-                    Irene and her young son, Benicio. When Irene's husband gets out of jail, he enlists Driver's
-                    help in a million-dollar heist. The job goes horribly wrong, and Driver must risk his life 
-                    to protect Irene and Benicio from the vengeful masterminds behind the robbery. 
+                    <h2 id='description'>Released {props.date}</h2>
+                    {props.description}
                 </span>
             </div>
         </div>
