@@ -14,7 +14,7 @@ export const FavScroller = (props) => {
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    const listOfFavorites = (data.listOfFavorites).map(item => item.Movieposterurl);
+                    const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
                     console.log(listOfFavorites);
                     setFavoriteList(listOfFavorites);
                 } else console.error('Failed to fetch favorite movies: ', response.statusText);
