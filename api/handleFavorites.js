@@ -7,7 +7,7 @@ export default async function handler(request, response) {
     const { movieName, posterURL } = request.body;
     if (operation === 'INSERT') {
         try {
-            await client.sql`INSERT INTO favorites (user_ID, favoriteMovieName, moviePosterURL) VALUES (${userID}, ${movieName}, ${posterURL});`;
+            await client.sql`INSERT INTO favorites (user_ID, Favoritemoviename, Movieposterurl) VALUES (${userID}, ${movieName}, ${posterURL});`;
             return response.status(200).json();
         } catch (error) {
             console.error('Error adding movie to favorites:', error);
@@ -15,7 +15,7 @@ export default async function handler(request, response) {
         }
     } else {
         try {
-            await client.sql`DELETE FROM favorites WHERE (user_ID = ${userID}) AND (favoriteMovieName = ${movieName});`;
+            await client.sql`DELETE FROM favorites WHERE (user_ID = ${userID}) AND (Favoritemoviename = ${movieName});`;
             return response.status(200).json();
         } catch (error) {
             console.error('Error removing movie from favorites:', error);
