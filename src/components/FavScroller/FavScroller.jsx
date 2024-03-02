@@ -25,25 +25,26 @@ export const FavScroller = (props) => {
     };
 
     useEffect(() => {  
-        populateScroller();
-
+        
         const scrollers = document.querySelectorAll(".scroller");
         
         function addAnimation() {
             scrollers.forEach((scroller) => {
                 scroller.setAttribute("data-animated", true);
-
+                
                 const scrollerInner = scroller.querySelector(".scroller_inner");
                 const scrollerContent = Array.from(scrollerInner.children);
-
+                
                 scrollerContent.forEach((item) => {
                     const duplicateItem = item.cloneNode(true);
+                    console.log(duplicateItem);
                     duplicateItem.setAttribute("aria-hidden", true);
                     scrollerInner.appendChild(duplicateItem);
                 });
             });
         }
         
+        populateScroller();
         addAnimation();
     }, []);
 
