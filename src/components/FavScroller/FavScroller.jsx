@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./FavScroller.css";
+import { elements } from 'chart.js';
 
 export const FavScroller = (props) => {
 
@@ -47,9 +48,9 @@ export const FavScroller = (props) => {
     return (
         <div className="scroller">
             <div className="scroller_inner">
-                {favoriteList.forEach(element => {
-                    <img src={element} alt="" width='175' height='275'/>
-                })}
+                {favoriteList.map((element, index) => (
+                    <img key={index} src={element} alt="" width='175' height='275'/>
+                ))}
             </div>
         </div>
     );
