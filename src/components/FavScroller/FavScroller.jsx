@@ -50,12 +50,12 @@ export const FavScroller = (props) => {
     return (
         <div className="scroller">
             <div className="scroller_inner">
-                <img src={placeholder} alt="" />
-                <img src={placeholder} alt="" />
-                <img src={placeholder} alt="" />
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
+                <img src={placeholder} alt="" />
+                <img src={placeholder} alt="" />
+                <img src={placeholder} alt="" />
             </div>
         </div>
     );
