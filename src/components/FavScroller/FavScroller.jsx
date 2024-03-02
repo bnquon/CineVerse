@@ -23,6 +23,8 @@ export const FavScroller = (props) => {
         }
     };
 
+    populateScroller();
+
     useEffect(() => {
 
         const scrollers = document.querySelectorAll(".scroller");
@@ -41,7 +43,7 @@ export const FavScroller = (props) => {
                 });
             });
         }
-        populateScroller();
+        
         addAnimation();
     }, []);
 
