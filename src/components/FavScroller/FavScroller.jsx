@@ -68,6 +68,9 @@ export const FavScroller = (props) => {
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
+                {favoriteList.map((element, index) => (
+                    <img key={index+2} src={element} alt="" width='175' height='275'/>
+                ))}
                 {/* {differenceList.map((element, index) => (
                     <img key={index + favoriteList.length} src={element}/>
                 ))} */}
