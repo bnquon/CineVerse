@@ -16,7 +16,14 @@ export const FavScroller = (props) => {
                 const data = await response.json();
                 const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
                 console.log(listOfFavorites);
+                
+                if (listOfFavorites.lenth < 4) {
+                    for (let i = 0; i < (4-listOfFavorites.length); i++) {
+                        listOfFavorites.push(placeholder);
+                    }
+                }
                 setFavoriteList(listOfFavorites);
+
             } else console.error('Failed to fetch favorite movies: ', response.statusText);
         } catch (error) {
             console.error('Error fetching favorite movies: ', error.message);
@@ -45,17 +52,17 @@ export const FavScroller = (props) => {
         addAnimation();
     }, []);
 
-    useEffect(() => {
-        if (favoriteList.length < 4) {
-            const tempDifferences = [];
-            for (let i = 0; i < (4 - favoriteList.length); i++) {
-                tempDifferences.push(placeholder);
-            }
-            setDifferenceList(tempDifferences);
-        } else {
-            setDifferenceList([]);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (favoriteList.length < 4) {
+    //         const tempDifferences = [];
+    //         for (let i = 0; i < (4 - favoriteList.length); i++) {
+    //             tempDifferences.push(placeholder);
+    //         }
+    //         setDifferenceList(tempDifferences);
+    //     } else {
+    //         setDifferenceList([]);
+    //     }
+    // }, []);
     
     return (
         <div className="scroller">
