@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom'
 
 export const Header = (props) => {
 
+    const navigate = useNavigate();
+
     const [searchType, setSearchType] = useState("movie");
 
     const userClick = () => {
@@ -29,8 +31,9 @@ export const Header = (props) => {
           });
           if (response.ok) {
             const data = await response.json();
+            const movieInfo = data.results[0];
             console.log(data.results[0]);
-            // useNavigate('./movie')
+            navigate('./movie');
           } else console.error('Failed to fetch search results: ', response.statusText);
         } catch (error) {
           console.error('Error fetching search results: ', error.message);
