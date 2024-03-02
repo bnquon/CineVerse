@@ -47,10 +47,9 @@ export const FavScroller = (props) => {
     return (
         <div className="scroller">
             <div className="scroller_inner">
-                <img src="https://placehold.co/175x275/orange/white" alt="" />
-                <img src="https://placehold.co/175x275/orange/white" alt="" />
-                <img src="https://placehold.co/175x275/orange/white" alt="" />
-                <img src="https://placehold.co/175x275/orange/white" alt="" />
+                {favoriteList.forEach(element => {
+                    <img src={element} alt="" width='175' height='275'/>
+                })}
             </div>
         </div>
     );
