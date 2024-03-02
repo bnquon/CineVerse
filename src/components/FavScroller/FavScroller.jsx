@@ -27,20 +27,20 @@ export const FavScroller = (props) => {
                 }
 
                 setFavoriteList(updatedFavorites);
-                addAnimation();
+
             } else console.error('Failed to fetch favorite movies: ', response.statusText);
         } catch (error) {
             console.error('Error fetching favoritemovies: ', error.message);
         }
     };
 
-    // useEffect(() => {
-    //     const fetchDataAndAnimate = async () => {
-    //         await populateScroller();
-    //         addAnimation();
-    //     }
-    //     fetchDataAndAnimate();
-    // }, []);
+    useEffect(() => {
+        const fetchDataAndAnimate = async () => {
+            await populateScroller();
+            addAnimation();
+        }
+        fetchDataAndAnimate();
+    }, []);
 
     
     function addAnimation() {
