@@ -2,13 +2,39 @@ import React, {useState} from 'react'
 import "./MovieInfo.css"
 
 export const MovieInfo = (props) => {
-
+    const userID = sessionStorage.getItem('username');
     let [isFavorite, setFavorite] = useState(false);
     let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
 
     const toggleFavorite = () => {
         setFavorite(!isFavorite);
         setFavoriteMsg(isFavorite ? "Add To Favorites" : "Remove from Favorites");
+        handleFavorites(isFavorite);    
+    }
+
+    const handleFavorites = async (add) => {
+        var operation = '';
+
+        if (add) {
+            operation = 'INSERT';
+        } else operation = 'REMOVE';
+
+        try {
+            const response = await fetch (`/api/handleFavorites?userID=${userID}&operation=${operation}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ movieName: props.title, posterURL: posterURL }),
+            });
+
+            if (!response.ok) {
+                console.error('Failed to add to favorites: ', response.statusText);
+              }
+
+        } catch (error) {
+            console.error('Error saving bio:', error.message);
+        }
     }
 
     const buttonStyles = {
