@@ -26,11 +26,13 @@ export const FavScroller = (props) => {
 
             } else console.error('Failed to fetch favorite movies: ', response.statusText);
         } catch (error) {
-            console.error('Error fetching favorite movies: ', error.message);
+            console.error('Error fetching favoritemovies: ', error.message);
         }
     };
 
     useEffect(() => {  
+        populateScroller();
+        
         const scrollers = document.querySelectorAll(".scroller");
         
         function addAnimation() {
@@ -48,7 +50,6 @@ export const FavScroller = (props) => {
             });
         }
         
-        populateScroller();
         addAnimation();
     }, []);
 
