@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 // add variable to store username and push through to this div 
 // maybe make home nav element
 // make icon switcher to search for movies or users
+require('dotenv').config();
 
 export const Header = (props) => {
     const API_KEY = process.env.API_KEY
