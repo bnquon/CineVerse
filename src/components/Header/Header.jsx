@@ -30,7 +30,7 @@ export const Header = (props) => {
           if (response.ok) {
             const data = await response.json();
             console.log(data.results[0]);
-            useNavigate('./movie')
+            // useNavigate('./movie')
           } else console.error('Failed to fetch search results: ', response.statusText);
         } catch (error) {
           console.error('Error fetching search results: ', error.message);
