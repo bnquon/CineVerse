@@ -24,6 +24,7 @@ export const FavScroller = (props) => {
                         console.log("For loop to push placeholders, i : ", i);
                         updatedFavorites.push(placeholder);
                     }
+                    updatedFavorites.push(placeholder);
                 }
 
                 setFavoriteList(updatedFavorites);
