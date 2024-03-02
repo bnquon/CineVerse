@@ -24,11 +24,11 @@
 .scroller[data-animated="true"] .scroller_inner {
     width: fit-content;
     flex-wrap: nowrap;
-    animation: scroll 60s reverse linear infinite;
+    animation: scroll 20s reverse linear infinite;
 }
 
 @keyframes scroll {
     to {
-        transform: translateY(calc(-50% - 0.5rem));
+        transform: translateY(-75%);
     }
 }
