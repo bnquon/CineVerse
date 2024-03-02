@@ -5,26 +5,26 @@ import placeholder from "../../assets/posterPlaceholder.png"
 export const FavScroller = (props) => {
 
     const [favoriteList, setFavoriteList] = useState([]);
+    const [differenceList, setDifferenceList] = useState([]);
+
+    const populateScroller = async () => {
+        try {
+            const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
+                method: 'GET',
+            });
+            if (response.ok) {
+                const data = await response.json();
+                const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
+                console.log(listOfFavorites);
+                setFavoriteList(listOfFavorites);
+            } else console.error('Failed to fetch favorite movies: ', response.statusText);
+        } catch (error) {
+            console.error('Error fetching favorite movies: ', error.message);
+        }
+    };
 
     useEffect(() => {
 
-        const populateScroller = async () => {
-            try {
-                const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
-                    method: 'GET',
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
-                    console.log(listOfFavorites);
-                    setFavoriteList(listOfFavorites);
-                } else console.error('Failed to fetch favorite movies: ', response.statusText);
-            } catch (error) {
-                console.error('Error fetching favorite movies: ', error.message);
-            }
-        };
-
-        // This code will run after the component has been mounted
         const scrollers = document.querySelectorAll(".scroller");
 
         function addAnimation() {
@@ -43,9 +43,19 @@ export const FavScroller = (props) => {
         }
         populateScroller();
         addAnimation();
-    }, []); // The empty dependency array ensures that the effect runs once after the initial render
+    }, [populateScroller]);
 
-    const difference = favoriteList.length; 
+    useEffect(() => {
+        if (favoriteList.length < 4) {
+            const tempDifferences = [];
+            for (let i = 0; i < (4 - favoriteList.length); i++) {
+                tempDifferences.push(placeholder);
+            }
+            setDifferenceList(tempDifferences);
+        } else {
+            setDifferenceList([]);
+        }
+    }, [favoriteList]);
     
     return (
         <div className="scroller">
@@ -53,9 +63,9 @@ export const FavScroller = (props) => {
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
-                <img src={placeholder} alt="" />
-                <img src={placeholder} alt="" />
-                <img src={placeholder} alt="" />
+                {differenceList.map((element, index) => (
+                    <img key={index + favoriteList.length} src={element}/>
+                ))}
             </div>
         </div>
     );
