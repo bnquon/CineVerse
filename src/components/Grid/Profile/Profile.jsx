@@ -12,7 +12,7 @@ export const Profile = (props) => {
   useEffect(() => {
     const getUserPFP = async () => {
       try {
-        const response = await fetch(`getUserPFP?userID=${userID}`, {
+        const response = await fetch(`/api/getUserPFP?userID=${userID}`, {
           method: 'GET',
         });
 
