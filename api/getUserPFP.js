@@ -6,7 +6,7 @@ export default async function handler(request, response) {
 
     try {
         const existingPFP = await client.sql`SELECT ProfilePicture FROM users WHERE userID = ${userID};`;
-        return res.status(200).json({ profilePicture: existingPFP });
+        return response.status(200).json({ profilePicture: existingPFP });
     } catch (error) {
         console.error('Error getting user profile picture:', error);
         return response.status(500).json({ error: 'Internal Server Error' });
