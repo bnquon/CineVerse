@@ -3,13 +3,16 @@ import './Profile.css';
 import noPFP from '../../../assets/noPFP.jpg';
 
 export const Profile = (props) => {
+
+  const userID = sessionStorage.getItem('userID');
+
   const [profilePicture, setProfilePicture] = useState(noPFP);
   const imageUploader = useRef(null);
 
   useEffect(() => {
     const getUserPFP = async () => {
       try {
-        const response = await fetch(`getUserPFP?userID=${props.userID}`, {
+        const response = await fetch(`getUserPFP?userID=${userID}`, {
           method: 'GET',
         });
 
