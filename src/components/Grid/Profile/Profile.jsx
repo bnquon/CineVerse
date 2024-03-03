@@ -15,11 +15,11 @@ export const Profile = (props) => {
 
         if (response.ok) {
           const data = await response.json();
-
+          console.log(data);
           if (data.profilePicture != null) {
             setProfilePicture(data.profilePicture);
           }
-          
+
         } else {
           console.error('Failed to fetch user profile picture: ', response.statusText);
         }
