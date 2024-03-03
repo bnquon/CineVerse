@@ -15,7 +15,7 @@ export const Profile = (props) => {
         current.src = e.target.result;
       }
       reader.readAsDataURL(file);
-      console.log(file);
+      console.log(reader.result);
     }
   };
 
