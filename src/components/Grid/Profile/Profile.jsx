@@ -9,30 +9,30 @@ export const Profile = (props) => {
   const [profilePicture, setProfilePicture] = useState(noPFP);
   const imageUploader = useRef(null);
 
-  useEffect(() => {
-    const getUserPFP = async () => {
-      try {
-        const response = await fetch(`/api/getUserPFP?userID=${userID}`, {
-          method: 'GET',
-        });
+  // useEffect(() => {
+  //   const getUserPFP = async () => {
+  //     try {
+  //       const response = await fetch(`/api/getUserPFP?userID=${userID}`, {
+  //         method: 'GET',
+  //       });
 
-        if (response.ok) {
-          const data = await response.json();
-          console.log(data);
-          if (data.profilePicture != null) {
-            setProfilePicture(data.profilePicture);
-          }
+  //       if (response.ok) {
+  //         const data = await response.json();
+  //         console.log(data);
+  //         if (data.profilePicture != null) {
+  //           setProfilePicture(data.profilePicture);
+  //         }
 
-        } else {
-          console.error('Failed to fetch user profile picture: ', response.statusText);
-        }
-      } catch (error) {
-        console.error('Error fetching user profile picture: ', error.message);
-      }
-    };
+  //       } else {
+  //         console.error('Failed to fetch user profile picture: ', response.statusText);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error fetching user profile picture: ', error.message);
+  //     }
+  //   };
 
-    getUserPFP();
-  }, [props.userID]);
+  //   getUserPFP();
+  // }, [props.userID]);
 
   const handleImageUpload = (e) => {
     const [file] = e.target.files;
