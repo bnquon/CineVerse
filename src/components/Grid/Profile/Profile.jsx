@@ -1,31 +1,63 @@
-import React, { useRef } from 'react'
-import "./Profile.css"
-import noPFP from "../../../assets/noPFP.jpg"
+import React, { useEffect, useState, useRef } from 'react';
+import './Profile.css';
+import noPFP from '../../../assets/noPFP.jpg';
 
 export const Profile = (props) => {
-  const uploadedImage = useRef(null);
+  const [profilePicture, setProfilePicture] = useState(noPFP);
   const imageUploader = useRef(null);
+
+  useEffect(() => {
+    const getUserPFP = async () => {
+      try {
+        const response = await fetch(`getUserPFP?userID=${props.userID}`, {
+          method: 'GET',
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+
+          if (data.profilePicture != null) {
+            setProfilePicture(data.profilePicture);
+          }
+          
+        } else {
+          console.error('Failed to fetch user profile picture: ', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error fetching user profile picture: ', error.message);
+      }
+    };
+
+    getUserPFP();
+  }, [props.userID]);
+
   const handleImageUpload = (e) => {
     const [file] = e.target.files;
     if (file) {
       const reader = new FileReader();
-      const {current} = uploadedImage;
-      current.file = file;
       reader.onload = (e) => {
-        current.src = e.target.result;
-        console.log(reader.result);
-      }
+        setProfilePicture(e.target.result);
+        console.log(e.target.result);
+      };
       reader.readAsDataURL(file);
     }
   };
 
   return (
     <div className="profile-container">
-        <input type="file" accept='image/*' multiple={false} id="pfp" ref={imageUploader} onChange={handleImageUpload} style={{display: 'none'}} />
-        <div id="image-container" onClick={() => imageUploader.current.click()}>
-          <img ref={uploadedImage} src={noPFP} />
-        </div>
-        <h2 id='username'>{props.username}</h2>
+      <input
+        type="file"
+        accept="image/*"
+        multiple={false}
+        id="pfp"
+        ref={imageUploader}
+        onChange={handleImageUpload}
+        style={{ display: 'none' }}
+      />
+      <div id="image-container" onClick={() => imageUploader.current.click()}>
+        <img src={profilePicture} alt="Profile" />
+      </div>
+      <h2 id="username">{props.username}</h2>
     </div>
-  )
-}
+  );
+};
