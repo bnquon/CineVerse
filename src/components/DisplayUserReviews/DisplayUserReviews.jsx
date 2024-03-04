@@ -6,7 +6,20 @@ import { MovieGraph } from '../MovieGraph/MovieGraph';
 import { MovieReviews } from '../MovieReviews/MovieReviews';
 
 export const DisplayUserReviews = (props) => {
-  const listOfMovieRatings = [];
+
+  const listOfMovieRatings = {
+                              '1': 0,
+                              '2': 0,
+                              '3': 0,
+                              '4': 0,
+                              '5': 0,
+                              '6': 0,
+                              '7': 0,
+                              '8': 0,
+                              '9': 0,
+                              '10': 0
+                          };
+
   const listOfMovieReviews = [];
 
   useEffect(() => {
@@ -20,7 +33,7 @@ export const DisplayUserReviews = (props) => {
 
           (data.movieInfo).forEach(element => {
             listOfMovieReviews.push([element.rating, element.review]);
-            listOfMovieRatings.push(element.rating);
+            listOfMovieRatings[String((element.rating[i])-1)];
           })
 
         } else console.error('Failed to fetch movie ratings and reviews: ', response.statusText);

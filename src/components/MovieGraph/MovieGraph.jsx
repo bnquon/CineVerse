@@ -6,24 +6,7 @@ import { Bar } from "react-chartjs-2";
 export const MovieGraph = (props) => {
 
     useEffect(() => {
-        console.log('Props.ratings is ', props.ratings);
-        console.log('Props.ratings length is ', props.ratings.length);
-        const temp = {
-            '1': 0,
-            '2': 0,
-            '3': 0,
-            '4': 0,
-            '5': 0,
-            '6': 0,
-            '7': 0,
-            '8': 0,
-            '9': 0,
-            '10': 0
-        }
-        for (let i = 0; i < props.ratings.length; i++) {
-            temp[String(props.ratings[i]-1)]++;
-        }
-        console.log(temp);
+        console.log(props.ratings);
     }, [])
 
   return (
