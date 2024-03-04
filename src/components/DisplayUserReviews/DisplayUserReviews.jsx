@@ -7,7 +7,7 @@ import { MovieReviews } from '../MovieReviews/MovieReviews';
 
 export const DisplayUserReviews = (props) => {
   const listOfRatings = [];
-  const listOfReviews = null;
+  const listOfReviews = [];
 
   useEffect(() => {
     const getMovieData = async () => {
@@ -20,7 +20,7 @@ export const DisplayUserReviews = (props) => {
           listOfReviews = data.movieInfo;
 
           (data.movieInfo).forEach(element => {
-            console.log('Trying to iterate through the ratings only: ' , element.rating);
+            listOfReviews.push([element.rating, element.review]);
             listOfRatings.push(element.rating);
           })
 
