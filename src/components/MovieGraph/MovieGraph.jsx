@@ -5,10 +5,9 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-    const ratings = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    console.log('Ratings before for loop: ', ratings);
-
     useEffect(() => {
+        const ratings = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        console.log('Ratings before for loop: ', ratings);
         
         (props.ratings).forEach(element => {
             console.log(element);
