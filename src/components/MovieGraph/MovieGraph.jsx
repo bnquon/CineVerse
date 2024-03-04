@@ -3,31 +3,25 @@ import "./MovieGraph.css"
 import { Chart as Chartjs, Legend, defaults} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
-export const MovieGraph = () => {
+export const MovieGraph = (props) => {
 
-//   const [ratingCount, setRatingCount] = useState([]);
+  const ratingMap = { 
+                    '1': 0,
+                    '2': 0,
+                    '4': 0,
+                    '5': 0,
+                    '6': 0,
+                    '7': 0,
+                    '8': 0,
+                    '9': 0,
+                    '10': 0
+                };
+  
+  for (let i = 0; i < (props.ratings).length; i++) {
+    ratingMap[(props.ratings[i])] += 1;
+  }
 
-//   useEffect(() => {
-//     const getMovieRatings = async () => {
-
-//         try {
-//             const response = await fetch(`/api/getMovieRatings?movieTitle=${props.title}`, {
-//                 method: 'GET',
-//             });
-
-//             if (response.ok) {
-//                 const data = await json.response();
-//                 const temp = data.ratingDistribution;
-//                 const valuesArray = Object.values(temp);
-//                 setRatingCount(e => [...e, ...valuesArray]);
-//             } else console.error('Failed to fetch movie ratings: ', response.statusText);
-
-//         } catch (error) {
-//             console.error('Error fetching movie review ratings')
-//         }
-
-//     }
-//   }, [setRatingCount])
+  console.log(ratingMap);
 
   return (
     <>  
