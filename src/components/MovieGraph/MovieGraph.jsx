@@ -10,7 +10,7 @@ export const MovieGraph = (props) => {
         console.log(props.ratings);
         const movieRatingsValues = Object.values(props.ratings);
         updateRatings(movieRatingsValues);
-    }, [props.ratings]);
+    }, []);
 
     return (
         <>  
