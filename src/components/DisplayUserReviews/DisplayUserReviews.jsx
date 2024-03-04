@@ -6,7 +6,9 @@ import { MovieGraph } from '../MovieGraph/MovieGraph';
 import { MovieReviews } from '../MovieReviews/MovieReviews';
 
 export const DisplayUserReviews = (props) => {
-    
+  const listOfRatings = [];
+  const listOfReviews = null;
+
   useEffect(() => {
     const getMovieData = async () => {
       try {
@@ -15,12 +17,13 @@ export const DisplayUserReviews = (props) => {
         });
         if (response.ok) {
           const data = await response.json();
-          // const listOfReviews = data.movieInfo;
-          // const listOfRatings = [];
+          listOfReviews = data.movieInfo;
+
           (data.movieInfo).forEach(element => {
             console.log('Trying to iterate through the ratings only: ' , element.rating);
-            // listOfRatings.push(element.rating);
+            listOfRatings.push(element.rating);
           })
+
         } else console.error('Failed to fetch movie ratings and reviews: ', response.statusText);
 
       } catch (error) {
@@ -34,6 +37,9 @@ export const DisplayUserReviews = (props) => {
   const {ref, inView} = useInView({
     threshold: 0.75,
   });
+
+  console.log('List of ratings: ', listOfRatings);
+  console.log('List of reveiws: ', listOfReviews);
 
   return (
     <>
