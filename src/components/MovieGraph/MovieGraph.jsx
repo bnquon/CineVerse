@@ -16,7 +16,7 @@ export const MovieGraph = (props) => {
           const data = await response.json();
 
           // console.log('DATA DISTRIBUTION IS: ', data.ratingDistribution);
-          const temp = data.ratings;
+          const temp = data.rating;
           const movieValuesArray = Object.values(temp);
           console.log('VALUES ARRAY:', movieValuesArray);
           setMovieRatingCount(empty => [...empty, ...movieValuesArray]);
