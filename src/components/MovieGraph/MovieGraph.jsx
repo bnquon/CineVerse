@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import "./MovieGraph.css"
-import { Chart as Chartjs, Legend, defaults} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-    const [a, b] = useState([]);
-
     useEffect(() => {
-        console.log(props.ratings); 
-        const temp = props.ratings;
-        const movieRatingsValues = Object.values(temp);
-        console.log('movieRatingsValues ARRAY:', movieRatingsValues);
-        b(empty => [...empty, ...movieRatingsValues]);
-    
+        console.log(props.ratings);     
     }, []);
     
-
+    console.log(props.ratings);
+    
   return (
     <>  
         <div id="left-cell">
@@ -30,7 +23,8 @@ export const MovieGraph = (props) => {
                         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                         datasets: [
                         {
-                            data: a,
+                            data: [props.ratings['1'], props.ratings['2'], props.ratings['3'], props.ratings['4'],
+                                    props.ratings['5'], props.ratings['6'], props.ratings['7'], props.ratings['8'], props.ratings['9'], props.ratings['10']],
                             backgroundColor: 'hsl(17, 83%, 64%)',
                             borderWidth: 3,
                             borderColor: 'hsl(0, 100%, 50%)',
