@@ -6,14 +6,16 @@ export const MovieGraph = (props) => {
 
     const [movieRatings, setMovieRatings] = useState([]);
     useEffect(() => {
-        console.log(props.ratings);    
-        for (const property in props.ratings) {
-            console.log(`${property}: ${props.ratings[property]}`);
-          }
-        const temp = Object.values(props.ratings);
+        console.log('props.ratings:', props.ratings);
+
+        const temp = Object.values(props.ratings).map(value => {
+            // You can perform any processing on each value if needed
+            return value;
+        });
+
         console.log('temp is: ', temp);
-        setMovieRatings(e => [...e, ...temp]); 
-    }, []);
+        setMovieRatings(prevRatings => [...prevRatings, ...temp]);
+    }, [props.ratings]); 
 
   return (
     <>  
