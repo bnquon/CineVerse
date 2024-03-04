@@ -5,15 +5,15 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
+    const [a, b] = useState([]);
+
     useEffect(() => {
         console.log(props.ratings); 
+        const temp = props.ratings;
+        const movieRatingsValues = Object.values(temp);
+        console.log('movieRatingsValues ARRAY:', movieRatingsValues);
+        b(empty => [...empty, ...movieRatingsValues]);
     
-        // Get arrays of keys and values
-        const ratingKeysArray = Object.keys(props.ratings);
-        const ratingValuesArray = Object.values(props.ratings);
-    
-        console.log('Rating keys array:', ratingKeysArray);
-        console.log('Rating values array:', ratingValuesArray);
     }, []);
     
 
@@ -30,7 +30,7 @@ export const MovieGraph = (props) => {
                         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                         datasets: [
                         {
-                            data: [1,1,1,1,1,1,1,1,1,1],
+                            data: a,
                             backgroundColor: 'hsl(17, 83%, 64%)',
                             borderWidth: 3,
                             borderColor: 'hsl(0, 100%, 50%)',
