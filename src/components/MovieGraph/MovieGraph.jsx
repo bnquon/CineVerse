@@ -7,8 +7,11 @@ export const MovieGraph = (props) => {
     const [movieRatings, setMovieRatings] = useState([]);
     useEffect(() => {
         console.log(props.ratings);    
+        props.ratings.forEach(element => {
+            console.log('Element in props.ratings loop: ', element);
+        });
         const temp = Object.values(props.ratings);
-        console.log(temp);
+        console.log('temp is: ', temp);
         setMovieRatings(e => [...e, ...temp]); 
     }, []);
 
