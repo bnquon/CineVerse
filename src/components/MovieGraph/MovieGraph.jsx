@@ -18,15 +18,15 @@ export const MovieGraph = (props) => {
                       10: 0
                   };
 
-  useEffect(() => {
-      console.log('With useEffect: Props.ratings is: ', props.ratings);  
-        for (let i = 0; i < (props.ratings).length; i++) {
-          console.log(props.ratings[i]);
-          ratingMap[(props.ratings[i])] += 1;
-        }
-      
-        console.log(ratingMap);
-  }, [])
+    useEffect(() => {
+    console.log('With useEffect: Props.ratings is: ', props.ratings);  
+    for (let i = 0; i < props.ratings.length; i++) {
+        console.log(props.ratings[i]);
+        const ratingKey = String(props.ratings[i]); // Convert rating to string
+        ratingMap[ratingKey] += 1;
+    }
+    console.log(ratingMap);
+    }, []);
 
   return (
     <>  
