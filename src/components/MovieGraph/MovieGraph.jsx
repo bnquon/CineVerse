@@ -5,6 +5,8 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
+  console.log(Object.values(props.ratings));  
+
   return (
     <>  
         <div id="left-cell">
