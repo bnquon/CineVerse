@@ -20,6 +20,7 @@ export const MovieGraph = (props) => {
   useEffect(() => {
       console.log('With useEffect: Props.ratings is: ', props.ratings);  
         for (let i = 0; i < (props.ratings).length; i++) {
+          console.log(props.ratings[i]);
           ratingMap[(props.ratings[i])] += 1;
         }
       
