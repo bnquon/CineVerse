@@ -37,15 +37,12 @@ export const DisplayUserReviews = (props) => {
     threshold: 0.75,
   });
 
-  console.log('List of ratings: ', listOfMovieRatings);
-  console.log('List of reveiws: ', listOfMovieReviews);
-
   return (
     <>
       <ArrowIcon state = {inView}/>
       <div ref={ref} id='container'>
-        <MovieGraph/>
-        <MovieReviews/>
+        <MovieGraph ratings={listOfMovieRatings} />
+        <MovieReviews reviews={listOfMovieReviews} />
       </div>
     </>
   );
