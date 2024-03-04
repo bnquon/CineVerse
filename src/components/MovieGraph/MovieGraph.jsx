@@ -6,16 +6,28 @@ export const MovieGraph = (props) => {
 
     const [movieRatings, setMovieRatings] = useState([]);
     useEffect(() => {
-        console.log('props.ratings:', props.ratings);
+        const getMovieRatings = async () => {
+            
+            try {
+                const response = await fetch(`/api/getUserRatings?movieName=${props.title}&userID=null`, {
+                    method: 'GET',
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    const temp = data.ratingDistribution;
+                    console.log('Temp from movie ratings is: ', temp);
+                    const movieRatingsArray = Object.values(temp);
+                    console.log('movieRatingsValue ARRAY:', movieRatingsArray);
+                    setMovieRatings(empty => [...empty, ...movieRatingsArray]);
+                } else console.error('Failed to fetch movie ratings: ', response.statusText);
 
-        const temp = Object.values(props.ratings).map(value => {
-            // You can perform any processing on each value if needed
-            return value;
-        });
+            } catch (error) {
+                console.error('Failed fetching movie ratings ', error.message);
+            }
+        }
 
-        console.log('temp is: ', temp);
-        setMovieRatings(prevRatings => [...prevRatings, ...temp]);
-    }, [props.ratings]); 
+        getMovieRatings();
+    }, []); 
 
   return (
     <>  
