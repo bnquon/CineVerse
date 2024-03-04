@@ -6,8 +6,8 @@ import { MovieGraph } from '../MovieGraph/MovieGraph';
 import { MovieReviews } from '../MovieReviews/MovieReviews';
 
 export const DisplayUserReviews = (props) => {
-  const listOfRatings = [];
-  const listOfReviews = [];
+  const listOfMovieRatings = [];
+  const listOfMovieReviews = [];
 
   useEffect(() => {
     const getMovieData = async () => {
@@ -17,11 +17,10 @@ export const DisplayUserReviews = (props) => {
         });
         if (response.ok) {
           const data = await response.json();
-          listOfReviews = data.movieInfo;
 
           (data.movieInfo).forEach(element => {
-            listOfReviews.push([element.rating, element.review]);
-            listOfRatings.push(element.rating);
+            listOfMovieReviews.push([element.rating, element.review]);
+            listOfMovieRatings.push(element.rating);
           })
 
         } else console.error('Failed to fetch movie ratings and reviews: ', response.statusText);
@@ -38,8 +37,8 @@ export const DisplayUserReviews = (props) => {
     threshold: 0.75,
   });
 
-  console.log('List of ratings: ', listOfRatings);
-  console.log('List of reveiws: ', listOfReviews);
+  console.log('List of ratings: ', listOfMovieRatings);
+  console.log('List of reveiws: ', listOfMovieReviews);
 
   return (
     <>
