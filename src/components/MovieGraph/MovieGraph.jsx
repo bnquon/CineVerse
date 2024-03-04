@@ -4,9 +4,31 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-    useEffect(() => {
-        console.log(props.ratings);     
-    }, []);
+  const [movieRatingCount, setMovieRatingCount] = useState([]);
+
+  useEffect(() => {
+    const getMovieData = async () => {
+      try {
+          const response = await fetch(`/api/getMovieData?movieName=${props.title}`, {
+          method: 'GET',
+        });
+        if (response.ok) {
+          const data = await response.json();
+
+          // console.log('DATA DISTRIBUTION IS: ', data.ratingDistribution);
+          const temp = data.ratings;
+          const movieValuesArray = Object.values(temp);
+          console.log('VALUES ARRAY:', movieValuesArray);
+          setMovieRatingCount(empty => [...empty, ...movieValuesArray]);
+        } else console.error('Failed to fetch movie ratings and reviews: ', response.statusText);
+
+      } catch (error) {
+        console.error('Error fetching movie data: ', error.message);
+      }
+    }
+
+    getMovieData();
+  }, [])
 
   return (
     <>  
@@ -21,7 +43,7 @@ export const MovieGraph = (props) => {
                         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                         datasets: [
                         {
-                            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                            data: movieRatingCount,
                             backgroundColor: 'hsl(17, 83%, 64%)',
                             borderWidth: 3,
                             borderColor: 'hsl(0, 100%, 50%)',
