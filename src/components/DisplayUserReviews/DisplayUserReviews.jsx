@@ -33,7 +33,7 @@ export const DisplayUserReviews = (props) => {
 
           (data.movieInfo).forEach(element => {
             listOfMovieReviews.push([element.rating, element.review]);
-            listOfMovieRatings[String((element.rating[i])-1)];
+            listOfMovieRatings[String(element.rating-1)]++;
           })
 
         } else console.error('Failed to fetch movie ratings and reviews: ', response.statusText);
