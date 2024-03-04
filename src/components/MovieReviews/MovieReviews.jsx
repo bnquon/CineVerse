@@ -10,7 +10,7 @@ const MovieReviewItem = ({ title, review }) => {
   );
 };
 
-export const MovieReviews = () => {
+export const MovieReviews = (props) => {
   // Sample data for testing
   const reviews = [
     { title: 'Review 1', review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },

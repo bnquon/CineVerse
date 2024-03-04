@@ -55,7 +55,7 @@ export const DisplayUserReviews = (props) => {
       <ArrowIcon state = {inView}/>
       <div ref={ref} id='container'>
         <MovieGraph title={props.title} />
-        <MovieReviews reviews={listOfMovieReviews} />
+        <MovieReviews reviews={props.title} />
       </div>
     </>
   );
