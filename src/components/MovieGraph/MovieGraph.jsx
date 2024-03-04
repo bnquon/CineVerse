@@ -5,11 +5,16 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-  useEffect(() => {
-    console.log(props.ratings); 
-    const aaa = [...props.ratings.keys()];
-    console.log('aaa: ', aaa);
-  }, [])
+    useEffect(() => {
+        console.log(props.ratings); 
+    
+        // Get arrays of keys and values
+        const ratingKeysArray = Object.keys(props.ratings);
+        const ratingValuesArray = Object.values(props.ratings);
+    
+        console.log('Rating keys array:', ratingKeysArray);
+        console.log('Rating values array:', ratingValuesArray);
+    }, []);
     
 
   return (
