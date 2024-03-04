@@ -46,9 +46,7 @@ export const Graph = () => {
               labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
               datasets: [
                 {
-                  data: [ratingCount[0], ratingCount[1], ratingCount[2],
-                  ratingCount[3], ratingCount[4], ratingCount[5], 
-                  ratingCount[6], ratingCount[7], ratingCount[8], ratingCount[9]],
+                  data: ratingCount,
                   backgroundColor: 'hsl(17, 83%, 64%)',
                   borderWidth: 3,
                   borderColor: 'hsl(0, 100%, 50%)',
