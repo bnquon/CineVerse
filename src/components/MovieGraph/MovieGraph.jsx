@@ -5,23 +5,25 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-  const ratingMap = { 
-                    '1': 0,
-                    '2': 0,
-                    '4': 0,
-                    '5': 0,
-                    '6': 0,
-                    '7': 0,
-                    '8': 0,
-                    '9': 0,
-                    '10': 0
-                };
-  
-  for (let i = 0; i < (props.ratings).length; i++) {
-    ratingMap[(props.ratings[i])] += 1;
-  }
+  console.log('Props.ratings is: ', props.ratings);  
 
-  console.log(ratingMap);
+//   const ratingMap = { 
+//                     '1': 0,
+//                     '2': 0,
+//                     '4': 0,
+//                     '5': 0,
+//                     '6': 0,
+//                     '7': 0,
+//                     '8': 0,
+//                     '9': 0,
+//                     '10': 0
+//                 };
+  
+//   for (let i = 0; i < (props.ratings).length; i++) {
+//     ratingMap[(props.ratings[i])] += 1;
+//   }
+
+//   console.log(ratingMap);
 
   return (
     <>  
