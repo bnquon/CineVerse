@@ -13,7 +13,7 @@ export const Graph = () => {
     const getUserRatings = async () => {
 
       try {
-        const response = await fetch(`/api/getUserRatings?movieName=null&userID=${userID}`, {
+        const response = await fetch(`/api/getUserRatings?userID=${userID}`, {
           method: 'GET',
         });
 

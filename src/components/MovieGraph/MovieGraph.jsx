@@ -4,32 +4,9 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-    const [movieRatings, setMovieRatings] = useState([]);
-    useEffect(() => {
-        const getMovieRatings = async () => {
-            
-            try {
-                const response = await fetch(`/api/getUserRatings?movieName=${props.title}&userID=null`, {
-                    method: 'GET',
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    const temp = data.ratingDistribution;
-                    console.log('Temp from movie ratings is: ', temp);
-                    const movieRatingsArray = Object.values(temp);
-                    console.log('movieRatingsValue ARRAY:', movieRatingsArray);
-                    setMovieRatings(empty => [...empty, ...movieRatingsArray]);
-                } else console.error('Failed to fetch movie ratings: ', response.statusText);
+    // props is props.title and have to make a new a new server fetch code because NOTHINGS WORKS
 
-            } catch (error) {
-                console.error('Failed fetching movie ratings ', error.message);
-            }
-        }
-
-        getMovieRatings();
-    }, []); 
-
-  return (
+    return (
     <>  
         <div id="left-cell">
 
