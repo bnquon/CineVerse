@@ -5,7 +5,11 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-  console.log(Object.values(props.ratings));  
+  useEffect(() => {
+    console.log(props.ratings);
+    console.log(Object.values(props.ratings));
+  }, [])
+    
 
   return (
     <>  
