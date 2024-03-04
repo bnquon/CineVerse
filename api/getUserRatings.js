@@ -2,7 +2,7 @@ import { db } from "@vercel/postgres";
 
 export default async function handler(request, response) {
     const userID = request.query.userID;
-    const movieName = request.query.movieName;
+    const movieName = String(request.query.movieName);
     const client = await db.connect();
     if (userID != null) {
         try {
@@ -51,7 +51,7 @@ export default async function handler(request, response) {
             return response.status(200).json({ratingDistribution : listOfRatings.rows[0]});
     
         } catch (error) {
-            console.error('Error getting user ratings:', error);
+            console.error('Error getting movie ratings:', error);
             return response.status(500).json({ error: 'Internal Server Error' });
         }
     }
