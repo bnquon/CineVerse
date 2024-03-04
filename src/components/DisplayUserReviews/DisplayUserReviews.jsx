@@ -17,7 +17,8 @@ export const DisplayUserReviews = (props) => {
           const data = await response.json();
           // const listOfRatings = data.ratings;
           // const listOfReviews = data.reviews;
-          console.log(data);
+          console.log(data.review);
+          console.log(data.rating);
         } else console.error('Failed to fetch movie ratings and reviews: ', response.statusText);
 
       } catch (error) {
