@@ -4,7 +4,7 @@ export default async function handler(request, response) {
     const userID = request.query.userID;
     const movieName = request.query.movieName;
     const client = await db.connect();
-    if (userID != null) {
+    if (userID != 'null') {
         try {
             const listOfRatings = await client.sql`
                 SELECT
