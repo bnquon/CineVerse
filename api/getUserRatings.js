@@ -46,7 +46,7 @@ export default async function handler(request, response) {
                 FROM 
                     reviews
                 WHERE 
-                    Moviename = ${movieName};`;
+                    movieName = '${movieName}';`;
             
             return response.status(200).json({ratingDistribution : listOfRatings.rows[0]});
     
