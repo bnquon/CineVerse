@@ -2,7 +2,7 @@ import { db } from "@vercel/postgres";
 
 export default async function handler(request, response) {
     const userID = request.query.userID;
-    const movieName = String(request.query.movieName);
+    const movieName = request.query.movieName;
     const client = await db.connect();
     if (userID != null) {
         try {
@@ -30,6 +30,7 @@ export default async function handler(request, response) {
             return response.status(500).json({ error: 'Internal Server Error' });
         }
     } else {
+        console.log('This is the else loop for movie name: ', movieName);
         try {
             const listOfRatings = await client.sql`
                 SELECT
