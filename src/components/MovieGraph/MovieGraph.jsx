@@ -4,7 +4,22 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
-    // props is props.title and have to make a new a new server fetch code because NOTHINGS WORKS
+    useEffect(() => {
+        const populateMovieGraph = async () => {
+            try {
+                const response = await fetch(`/api/getMovieRatings?movieName=${props.title}`, {
+                    method: 'GET',
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data);
+                }
+            } catch (error) {
+                console.error('Error fetching user ratings: ', error.message);
+            }
+        }
+        populateMovieGraph();
+    }, [])
 
     return (
     <>  
