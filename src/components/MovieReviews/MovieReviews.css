@@ -1,9 +1,16 @@
 #movieReviewContainer {
     display: flex;
     flex-direction: column;
+    border: 1px solid red;
+}
+
+#movieReviewTitle {
+    margin-top: 1rem;
+    border: 1px solid green;
 }
 
 #movieReview-Grid {
+    border: 1px solid blue;
     position: relative;
     top: 0%;
     height: fit-content;
@@ -12,7 +19,7 @@
     display: grid;
     grid-template-rows: auto;
     overflow-y: auto;
-    margin-top: 1.75rem;
+    margin-top: 1rem;
     margin-right: 2rem;
     gap: 0;
 }
