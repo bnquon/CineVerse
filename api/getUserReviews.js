@@ -4,7 +4,7 @@ export default async function handler(request, response) {
     const userID = request.query.userID;
     const client = await db.connect();
     try {
-        const listOfReviews = await client.sql`SELECT * FROM reviews WHERE userID = ${userID};`;
+        const listOfReviews = await client.sql`SELECT * FROM reviews WHERE userID = ${userID} ORDER BY reviewID DESC;`;
         return response.status(200).json({ reviews: listOfReviews.rows});
     } catch (error) {
         console.error('Error getting user reviews:', error);
