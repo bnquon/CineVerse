@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./MovieReviews.css";
+import { NoMovieReviews } from './NoMovieReviews/NoMovieReviews';
 
 const MovieReviewItem = ({ rating, review, username }) => {
   return (
@@ -50,9 +51,13 @@ export const MovieReviews = (props) => {
 
   return (
     <div id='movieReview-Grid' className='movie-review-container'>
-        {reviews.map(review => (
-          <MovieReviewItem {...review} />
-        ))}
+        {reviews.length > 0 ? 
+          reviews.map(review => (
+            <MovieReviewItem {...review} />
+          )) :
+
+          <NoMovieReviews/>
+        }
     </div>
   );
 };
