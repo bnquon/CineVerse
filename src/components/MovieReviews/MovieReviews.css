@@ -13,7 +13,7 @@
 }
 
 #movieReview-Grid > :nth-child(even) {
-    background-color: #cecece;
+    background-color: #d9d9d9;
 }
 
 .movie-review-item {
