@@ -20,6 +20,9 @@
     padding-left: 4rem;
     font-weight: 700;
     font-style: italic;
+}
+
+.left > span {
     transition: 250ms;
 }
 
