@@ -5,6 +5,8 @@ import { Bar } from "react-chartjs-2";
 export const MovieGraph = (props) => {
 
     const [movieRatingCount, setMovieRatingCount] = useState([]);
+    const [averageRating, updateAverageRating] = useState(0);
+
     useEffect(() => {
         const populateMovieGraph = async () => {
             try {
@@ -24,12 +26,25 @@ export const MovieGraph = (props) => {
         populateMovieGraph();
     }, [props.title])
 
+    useEffect(() => {
+        var numOfReviews = 0;
+        var sum = 0;
+        for (let i = 0; i < movieRatingCount.length; i++) {
+            if (movieRatingCount[i] != 0) {
+                numOfReviews += movieRatingCount[i];
+                sum += (movieRatingCount[i]*(i+1));
+            }
+        }
+        var temp = sum / numOfReviews;
+        updateAverageRating(Math.round(temp * 10) / 10)
+    }, [movieRatingCount])
+
     return (
     <>  
         <div id="left-cell">
 
             <div id="average">
-                <h2>USER AVERAGE RATING ⭐ 9/10 </h2>
+                <h2>Average Rating by Users ⭐ {averageRating}/10 </h2>
             </div>
             <div id='graph-Container'>
                 <Bar 
