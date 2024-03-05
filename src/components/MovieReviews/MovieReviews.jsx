@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "./MovieReviews.css";
 
-const MovieReviewItem = ({ rating, review }) => {
+const MovieReviewItem = ({ rating, review, username }) => {
   return (
     <div className='movie-review-item'>
       <h3>⭐ {rating}/10</h3>
+      <h4>Review by: {username}</h4>
       <p>{review}</p>
     </div>
   );
