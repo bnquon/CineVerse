@@ -4,7 +4,7 @@ import "./MovieReviews.css";
 const MovieReviewItem = ({ rating, review }) => {
   return (
     <div className='movie-review-item'>
-      <h3>{rating}</h3>
+      <h3>⭐ {rating}/10</h3>
       <p>{review}</p>
     </div>
   );
