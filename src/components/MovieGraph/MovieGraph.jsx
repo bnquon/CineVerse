@@ -92,7 +92,6 @@ export const MovieGraph = (props) => {
                                       weight: 'bold',
                                     },
                                   },
-                                },
                                 grid: {
                                     display: false,
                                 },
