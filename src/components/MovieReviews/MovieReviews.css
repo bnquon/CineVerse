@@ -1,8 +1,9 @@
 #movieReviewContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     border: 1px solid red;
-    max-height: 90%;
+    max-height: 80%;
 }
 
 #movieReviewTitle {
