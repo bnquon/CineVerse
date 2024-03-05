@@ -20,6 +20,12 @@
     padding-left: 4rem;
     font-weight: 700;
     font-style: italic;
+    transition: 250ms;
+}
+
+.left > span:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .center {

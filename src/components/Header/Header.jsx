@@ -52,7 +52,7 @@ export const Header = (props) => {
 
   return (
     <div className="nav-container">
-        <div className="left" onClick={logoClick}>CINEVERSE</div>
+        <div className="left" onClick={logoClick}><span>CINEVERSE</span></div>
         
         <div className="center">
             <FontAwesomeIcon onClick={movieClick} id='searchMovie' icon={faFilm} style={{ opacity: searchType === 'movie' ? "1" : "0.3" }}/>
