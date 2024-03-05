@@ -13,7 +13,7 @@
 }
 
 #movieReview-Grid > :nth-child(even) {
-    background-color: lightgray;
+    background-color: #eeeeee;
 }
 
 .movie-review-item {
@@ -28,8 +28,9 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.movie-review-item > * {
-    margin: 0;
+.movie-review-item > h3,
+.movie-review-item > h4 {
+    margin: 0.5rem 0 0 0.5rem
 }
 
 .movie-review-item > p {
