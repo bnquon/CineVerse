@@ -13,7 +13,7 @@ export const DisplayUserReviews = (props) => {
 
   return (
     <>
-      <ArrowIcon state = {inView}/>
+      {/* <ArrowIcon state = {inView}/> */}
       <div ref={ref} id='container'>
         <MovieGraph title={props.title} />
         <MovieReviews title={props.title} />
