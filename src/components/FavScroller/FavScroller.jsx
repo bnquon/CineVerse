@@ -15,8 +15,6 @@ export const FavScroller = (props) => {
                 if (response.ok) {
                     const data = await response.json();
                     const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
-                    console.log(listOfFavorites.length);
-
                     setFavoriteList(listOfFavorites);
     
                 } else console.error('Failed to fetch favorite movies: ', response.statusText);
@@ -25,20 +23,6 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-        const scrollers = document.querySelectorAll(".scroller");
-        scrollers.forEach((scroller) => {
-            scroller.setAttribute("data-animated", true);
-            
-            const scrollerInner = scroller.querySelector(".scroller_inner");
-            const scrollerContent = Array.from(scrollerInner.children);
-            
-            scrollerContent.forEach((item) => {
-                const duplicateItem = item.cloneNode(true);
-                console.log('Duplicate: ', duplicateItem);
-                duplicateItem.setAttribute("aria-hidden", true);
-                scrollerInner.appendChild(duplicateItem);
-            });
-        });
     }, [])
 
     useEffect(() => {
@@ -47,7 +31,7 @@ export const FavScroller = (props) => {
             for (let i = 0; i < (4-temp.length); i++) {
                 temp.push(placeholder);
             }
-            console.log(temp);
+            console.log('TEMP IS IN FavScroller.jsx: ', temp);
             setFavoriteList(temp);
         }
 
