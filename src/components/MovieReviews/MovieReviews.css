@@ -12,6 +12,10 @@
     gap: 0;
 }
 
+#movieReview-Grid > :nth-child(even) {
+    background-color: lightgray;
+}
+
 .movie-review-item {
     background-color: white;
     margin-right: 1rem;
