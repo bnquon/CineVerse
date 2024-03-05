@@ -25,6 +25,7 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
+        addAnimation();
     }, [])
 
     useEffect(() => {
@@ -35,7 +36,6 @@ export const FavScroller = (props) => {
             }
             setFavoriteList(temp);
         }
-        addAnimation();
     }, [favoriteList])
 
     
