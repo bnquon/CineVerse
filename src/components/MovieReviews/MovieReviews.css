@@ -1,4 +1,5 @@
 #movieReviewContainer {
+    background-color: lightblue;
     position: relative;
     display: flex;
     flex-direction: column;

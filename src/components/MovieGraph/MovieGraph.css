@@ -1,4 +1,5 @@
 #left-cell {
+    background-color: yellow;
     position: relative;
     display: flex;
     flex-direction: column;
