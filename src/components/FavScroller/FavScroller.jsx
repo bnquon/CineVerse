@@ -25,7 +25,6 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-        addAnimation();
     }, [])
 
     useEffect(() => {
@@ -34,8 +33,10 @@ export const FavScroller = (props) => {
             for (let i = 0; i < (4-temp.length); i++) {
                 temp.push(placeholder);
             }
+            console.log(temp);
             setFavoriteList(temp);
         }
+        addAnimation();
     }, [favoriteList])
 
     
