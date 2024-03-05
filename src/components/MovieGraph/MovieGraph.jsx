@@ -25,7 +25,7 @@ export const MovieGraph = (props) => {
             }
         }
         populateMovieGraph();
-    }, [])
+    }, [props.title])
 
     return (
     <>  
