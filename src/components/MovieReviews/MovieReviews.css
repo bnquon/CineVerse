@@ -1,7 +1,8 @@
 #movieReview-Grid {
     position: relative;
     top: 0%;
-    height: 93%;
+    height: fit-content;
+    max-height: 93%;
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
