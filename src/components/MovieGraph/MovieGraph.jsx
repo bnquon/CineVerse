@@ -31,7 +31,7 @@ export const MovieGraph = (props) => {
         var sum = 0;
         for (let i = 0; i < movieRatingCount.length; i++) {
             if (movieRatingCount[i] != 0) {
-                numOfReviews += movieRatingCount[i];
+                numOfReviews += parseInt(movieRatingCount[i]);
                 sum += (movieRatingCount[i]*(i+1));
             }
         }
