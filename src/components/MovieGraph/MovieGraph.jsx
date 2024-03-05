@@ -86,7 +86,12 @@ export const MovieGraph = (props) => {
                                     },
                                 },
                                 ticks: {
-                                    display: false,
+                                    color: 'black',
+                                    font: {
+                                      size: 18,
+                                      weight: 'bold',
+                                    },
+                                  },
                                 },
                                 grid: {
                                     display: false,
