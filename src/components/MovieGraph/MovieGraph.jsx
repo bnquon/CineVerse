@@ -15,7 +15,9 @@ export const MovieGraph = (props) => {
                     const data = await response.json();
                     console.log(data);
                     const temp = data.movieInfo;
+                    console.log(temp);
                     const movieValuesArray = Object.values(temp);
+                    console.log(movieValuesArray);
                     setMovieRatingCount(empty => [...empty, ...movieValuesArray]);
                 }
             } catch (error) {
