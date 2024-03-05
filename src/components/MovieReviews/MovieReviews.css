@@ -2,17 +2,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
-    height: 75%;
+    height: 70%;
 }
 
 #movieReviewTitle {
     margin-top: 2rem;
-    border: 1px solid green;
 }
 
 #movieReview-Grid {
-    border: 1px solid blue;
     position: relative;
     top: 0%;
     height: fit-content;
