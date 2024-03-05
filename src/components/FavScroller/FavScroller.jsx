@@ -57,8 +57,6 @@ export const FavScroller = (props) => {
             });
         });
     }
-
-    addAnimation();
     
     return (
         <div className="scroller">
