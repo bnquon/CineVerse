@@ -1,5 +1,4 @@
 import React from 'react'
-import "./NoMovieReviews.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceGrinStars } from '@fortawesome/free-solid-svg-icons'
 
