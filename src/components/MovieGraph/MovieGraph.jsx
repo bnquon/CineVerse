@@ -36,8 +36,13 @@ export const MovieGraph = (props) => {
             }
         }
         console.log('Sum: ', sum, ' numOfReviews: ', numOfReviews);
-        var temp = (sum / numOfReviews);
-        updateAverageRating(Math.round(temp * 10) / 10)
+
+        if (sum === 0) {
+            updateAverageRating(0);
+        } else {
+            var temp = (sum / numOfReviews);
+            updateAverageRating(Math.round(temp * 10) / 10)
+        }
     }, [movieRatingCount])
 
     return (
