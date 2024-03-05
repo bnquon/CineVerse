@@ -17,6 +17,7 @@
 }
 
 .movie-review-item {
+    box-sizing: border-box;
     background-color: white;
     margin-right: 1rem;
     margin-bottom: 1.5rem;
@@ -32,5 +33,5 @@
 }
 
 .movie-review-item > p {
-    margin-top: 1rem;
+    margin: 0.5rem;
 }
