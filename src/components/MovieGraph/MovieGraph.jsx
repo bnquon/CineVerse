@@ -4,6 +4,7 @@ import { Bar } from "react-chartjs-2";
 
 export const MovieGraph = (props) => {
 
+    const [movieRatingCount, setMovieRatingCount] = useState([]);
     useEffect(() => {
         const populateMovieGraph = async () => {
             try {
@@ -13,6 +14,9 @@ export const MovieGraph = (props) => {
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data);
+                    const temp = data.movieInfo;
+                    const movieValuesArray = Object.values(temp);
+                    setRatingCount(empty => [...empty, ...valuesArray]);
                 }
             } catch (error) {
                 console.error('Error fetching user ratings: ', error.message);
@@ -34,7 +38,7 @@ export const MovieGraph = (props) => {
                         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
                         datasets: [
                         {
-                            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                            data: movieRatingCount,
                             backgroundColor: 'hsl(17, 83%, 64%)',
                             borderWidth: 3,
                             borderColor: 'hsl(0, 100%, 50%)',
