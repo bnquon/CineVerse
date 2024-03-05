@@ -23,7 +23,7 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-    }, [])
+    }, [props.userID])
 
     useEffect(() => {
         if (favoriteList.length < 4) {
