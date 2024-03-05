@@ -36,13 +36,7 @@ export const FavScroller = (props) => {
             console.log(temp);
             setFavoriteList(temp);
         }
-        addAnimation();
-    }, [favoriteList])
 
-    
-
-    
-    function addAnimation() {
         const scrollers = document.querySelectorAll(".scroller");
         scrollers.forEach((scroller) => {
             scroller.setAttribute("data-animated", true);
@@ -57,7 +51,28 @@ export const FavScroller = (props) => {
                 scrollerInner.appendChild(duplicateItem);
             });
         });
-    }
+
+    }, [favoriteList])
+
+    
+
+    
+    // function addAnimation() {
+    //     const scrollers = document.querySelectorAll(".scroller");
+    //     scrollers.forEach((scroller) => {
+    //         scroller.setAttribute("data-animated", true);
+            
+    //         const scrollerInner = scroller.querySelector(".scroller_inner");
+    //         const scrollerContent = Array.from(scrollerInner.children);
+            
+    //         scrollerContent.forEach((item) => {
+    //             const duplicateItem = item.cloneNode(true);
+    //             console.log('Duplicate: ', duplicateItem);
+    //             duplicateItem.setAttribute("aria-hidden", true);
+    //             scrollerInner.appendChild(duplicateItem);
+    //         });
+    //     });
+    // }
     
     return (
         <div className="scroller">
