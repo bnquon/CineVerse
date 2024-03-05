@@ -13,12 +13,9 @@ export const MovieGraph = (props) => {
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data);
                     const temp = data.movieInfo;
-                    console.log(temp);
                     const movieValuesArray = Object.values(temp);
-                    console.log(movieValuesArray);
-                    setMovieRatingCount(empty => [...empty, ...movieValuesArray]);
+                    setMovieRatingCount(movieValuesArray);
                 }
             } catch (error) {
                 console.error('Error fetching user ratings: ', error.message);
