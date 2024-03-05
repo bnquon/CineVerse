@@ -23,7 +23,7 @@ export const Graph = () => {
           const temp = data.ratingDistribution;
           const valuesArray = Object.values(temp);
           console.log('VALUES ARRAY:', valuesArray);
-          setRatingCount(empty => [...empty, ...valuesArray]);
+          setRatingCount(valuesArray);
 
 
         } else console.error('Failed to fetch user ratings: ', response.statusText);
@@ -79,6 +79,7 @@ export const Graph = () => {
                 },
                 y: {
                   ticks: {
+                    precision: 0,
                     color: 'black',
                     font: {
                       size: 14,
