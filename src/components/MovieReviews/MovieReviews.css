@@ -5,7 +5,7 @@
 }
 
 #movieReviewTitle {
-    margin-top: 1rem;
+    margin-top: 2rem;
     border: 1px solid green;
 }
 
@@ -19,7 +19,6 @@
     display: grid;
     grid-template-rows: auto;
     overflow-y: auto;
-    margin-top: 1rem;
     margin-right: 2rem;
     gap: 0;
 }
