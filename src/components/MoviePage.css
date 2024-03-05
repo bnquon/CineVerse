@@ -15,11 +15,6 @@ body {
 }
 
 #page-2 {
+  top: 10vh; 
   background-color: lightcoral;
 }
-
-/* #page-2 {
-    position: absolute;
-    top: 88vh;
-    height: 100vh;
-} */
