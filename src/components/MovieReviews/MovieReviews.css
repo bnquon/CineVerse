@@ -16,7 +16,7 @@
     position: relative;
     top: 0%;
     height: fit-content;
-    max-height: 75%;
+    max-height: 85%;
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
