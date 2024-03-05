@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "./FavScroller.css";
-import placeholder from "../../assets/posterPlaceholder.png"
+import placeholder from "../../assets/posterPlaceholder.png";
 
 export const FavScroller = (props) => {
-
     const [favoriteList, setFavoriteList] = useState([]);
+    const [animationAdded, setAnimationAdded] = useState(false);
 
     useEffect(() => {
         const populateScroller = async () => {
@@ -23,7 +23,7 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-    }, [])
+    }, []);
 
     useEffect(() => {
         if (favoriteList.length < 4) {
@@ -34,34 +34,38 @@ export const FavScroller = (props) => {
             console.log('TEMP IS IN FavScroller.jsx: ', temp);
             setFavoriteList(temp);
         }
+    }, [favoriteList]);
 
-    }, [favoriteList])
+    useEffect(() => {
+        if (!animationAdded) {
+            // Add animation logic here, after favoriteList is updated
+            addAnimation();
+            setAnimationAdded(true);
+        }
+    }, [animationAdded]);
 
-    
-
-    
-    // function addAnimation() {
-    //     const scrollers = document.querySelectorAll(".scroller");
-    //     scrollers.forEach((scroller) => {
-    //         scroller.setAttribute("data-animated", true);
+    function addAnimation() {
+        const scrollers = document.querySelectorAll(".scroller");
+        scrollers.forEach((scroller) => {
+            scroller.setAttribute("data-animated", true);
             
-    //         const scrollerInner = scroller.querySelector(".scroller_inner");
-    //         const scrollerContent = Array.from(scrollerInner.children);
+            const scrollerInner = scroller.querySelector(".scroller_inner");
+            const scrollerContent = Array.from(scrollerInner.children);
             
-    //         scrollerContent.forEach((item) => {
-    //             const duplicateItem = item.cloneNode(true);
-    //             console.log('Duplicate: ', duplicateItem);
-    //             duplicateItem.setAttribute("aria-hidden", true);
-    //             scrollerInner.appendChild(duplicateItem);
-    //         });
-    //     });
-    // }
+            scrollerContent.forEach((item) => {
+                const duplicateItem = item.cloneNode(true);
+                console.log('Duplicate: ', duplicateItem);
+                duplicateItem.setAttribute("aria-hidden", true);
+                scrollerInner.appendChild(duplicateItem);
+            });
+        });
+    }
     
     return (
         <div className="scroller">
             <div className="scroller_inner">
                 {favoriteList.map((element, index) => (
-                    <img key={index} src={element} alt="" width='175' height='275'/>
+                    <img key={index} src={element} alt="" width='175' height='275' />
                 ))}
             </div>
         </div>
