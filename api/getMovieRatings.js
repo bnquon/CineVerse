@@ -20,7 +20,7 @@ export default async function handler(request, response) {
             reviews
         WHERE 
             movieName = ${movieTitle};`;
-        return response.status(200).json({ movieInfo: data.rows });
+        return response.status(200).json({ movieInfo: data.rows[0] });
     } catch (error) {
         console.error('Error fetching movie ratings and reviews:', error);
         return response.status(500).json({ error: 'Internal Server Error' });
