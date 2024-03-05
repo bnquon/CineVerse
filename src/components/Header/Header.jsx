@@ -11,6 +11,10 @@ import { useNavigate } from 'react-router-dom'
 export const Header = (props) => {
     const navigate = useNavigate();
 
+    const logoClick = () => {
+        navigate('/user')
+    }
+
     const [searchType, setSearchType] = useState("movie");
 
     const userClick = () => {
@@ -48,7 +52,7 @@ export const Header = (props) => {
 
   return (
     <div className="nav-container">
-        <div className="left">CINEVERSE</div>
+        <div className="left" onClick={logoClick}>CINEVERSE</div>
         
         <div className="center">
             <FontAwesomeIcon onClick={movieClick} id='searchMovie' icon={faFilm} style={{ opacity: searchType === 'movie' ? "1" : "0.3" }}/>
