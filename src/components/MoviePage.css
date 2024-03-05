@@ -15,6 +15,7 @@ body {
 }
 
 #page-2 {
-  top: 10vh; 
+  position: absolute;
+  top: 10vh;
   background-color: lightcoral;
 }
