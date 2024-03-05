@@ -35,7 +35,6 @@ export const FavScroller = (props) => {
             }
             setFavoriteList(temp);
         }
-        addAnimation();
     }, [favoriteList])
 
     
@@ -58,6 +57,7 @@ export const FavScroller = (props) => {
         });
     }
 
+    addAnimation();
     
     return (
         <div className="scroller">
