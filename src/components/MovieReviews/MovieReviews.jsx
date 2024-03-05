@@ -38,17 +38,21 @@ export const MovieReviews = (props) => {
   return (
 
     <>
-      <div>
-        Total Reviews for this Movie: {reviews.length}
-      </div>
-      <div id='movieReview-Grid' className='movie-review-container'>
-          {reviews.length > 0 ? 
-            reviews.map(review => (
-              <MovieReviewItem {...review} />
-            )) :
+      <div id="movieReviewContainer">
+        
+        <div id="movieReviewTitle">
+          <h2>{reviews.length} Reviews for this Movie</h2>
+        </div>
 
-            <NoMovieReviews/>
-          }
+        <div id='movieReview-Grid' className='movie-review-container'>
+            {reviews.length > 0 ? 
+              reviews.map(review => (
+                <MovieReviewItem {...review} />
+              )) :
+
+              <NoMovieReviews/>
+            }
+        </div>
       </div>
     </>
   );

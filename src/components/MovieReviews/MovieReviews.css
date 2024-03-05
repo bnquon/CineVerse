@@ -1,3 +1,8 @@
+#movieReviewContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 #movieReview-Grid {
     position: relative;
     top: 0%;
