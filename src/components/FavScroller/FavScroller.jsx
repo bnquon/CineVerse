@@ -25,18 +25,6 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-    }, [])
-
-    useEffect(() => {
-        if (favoriteList.length < 4) {
-            const temp = [...favoriteList];
-            for (let i = 0; i < (4-temp.length); i++) {
-                temp.push(placeholder);
-            }
-            console.log(temp);
-            setFavoriteList(temp);
-        }
-
         const scrollers = document.querySelectorAll(".scroller");
         scrollers.forEach((scroller) => {
             scroller.setAttribute("data-animated", true);
@@ -51,6 +39,17 @@ export const FavScroller = (props) => {
                 scrollerInner.appendChild(duplicateItem);
             });
         });
+    }, [])
+
+    useEffect(() => {
+        if (favoriteList.length < 4) {
+            const temp = [...favoriteList];
+            for (let i = 0; i < (4-temp.length); i++) {
+                temp.push(placeholder);
+            }
+            console.log(temp);
+            setFavoriteList(temp);
+        }
 
     }, [favoriteList])
 
