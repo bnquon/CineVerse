@@ -35,7 +35,8 @@ export const MovieGraph = (props) => {
                 sum += (movieRatingCount[i]*(i+1));
             }
         }
-        var temp = sum / numOfReviews;
+        console.log('Sum: ', sum, ' numOfReviews: ', numOfReviews);
+        var temp = (sum / numOfReviews);
         updateAverageRating(Math.round(temp * 10) / 10)
     }, [movieRatingCount])
 
