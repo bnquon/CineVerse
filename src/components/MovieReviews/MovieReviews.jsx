@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./MovieReviews.css";
 
 const MovieReviewItem = ({ title, review }) => {
@@ -11,6 +11,25 @@ const MovieReviewItem = ({ title, review }) => {
 };
 
 export const MovieReviews = (props) => {
+
+  useEffect(() => {
+    const populateMovieReviews = async () => {
+      try {
+          const response = await fetch(`/api/getMovieReviews?movieName=${props.title}`, {
+              method: 'GET',
+          });
+          if (response.ok) {
+              const data = await response.json();
+              const temp = data.listOfReviews;
+              console.log('GET CALL FROM MovieReviews.jsx: ', temp);
+          }
+      } catch (error) {
+          console.error('Error fetching movie reviews: ', error.message);
+      }
+  }
+  populateMovieReviews();
+  }, [props.title])
+
   // Sample data for testing
   const reviews = [
     { title: 'Review 1', review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
@@ -28,7 +47,7 @@ export const MovieReviews = (props) => {
   return (
     <div id='movieReview-Grid' className='movie-review-container'>
         {reviews.map((review, index) => (
-        <MovieReviewItem key={index} {...review} />
+          <MovieReviewItem key={index} {...review} />
         ))}
     </div>
   );
