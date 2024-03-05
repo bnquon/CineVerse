@@ -6,6 +6,5 @@
     left: 0;
     width: 100vw;
     height: 80vh;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+    display: flex;
 }
