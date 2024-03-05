@@ -16,7 +16,7 @@ export const MovieGraph = (props) => {
                     console.log(data);
                     const temp = data.movieInfo;
                     const movieValuesArray = Object.values(temp);
-                    setRatingCount(empty => [...empty, ...valuesArray]);
+                    setMovieRatingCount(empty => [...empty, ...movieValuesArray]);
                 }
             } catch (error) {
                 console.error('Error fetching user ratings: ', error.message);
