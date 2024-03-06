@@ -4,7 +4,7 @@ import './ReviewModal.css'
 export const ReviewModal = ( {toggleModal} ) => {
 
   return (
-    <div id="myModal" className='modal stop-scrolling'>
+    <div id="myModal" className='modal'>
         
         <div className="modal-content">
 
