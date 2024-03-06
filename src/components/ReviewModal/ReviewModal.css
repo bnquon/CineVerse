@@ -26,30 +26,35 @@
 }
 
 #modalTitle {
+    position: relative;
     text-align: center;
     border: 1px solid red;
 }
 
 #modalRating {
+    padding: 1rem;
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     border: 1px solid blue;
 }
 
 #modalReview {
+    position: relative;
     text-align: center;
     border: 1px solid green;
-    height: fit-content;
+    height: 50%
 }
 
 #modalReview > textarea {
     font-size: 1.5rem;
     resize: none;
     width: 70%;
-    height: 100%;
+    height: 80%;
   }
 
 #modalButtons {
+    position: relative;
     margin-top: auto;
     border: 1px solid purple;
     display: flex;
