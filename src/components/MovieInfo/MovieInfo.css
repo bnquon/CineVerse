@@ -26,6 +26,14 @@
     align-items: center;
 }
 
+#movie-title > h2 {
+    margin-left: auto;
+}
+
+#movie-title > button {
+    margin-left: auto;
+}
+
 .movieinfo-container #poster,
 .movieinfo-container #backdrop {
     width: 100%;
