@@ -6,9 +6,17 @@
 }
 
 #movieReviewTitle {
-    margin-right: 2rem;
+    margin-right: auto;
     margin-top: 0.5rem;
     text-align: center;
+}
+
+#movieReviewTitle h2 {
+    display: inline-block;
+}
+
+#movieReviewTitle button {
+    margin-left: auto;
 }
 
 #movieReview-Grid {
