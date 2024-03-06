@@ -32,8 +32,8 @@ export const ReviewModal = ( {toggleModal} ) => {
             </div>
 
             <div id="modalButtons">
-                <button>Post</button>
-                <button onClick={toggleModal}>Cancel</button>
+                <button id='post'>Post</button>
+                <button id='cancel' onClick={toggleModal}>Cancel</button>
             </div>
 
         </div>

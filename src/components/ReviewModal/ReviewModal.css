@@ -51,3 +51,16 @@
     display: flex;
     justify-content: end;
 }
+
+#modalButtons > button {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+}
+
+#modalButtons > #post {
+    background-color: #0080FE;
+}
+
+#modalButtons > #cancel {
+    background-color: #e5e5e5;
+}
