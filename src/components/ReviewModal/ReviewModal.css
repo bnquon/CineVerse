@@ -44,11 +44,15 @@
     text-align: center;
     border: 1px solid green;
     height: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#modalReview > h3 {
+    font-size: 1.5rem;
 }
 
 #modalReview > textarea {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     resize: none;
     width: 70%;
     height: 50%;
