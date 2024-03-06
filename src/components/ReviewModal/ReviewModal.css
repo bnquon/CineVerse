@@ -21,7 +21,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
+    width: 50%;
 }
 
 #modalTitle {
@@ -40,10 +40,10 @@
     border: 1px solid green;
 }
 
-textarea {
+#modalReview > textarea {
     resize: none;
     width: 70%;
-    height: 50%;
+    height: 100%;
   }
 
 #modalButtons {
