@@ -6,14 +6,9 @@
 }
 
 #movieReviewTitle {
+    border: 1px solid red;
     margin-top: 0.5rem;
     text-align: center;
-    position: relative;
-}
-
-#movieReviewTitle button{
-    position: absolute;
-    right: 0;
 }
 
 #movieReview-Grid {
