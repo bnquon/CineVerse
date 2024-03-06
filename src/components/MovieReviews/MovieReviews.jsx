@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./MovieReviews.css";
 import { NoMovieReviews } from './NoMovieReviews/NoMovieReviews';
+import { ReviewModal } from '../ReviewModal/ReviewModal';
 
 const MovieReviewItem = ({ rating, review, username }) => {
   return (
@@ -14,6 +15,7 @@ const MovieReviewItem = ({ rating, review, username }) => {
 
 export const MovieReviews = (props) => {
 
+  const [modalDisplay, setModalDisplay] = useState(false);
   const [reviews, updateReviews] = useState([]);
 
   useEffect(() => {
@@ -48,6 +50,10 @@ export const MovieReviews = (props) => {
     { rating: 9.5, review: 'Top-notch acting!', username: 'User10' },
   ];
 
+  const toggleModal = () => {
+    setModalDisplay(!modalDisplay);
+  }
+
   return (
 
     <>
@@ -55,7 +61,7 @@ export const MovieReviews = (props) => {
         
         <div id="movieReviewTitle">
             <h2>{hardcodedReviews.length} Reviews for this Movie</h2>
-            <button>Add a Review!</button>        
+            <button onClick={toggleModal}>Add a Review!</button>        
         </div>
 
         <div id='movieReview-Grid' className='movie-review-container'>
@@ -67,6 +73,9 @@ export const MovieReviews = (props) => {
               <NoMovieReviews/>
             }
         </div>
+
+        {modalDisplay && <ReviewModal toggleModal={toggleModal}/>}    
+
       </div>
     </>
   );
