@@ -9,7 +9,7 @@ export const ReviewModal = ( {toggleModal} ) => {
         <div className="modal-content">
 
             <div id="modalTitle">
-                <h1>Review Form for MOVIE TITLE</h1>
+                <h2>Review Form for MOVIE TITLE</h2>
             </div>
 
             <div id="modalRating">
@@ -28,8 +28,8 @@ export const ReviewModal = ( {toggleModal} ) => {
             </div>
 
             <div id="modalReview">
-                <h2>Enter Your Review</h2>
-                <textarea name="review" id="" cols="30" rows="10" maxLength="300"></textarea>
+                <h3>Enter Your Review</h3>
+                <textarea name="review" id="" cols="30" rows="20" maxLength="300"></textarea>
             </div>
 
             <div id="modalButtons">

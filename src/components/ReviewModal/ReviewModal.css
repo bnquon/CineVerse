@@ -34,8 +34,13 @@
 }
 
 #modalReview {
+    text-align: center;
     border: 1px solid green;
 }
+
+textarea {
+    resize: none;
+  }
 
 #modalButtons {
     border: 1px solid purple;
