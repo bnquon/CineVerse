@@ -54,11 +54,8 @@ export const MovieReviews = (props) => {
       <div id="movieReviewContainer">
         
         <div id="movieReviewTitle">
-          <span>
-            <h2>{hardcodedReviews.length} Reviews for this Movie</h2><button>Add a Review!</button>
-          </span>
-            
-          
+            <h2>{hardcodedReviews.length} Reviews for this Movie</h2>
+            <button>Add a Review!</button>        
         </div>
 
         <div id='movieReview-Grid' className='movie-review-container'>
