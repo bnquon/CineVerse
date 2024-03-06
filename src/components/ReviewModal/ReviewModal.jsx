@@ -1,5 +1,7 @@
 import React from 'react'
 import './ReviewModal.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fa1, fa2, fa3, fa4, fa5, fa6, fa7, fa8, fa9 } from '@fortawesome/free-solid-svg-icons'
 
 export const ReviewModal = ( {toggleModal} ) => {
 
@@ -13,18 +15,15 @@ export const ReviewModal = ( {toggleModal} ) => {
             </div>
 
             <div id="modalRating">
-                <select id="ratingSelect">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+                <FontAwesomeIcon icon={fa1} />
+                <FontAwesomeIcon icon={fa2} />
+                <FontAwesomeIcon icon={fa3} />
+                <FontAwesomeIcon icon={fa4} />
+                <FontAwesomeIcon icon={fa5} />
+                <FontAwesomeIcon icon={fa6} />
+                <FontAwesomeIcon icon={fa7} />
+                <FontAwesomeIcon icon={fa8} />
+                <FontAwesomeIcon icon={fa9} />
             </div>
 
             <div id="modalReview">
