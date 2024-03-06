@@ -3,10 +3,8 @@ import './ReviewModal.css'
 
 export const ReviewModal = ( {toggleModal} ) => {
 
-  document.getElementsByClassName('modal').addClass('stop-scrolling');  
-
   return (
-    <div id="myModal" className='modal'>
+    <div id="myModal" className='modal stop-scrolling'>
         
         <div className="modal-content">
 
