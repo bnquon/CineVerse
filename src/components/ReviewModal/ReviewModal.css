@@ -22,7 +22,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
-    height: 50%;
+    height: fit-content;
 }
 
 #modalTitle {
@@ -50,7 +50,7 @@
     font-size: 1.5rem;
     resize: none;
     width: 70%;
-    height: 80%;
+    height: 50%;
   }
 
 #modalButtons {
