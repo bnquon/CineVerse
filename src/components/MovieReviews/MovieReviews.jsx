@@ -52,6 +52,7 @@ export const MovieReviews = (props) => {
 
   const toggleModal = () => {
     setModalDisplay(!modalDisplay);
+    console.log('Modal should be: ', modalDisplay);
   }
 
   return (
