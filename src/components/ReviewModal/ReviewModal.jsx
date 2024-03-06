@@ -29,7 +29,7 @@ export const ReviewModal = ( {toggleModal} ) => {
 
             <div id="modalReview">
                 <h3>Enter Your Review</h3>
-                <textarea name="review" id="" cols="30" rows="20" maxLength="300"></textarea>
+                <textarea name="review" id=""></textarea>
             </div>
 
             <div id="modalButtons">
