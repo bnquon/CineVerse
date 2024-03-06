@@ -11,6 +11,14 @@
     align-items: center;
 }
 
+#movieReviewTitle > h2 {
+    margin-left: auto;
+}
+
+#movieReviewTitle > button {
+    margin-left: auto;
+}
+
 #movieReview-Grid {
     position: relative;
     top: 0%;
