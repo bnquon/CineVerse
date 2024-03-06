@@ -39,6 +39,7 @@
 #modalReview {
     text-align: center;
     border: 1px solid green;
+    height: fit-content;
 }
 
 #modalReview > textarea {
@@ -49,6 +50,7 @@
   }
 
 #modalButtons {
+    margin-top: auto;
     border: 1px solid purple;
     display: flex;
     justify-content: end;
