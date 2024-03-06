@@ -19,3 +19,8 @@
     border: 1px solid #888;
     width: 80%;
   }
+
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
