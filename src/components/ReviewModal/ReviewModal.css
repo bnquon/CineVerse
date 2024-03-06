@@ -55,6 +55,9 @@
 #modalButtons > button {
     font-size: 1.25rem;
     padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    width: 15%;
+    margin-right: 3rem;
 }
 
 #modalButtons > #post {
