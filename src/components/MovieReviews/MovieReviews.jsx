@@ -55,8 +55,7 @@ export const MovieReviews = (props) => {
         
         <div id="movieReviewTitle">
           <span>
-            <h2>{hardcodedReviews.length} Reviews for this Movie</h2>
-            <button>Add a Review!</button>
+            <h2>{hardcodedReviews.length} Reviews for this Movie</h2><button>Add a Review!</button>
           </span>
             
           

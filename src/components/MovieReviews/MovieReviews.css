@@ -6,7 +6,7 @@
 }
 
 #movieReviewTitle {
-    display: inline-block;
+    /* display: inline-block; */
     border: 1px solid red;
     margin-top: 0.5rem;
     text-align: center;
