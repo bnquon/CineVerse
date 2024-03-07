@@ -4,12 +4,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fa0, fa1, fa2, fa3, fa4, fa5, fa6, fa7, fa8, fa9 } from '@fortawesome/free-solid-svg-icons'
 
 export const ReviewModal = ( {toggleModal , title} ) => {
-
+ 
+  const userID = sessionStorage.getItem('userID');  
   const [rating, setRating] = useState();
 
   const handleRatingClick = (value) => {
     setRating(value);
     console.log(value);
+  }
+
+  const postReview = async () => {
+    const reviewText = document.getElementById('reviewText').value;
+    try {
+        const respone = await fetch(``, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userID: userID,
+                movieName: {title},
+                review: reviewText,
+                rating: rating,
+            }),
+        })
+    } catch (error) {
+        
+    }
   }
 
   return (
@@ -36,7 +57,7 @@ export const ReviewModal = ( {toggleModal , title} ) => {
 
             <div id="modalReview">
                 <h3>Type Your Review</h3>
-                <textarea name="review" id=""></textarea>
+                <textarea name="review" id="reviewText"></textarea>
             </div>
 
             <div id="modalButtons">
