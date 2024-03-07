@@ -40,6 +40,7 @@ export const ReviewModal = ( {toggleModal , title, poster} ) => {
     } catch (error) {
         console.error('Error posting review:', error.message);
     }
+    toggleModal();
   }
 
   return (
