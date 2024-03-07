@@ -35,6 +35,10 @@
     border: 1px solid red;
 }
 
+#modalTitle > h2{
+    margin: 0;
+}
+
 #modalRating {
     padding: 0.5rem;
     position: relative;
@@ -67,6 +71,7 @@
 
 #modalReview > h3 {
     font-size: 1.5rem;
+    margin: 0.25rem;
 }
 
 #modalReview > textarea {
