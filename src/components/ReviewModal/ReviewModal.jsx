@@ -3,7 +3,7 @@ import './ReviewModal.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fa0, fa1, fa2, fa3, fa4, fa5, fa6, fa7, fa8, fa9 } from '@fortawesome/free-solid-svg-icons'
 
-export const ReviewModal = ( {toggleModal} ) => {
+export const ReviewModal = ( {toggleModal}, props ) => {
 
   const [rating, setRating] = useState();
 
@@ -18,7 +18,7 @@ export const ReviewModal = ( {toggleModal} ) => {
         <div className="modal-content">
 
             <div id="modalTitle">
-                <h2>Creating Review for MOVIE TITLE</h2>
+                <h1>Creating Review for {props.title}</h1>
             </div>
 
             <div id="modalRating">
