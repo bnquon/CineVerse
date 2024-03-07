@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ReviewModal.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fa0, fa1, fa2, fa3, fa4, fa5, fa6, fa7, fa8, fa9 } from '@fortawesome/free-solid-svg-icons'
 
 export const ReviewModal = ( {toggleModal} ) => {
+
+  const [rating, setRating] = useState();
 
   return (
     <div id="myModal" className='modal'>

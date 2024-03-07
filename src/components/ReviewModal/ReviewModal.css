@@ -25,6 +25,10 @@
     height: fit-content;
 }
 
+.modal-content > * {
+    margin-bottom: 0.5rem;
+}
+
 #modalTitle {
     position: relative;
     text-align: center;
