@@ -5,8 +5,7 @@ export default async function handler(request, response) {
     const client = await db.connect();
 
     try {
-        await client.sql`
-                        INSERT INTO reviews (userID, moviename, rating, review, movieposterurl, username)
+        await client.sql`INSERT INTO reviews (userID, moviename, rating, review, movieposterurl, username)
                         VALUES (${userID}, ${movieName}, ${rating}, ${review}, ${poster}, ${username});`;
         return response.status(200).json();
     } catch (error) {
