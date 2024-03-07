@@ -32,7 +32,6 @@
 #modalTitle {
     position: relative;
     text-align: center;
-    border: 1px solid red;
 }
 
 #modalTitle > h2{
@@ -44,7 +43,6 @@
     position: relative;
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid blue;
 }
 
 #modalRating > div {
@@ -64,7 +62,6 @@
 #modalReview {
     position: relative;
     text-align: center;
-    border: 1px solid green;
     height: 50%;
     margin-bottom: 0.5rem;
 }
@@ -84,7 +81,6 @@
 #modalButtons {
     position: relative;
     margin-top: auto;
-    border: 1px solid purple;
     display: flex;
     justify-content: end;
 }
@@ -100,7 +96,7 @@
 }
 
 #modalButtons > #post {
-    background-color: #0080FE;
+    background-color: #0CAFFF;
 }
 
 #modalButtons > #cancel {
