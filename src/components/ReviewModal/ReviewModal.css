@@ -40,8 +40,15 @@
 }
 
 #modalRating > div {
+    position: relative;
+    width: 10%;
     border: 1px solid black;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#modalRating > div:hover {
+    background-color: #e5e5e5; /* Add a hover effect */
 }
 
 #modalReview {
