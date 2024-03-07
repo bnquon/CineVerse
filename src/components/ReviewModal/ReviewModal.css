@@ -42,7 +42,7 @@
 #modalRating > div {
     position: relative;
     width: 10%;
-    height: 100%;
+    padding: 0.5rem 1rem;
     border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
