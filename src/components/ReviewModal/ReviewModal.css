@@ -39,6 +39,11 @@
     border: 1px solid blue;
 }
 
+#modalRating > div {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 #modalReview {
     position: relative;
     text-align: center;
