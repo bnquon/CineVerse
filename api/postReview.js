@@ -6,7 +6,7 @@ export default async function handler(request, response) {
 
     try {
         await client.sql`
-                        INSERT INTO reviews (userID, movieName, rating, review, Movieposterurl, username)
+                        INSERT INTO reviews (userID, moviename, rating, review, movieposterurl, username)
                         VALUES (${userID}, ${username}, ${movieName}, ${review}, ${rating}, ${poster});`;
         return response.status(200).json();
     } catch (error) {
