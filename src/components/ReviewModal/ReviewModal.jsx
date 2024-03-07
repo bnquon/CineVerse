@@ -15,8 +15,8 @@ export const ReviewModal = ( {toggleModal , title, poster} ) => {
   }
 
   const postReview = async () => {
-    console.log('Post button pressed, values passed through: ', username, userID, title, reviewText, rating, posterURL);
     const reviewText = document.getElementById('reviewText').value;
+    console.log('Post button pressed, values passed through: ', username, userID, title, reviewText, rating, posterURL);
     try {
         const response = await fetch(`/api/postReview`, {
             method: 'POST',
