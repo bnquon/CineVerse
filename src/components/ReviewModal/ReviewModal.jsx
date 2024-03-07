@@ -22,16 +22,16 @@ export const ReviewModal = ( {toggleModal} ) => {
             </div>
 
             <div id="modalRating">
-                <div key={1} onClick={handleRatingClick(key)} id="1"><FontAwesomeIcon icon={fa1}/></div>
-                <div key={2} onClick={handleRatingClick(key)} id="2"><FontAwesomeIcon icon={fa2}/></div>
-                <div key={3} onClick={handleRatingClick(key)} id="3"><FontAwesomeIcon icon={fa3}/></div>
-                <div key={4} onClick={handleRatingClick(key)} id="4"><FontAwesomeIcon icon={fa4}/></div>
-                <div key={5} onClick={handleRatingClick(key)} id="5"><FontAwesomeIcon icon={fa5}/></div>
-                <div key={6} onClick={handleRatingClick(key)} id="6"><FontAwesomeIcon icon={fa6}/></div>
-                <div key={7} onClick={handleRatingClick(key)} id="7"><FontAwesomeIcon icon={fa7}/></div>
-                <div key={8} onClick={handleRatingClick(key)} id="8"><FontAwesomeIcon icon={fa8}/></div>
-                <div key={9} onClick={handleRatingClick(key)} id="9"><FontAwesomeIcon icon={fa9}/></div>
-                <div key={10} onClick={handleRatingClick(key)} id="10"><FontAwesomeIcon icon={fa1}/><FontAwesomeIcon icon={fa0}/></div>
+                <div onClick={handleRatingClick(1)} id="1"><FontAwesomeIcon icon={fa1}/></div>
+                <div onClick={handleRatingClick(2)} id="2"><FontAwesomeIcon icon={fa2}/></div>
+                <div onClick={handleRatingClick(3)} id="3"><FontAwesomeIcon icon={fa3}/></div>
+                <div onClick={handleRatingClick(4)} id="4"><FontAwesomeIcon icon={fa4}/></div>
+                <div onClick={handleRatingClick(5)} id="5"><FontAwesomeIcon icon={fa5}/></div>
+                <div onClick={handleRatingClick(6)} id="6"><FontAwesomeIcon icon={fa6}/></div>
+                <div onClick={handleRatingClick(7)} id="7"><FontAwesomeIcon icon={fa7}/></div>
+                <div onClick={handleRatingClick(8)} id="8"><FontAwesomeIcon icon={fa8}/></div>
+                <div onClick={handleRatingClick(9)} id="9"><FontAwesomeIcon icon={fa9}/></div>
+                <div onClick={handleRatingClick(10)} id="10"><FontAwesomeIcon icon={fa1}/><FontAwesomeIcon icon={fa0}/></div>
             </div>
 
             <div id="modalReview">
