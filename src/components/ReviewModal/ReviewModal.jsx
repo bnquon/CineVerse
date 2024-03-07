@@ -23,15 +23,15 @@ export const ReviewModal = ( {toggleModal} ) => {
 
             <div id="modalRating">
                 <div onClick={() => handleRatingClick(1)} id="1" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa1}/></div>
-                <div onClick={() => handleRatingClick(2)} id="2" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa2}/></div>
-                <div onClick={() => handleRatingClick(3)} id="3" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa3}/></div>
-                <div onClick={() => handleRatingClick(4)} id="4" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa4}/></div>
-                <div onClick={() => handleRatingClick(5)} id="5" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa5}/></div>
-                <div onClick={() => handleRatingClick(6)} id="6" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa6}/></div>
-                <div onClick={() => handleRatingClick(7)} id="7" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa7}/></div>
-                <div onClick={() => handleRatingClick(8)} id="8" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa8}/></div>
-                <div onClick={() => handleRatingClick(9)} id="9" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa9}/></div>
-                <div onClick={() => handleRatingClick(10)} id="10" style={{backgroundColor: rating === 1 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa1}/><FontAwesomeIcon icon={fa0}/></div>
+                <div onClick={() => handleRatingClick(2)} id="2" style={{backgroundColor: rating === 2 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa2}/></div>
+                <div onClick={() => handleRatingClick(3)} id="3" style={{backgroundColor: rating === 3 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa3}/></div>
+                <div onClick={() => handleRatingClick(4)} id="4" style={{backgroundColor: rating === 4 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa4}/></div>
+                <div onClick={() => handleRatingClick(5)} id="5" style={{backgroundColor: rating === 5 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa5}/></div>
+                <div onClick={() => handleRatingClick(6)} id="6" style={{backgroundColor: rating === 6 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa6}/></div>
+                <div onClick={() => handleRatingClick(7)} id="7" style={{backgroundColor: rating === 7 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa7}/></div>
+                <div onClick={() => handleRatingClick(8)} id="8" style={{backgroundColor: rating === 8 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa8}/></div>
+                <div onClick={() => handleRatingClick(9)} id="9" style={{backgroundColor: rating === 9 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa9}/></div>
+                <div onClick={() => handleRatingClick(10)} id="10" style={{backgroundColor: rating === 10 ? 'hsl(17, 83%, 64%)': 'white', transition: '250ms'}}><FontAwesomeIcon icon={fa1}/><FontAwesomeIcon icon={fa0}/></div>
             </div>
 
             <div id="modalReview">
