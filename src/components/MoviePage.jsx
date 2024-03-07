@@ -26,7 +26,7 @@ export const MoviePage = () => {
       </div>
 
       <div id="page-2">
-        <DisplayUserReviews title={movieInfo.title}/>
+        <DisplayUserReviews title={movieInfo.title} poster={movieInfo.poster_path}/>
         <Footer/>
       </div>
     </>

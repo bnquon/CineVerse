@@ -75,7 +75,7 @@ export const MovieReviews = (props) => {
             }
         </div>
 
-        {modalDisplay ? <ReviewModal toggleModal={toggleModal} title={props.title}/>: null}    
+        {modalDisplay ? <ReviewModal toggleModal={toggleModal} title={props.title} poster={props.poster}/>: null}    
 
       </div>
     </>

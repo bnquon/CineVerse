@@ -3,9 +3,10 @@ import './ReviewModal.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fa0, fa1, fa2, fa3, fa4, fa5, fa6, fa7, fa8, fa9 } from '@fortawesome/free-solid-svg-icons'
 
-export const ReviewModal = ( {toggleModal , title} ) => {
- 
+export const ReviewModal = ( {toggleModal , title, poster} ) => {
+  const posterURL = "https://image.tmdb.org/t/p/w500" + poster;  
   const userID = sessionStorage.getItem('userID');  
+  const username = sessionStorage.getItem('username');
   const [rating, setRating] = useState();
 
   const handleRatingClick = (value) => {
@@ -16,20 +17,27 @@ export const ReviewModal = ( {toggleModal , title} ) => {
   const postReview = async () => {
     const reviewText = document.getElementById('reviewText').value;
     try {
-        const respone = await fetch(``, {
+        const response = await fetch(`/api/postReview`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                username: username,
                 userID: userID,
-                movieName: {title},
+                movieName: title,
                 review: reviewText,
                 rating: rating,
+                poster: posterURL,
             }),
         })
-    } catch (error) {
         
+        if (!response.ok) {
+            console.error('Failed to post review: ', response.statusText);
+        }
+    
+    } catch (error) {
+        console.error('Error posting review:', error.message);
     }
   }
 
@@ -61,7 +69,7 @@ export const ReviewModal = ( {toggleModal , title} ) => {
             </div>
 
             <div id="modalButtons">
-                <button id='post'>Post</button>
+                <button id='post' onClick={postReview}>Post</button>
                 <button id='cancel' onClick={toggleModal}>Cancel</button>
             </div>
 
