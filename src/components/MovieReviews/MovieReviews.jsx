@@ -19,7 +19,7 @@ const NoMovieReviews= (props) => {
     <div className="movie-review-item">
       <h3>
         There are unfortunately no reviews for {props.title}. Be the first one!
-        <FontAwesomeIcon icon={faGrinStars} />
+        <FontAwesomeIcon icon={faFaceGrinStars} />
       </h3>
     </div>
   );
