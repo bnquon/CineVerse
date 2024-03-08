@@ -74,7 +74,7 @@ export const MovieReviews = (props) => {
         
         <div id="movieReviewTitle">
             <h2>{reviews.length} Reviews for this Movie</h2>
-            <button onClick={toggleModal}>Add a Review!</button>        
+            <button className='btn' onClick={toggleModal}>Add a Review!</button>        
         </div>
 
         <div id='movieReview-Grid' className='movie-review-container'>
