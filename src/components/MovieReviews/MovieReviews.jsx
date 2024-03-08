@@ -35,7 +35,7 @@ export const MovieReviews = (props) => {
       }
   }
   populateMovieReviews();
-  }, [props.title])
+  }, [props.title, modalDisplay])
 
   // const hardcodedReviews = [
   //   { rating: 8, review: 'Great movie!', username: 'User1' },
