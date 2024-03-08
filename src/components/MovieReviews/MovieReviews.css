@@ -60,3 +60,11 @@
     font-weight: 500;
     margin: 0.5rem;
 }
+
+#no-review-message {
+    box-sizing: border-box;
+    background-color: white;
+    text-align: center;
+    width: 50%;
+    padding: 1rem;
+}

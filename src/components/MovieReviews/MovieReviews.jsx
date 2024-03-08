@@ -16,11 +16,11 @@ const MovieReviewItem = ({ rating, review, username }) => {
 
 const NoMovieReviews= (props) => {
   return (
-    <div className="movie-review-item">
-      <h3>
+    <div id="no-review-message">
+      <h2>
         There are unfortunately no reviews for {props.title}. Be the first one!
-        <FontAwesomeIcon icon={faFaceGrinStars} />
-      </h3>
+        <FontAwesomeIcon icon={faFaceGrinStars} size='2x'/>
+      </h2>
     </div>
   );
 }
