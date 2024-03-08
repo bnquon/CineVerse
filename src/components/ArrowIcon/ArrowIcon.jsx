@@ -16,6 +16,7 @@ export const ArrowIcon = (props) => {
 
   const divStyle = {
     flexDirection: props.state ? 'column-reverse': 'column',
+    backgroundColor: props.state ? '#B9BBB6': '#EFEFEF',
   }
   
   return (
