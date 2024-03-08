@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "./MovieReviews.css";
-import { NoMovieReviews } from './NoMovieReviews/NoMovieReviews';
 import { ReviewModal } from '../ReviewModal/ReviewModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFaceGrinStars } from '@fortawesome/free-solid-svg-icons'
 
 const MovieReviewItem = ({ rating, review, username }) => {
   return (
@@ -12,6 +13,12 @@ const MovieReviewItem = ({ rating, review, username }) => {
     </div>
   );
 };
+
+const NoMovieReviews= (props) => {
+  <div className="movie-review-item">
+    <h3>There are unfortunately no reviews for {props.title}. Be the first one! {faFaceGrinStars}</h3>
+  </div>
+}
 
 export const MovieReviews = (props) => {
 
@@ -71,7 +78,7 @@ export const MovieReviews = (props) => {
                 <MovieReviewItem {...review} />
               )) :
 
-              <NoMovieReviews/>
+              <NoMovieReviews title={props.title}/>
             }
         </div>
 
