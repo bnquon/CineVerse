@@ -15,9 +15,11 @@ const MovieReviewItem = ({ rating, review, username }) => {
 };
 
 const NoMovieReviews= (props) => {
-  <div className="movie-review-item">
-    <h3>There are unfortunately no reviews for {props.title}. Be the first one! {faFaceGrinStars}</h3>
-  </div>
+  return (
+    <div className="movie-review-item">
+      <h3>There are unfortunately no reviews for {props.title}. Be the first one! {faFaceGrinStars}</h3>
+    </div>
+  );
 }
 
 export const MovieReviews = (props) => {
