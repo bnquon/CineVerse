@@ -22,6 +22,9 @@ export const MovieInfo = (props) => {
                     if (temp.isFavorited == 1) {
                         setFavorite(true);
                         setFavoriteMsg("Remove from Favorites");
+                    } else {
+                        setFavorite(false);
+                        setFavoriteMsg("Add To Favorites");
                     }
                 }
             } catch (error) {
