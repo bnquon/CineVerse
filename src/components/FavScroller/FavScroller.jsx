@@ -23,6 +23,7 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
+        addAnimation();
     }, [props.userID])
 
     useEffect(() => {
@@ -40,22 +41,22 @@ export const FavScroller = (props) => {
     
 
     
-    // function addAnimation() {
-    //     const scrollers = document.querySelectorAll(".scroller");
-    //     scrollers.forEach((scroller) => {
-    //         scroller.setAttribute("data-animated", true);
+    function addAnimation() {
+        const scrollers = document.querySelectorAll(".scroller");
+        scrollers.forEach((scroller) => {
+            scroller.setAttribute("data-animated", true);
             
-    //         const scrollerInner = scroller.querySelector(".scroller_inner");
-    //         const scrollerContent = Array.from(scrollerInner.children);
+            const scrollerInner = scroller.querySelector(".scroller_inner");
+            const scrollerContent = Array.from(scrollerInner.children);
             
-    //         scrollerContent.forEach((item) => {
-    //             const duplicateItem = item.cloneNode(true);
-    //             console.log('Duplicate: ', duplicateItem);
-    //             duplicateItem.setAttribute("aria-hidden", true);
-    //             scrollerInner.appendChild(duplicateItem);
-    //         });
-    //     });
-    // }
+            scrollerContent.forEach((item) => {
+                const duplicateItem = item.cloneNode(true);
+                console.log('Duplicate: ', duplicateItem);
+                duplicateItem.setAttribute("aria-hidden", true);
+                scrollerInner.appendChild(duplicateItem);
+            });
+        });
+    }
     
     return (
         <div className="scroller">

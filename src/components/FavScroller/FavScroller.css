@@ -29,6 +29,6 @@
 
 @keyframes scroll {
     to {
-        transform: translateY(calc(-50% - 0.5rem));
+        transform: translateY(-50%);
     }
 }
