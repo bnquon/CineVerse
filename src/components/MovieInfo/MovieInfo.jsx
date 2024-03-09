@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import "./MovieInfo.css"
 
 export const MovieInfo = (props) => {
@@ -6,6 +6,23 @@ export const MovieInfo = (props) => {
 
     const posterURL = "https://image.tmdb.org/t/p/w500" + props.poster;
     const backdropURL = "https://image.tmdb.org/t/p/w500" + props.backdrop;
+
+    useEffect(() => {
+        const checkIfFavorite = async () => {
+            try {
+                const response = await fetch(`/api/checkIfFavorite?userID=${userID}`, {
+                    method: 'GET',
+                });
+                if (response.ok) {
+                    console.log(response);
+                }
+            } catch (error) {
+                console.error('Error checking if movie is favorited: ', error.message);
+            }
+        }
+        
+        checkIfFavorite();
+    }, [props.title])
 
     let [isFavorite, setFavorite] = useState(false);
     let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
