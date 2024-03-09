@@ -10,7 +10,7 @@ export const MovieInfo = (props) => {
     useEffect(() => {
         const checkIfFavorite = async () => {
             try {
-                const response = await fetch(`/api/checkIfFavorite?userID=${userID}`, {
+                const response = await fetch(`/api/checkIfFavorite?userID=${userID}&movieName=${props.title}`, {
                     method: 'GET',
                 });
                 if (response.ok) {
@@ -20,7 +20,7 @@ export const MovieInfo = (props) => {
                 console.error('Error checking if movie is favorited: ', error.message);
             }
         }
-        
+
         checkIfFavorite();
     }, [props.title])
 
