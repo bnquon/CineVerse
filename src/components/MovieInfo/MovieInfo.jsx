@@ -7,6 +7,9 @@ export const MovieInfo = (props) => {
     const posterURL = "https://image.tmdb.org/t/p/w500" + props.poster;
     const backdropURL = "https://image.tmdb.org/t/p/w500" + props.backdrop;
 
+    let [isFavorite, setFavorite] = useState(false);
+    let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
+
     useEffect(() => {
         const checkIfFavorite = async () => {
             try {
@@ -15,7 +18,7 @@ export const MovieInfo = (props) => {
                 });
                 if (response.ok) {
                     const temp = await response.json();
-                    console.log(temp.isFavorited);
+                    console.log('GET CALL FROM checkIfFavorite is: ', temp);
                 }
             } catch (error) {
                 console.error('Error checking if movie is favorited: ', error.message);
@@ -24,9 +27,6 @@ export const MovieInfo = (props) => {
 
         checkIfFavorite();
     }, [props.title])
-
-    let [isFavorite, setFavorite] = useState(false);
-    let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
 
     const toggleFavorite = () => {
         setFavorite(!isFavorite);
