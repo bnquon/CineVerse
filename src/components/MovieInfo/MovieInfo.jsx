@@ -14,7 +14,8 @@ export const MovieInfo = (props) => {
                     method: 'GET',
                 });
                 if (response.ok) {
-                    console.log(response);
+                    const temp = await response.json();
+                    console.log(temp.isFavorited);
                 }
             } catch (error) {
                 console.error('Error checking if movie is favorited: ', error.message);
