@@ -19,6 +19,10 @@ export const MovieInfo = (props) => {
                 if (response.ok) {
                     const temp = await response.json();
                     console.log('GET CALL FROM checkIfFavorite is: ', temp);
+                    if (temp.isFavorited == 1) {
+                        setFavorite(true);
+                        setFavoriteMsg("Remove from Favorites");
+                    }
                 }
             } catch (error) {
                 console.error('Error checking if movie is favorited: ', error.message);
