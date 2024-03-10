@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./CreateUserPage.css"
+import backgroundImage from '../assets/test.webp'
 
 export const CreateUserPage = () => {
 
@@ -35,22 +36,45 @@ export const CreateUserPage = () => {
             console.error('Error creating user:', error.message);
         }
     }
-    // const navigate = useNavigate();
 
-    // const handleClick = () => {
-    //     const input = document.getElementById('loginUsername').value;
-    //     sessionStorage.setItem('username', input);
-    //     navigate("./user");
-    // }
+    document.getElementById('gotosignup').addEventListener('click', () => {
+        document.getElementById('signup').classList.add('signup-form');
+        document.getElementById('signup').classList.remove('login-form');
+    })
+
+    document.getElementById('gotologin').addEventListener('click', () => {
+        document.getElementById('signup').classList.add('login-form');
+        document.getElementById('signup').classList.remove('signup-form');
+    })
 
     return (
         <>    
             <div id="page-container">
-                <div id='form-container'>
-                    <h1>Username</h1>
-                    <input id='loginUsername' type="text" />
-                    <button type='submit' onClick={handleClick}>SUBMIT</button>
+                <img src={backgroundImage} alt="" />
+
+                <div id="form">
+        
+                    <div id="login">
+                        <h1>LOGIN</h1>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="loginUsername"/>
+                        <label for="password">Password</label>
+                        <input type="text" name="password" id=""/>
+                        <button onClick={handleClick}>SUBMIT</button>
+                        <button id='gotosignup'>Sign up instead</button>
+                    </div>
+
+                    <div id="signup">
+                        <h1>Sign Up</h1>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id=""/>
+                        <label for="password">Password</label>
+                        <input type="text" name="password" id=""/>
+                        <button id="gotologin">Login instead</button>
+                    </div>
+
                 </div>
+                
             </div>
         </>
     )
