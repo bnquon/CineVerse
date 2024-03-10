@@ -3,6 +3,7 @@ import "./MovieReviews.css";
 import { ReviewModal } from '../ReviewModal/ReviewModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceGrinStars } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const MovieReviewItem = ({ rating, review, username }) => {
   return (
@@ -74,7 +75,7 @@ export const MovieReviews = (props) => {
         
         <div id="movieReviewTitle">
             <h2>{reviews.length} Reviews for this Movie</h2>
-            <button className='btn' onClick={toggleModal}>Add a Review!</button>        
+            <button className='btn' onClick={toggleModal}><FontAwesomeIcon icon={faPlus} />Add a Review!</button>        
         </div>
 
         <div id='movieReview-Grid' className='movie-review-container'>

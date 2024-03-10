@@ -67,7 +67,7 @@ export const CreateUserPage = () => {
                         <input type="text" name="username" id="loginUsername" placeholder='Username'/>
                         <input type="text" name="password" id="" placeholder='Password'/>
                         <button id='loginBtn' onClick={handleClick}>Login</button>
-                        <button id='gotosignup' onClick={showSignup}>Sign up instead</button>
+                        <button id='gotosignup' onClick={showSignup}>Create User</button>
                     </div>
 
                     <div id="signup">
@@ -77,7 +77,7 @@ export const CreateUserPage = () => {
                         <input type="text" name="username" id="" placeholder='New Username'/>
                         <input type="text" name="password" id="" placeholder='New Password'/>
                         <button id="signupBtn">Sign Up</button>
-                        <button id="gotologin" onClick={showLogin}>Login instead</button>
+                        <button id="gotologin" onClick={showLogin}>Login</button>
                     </div>
 
                 </div>
