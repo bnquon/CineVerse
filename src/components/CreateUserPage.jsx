@@ -74,8 +74,8 @@ export const CreateUserPage = () => {
                         <div class="formname">
                             <h1>Sign Up</h1>
                         </div>
-                        <input type="text" name="username" id="" placeholder='Username'/>
-                        <input type="text" name="password" id="" placeholder='Password'/>
+                        <input type="text" name="username" id="" placeholder='New Username'/>
+                        <input type="text" name="password" id="" placeholder='New Password'/>
                         <button id="signupBtn">Sign Up</button>
                         <button id="gotologin" onClick={showLogin}>Login instead</button>
                     </div>
