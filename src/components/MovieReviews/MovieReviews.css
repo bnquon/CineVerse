@@ -78,10 +78,6 @@
     gap: 0;
 }
 
-#movieReview-Grid > :nth-child(even) {
-    background-color: #d9d9d9;
-}
-
 .movie-review-item {
     box-sizing: border-box;
     background-color: white;
