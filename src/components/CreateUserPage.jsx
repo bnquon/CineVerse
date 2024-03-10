@@ -51,16 +51,6 @@ export const CreateUserPage = () => {
         document.getElementById('login').classList.remove('signup-form');
     }
 
-    // document.getElementById('gotosignup').addEventListener('click', () => {
-    //     document.getElementById('signup').classList.add('signup-form');
-    //     document.getElementById('signup').classList.remove('login-form');
-    // })
-
-    // document.getElementById('gotologin').addEventListener('click', () => {
-    //     document.getElementById('signup').classList.add('login-form');
-    //     document.getElementById('signup').classList.remove('signup-form');
-    // })
-
     return (
         <>    
             <div id="page-container">
@@ -71,21 +61,22 @@ export const CreateUserPage = () => {
                 <div id="form">
         
                     <div id="login">
-                        <h1>LOGIN</h1>
-                        <label for="username">Username</label>
+                        <div class="formname">
+                            <h1>LOGIN</h1>
+                        </div>
                         <input type="text" name="username" id="loginUsername"/>
-                        <label for="password">Password</label>
                         <input type="text" name="password" id=""/>
-                        <button onClick={handleClick}>SUBMIT</button>
+                        <button id='loginBtn' onClick={handleClick}>Login</button>
                         <button id='gotosignup' onClick={showSignup}>Sign up instead</button>
                     </div>
 
                     <div id="signup">
-                        <h1>Sign Up</h1>
-                        <label for="username">Username</label>
+                        <div class="formname">
+                            <h1>Sign Up</h1>
+                        </div>
                         <input type="text" name="username" id=""/>
-                        <label for="password">Password</label>
                         <input type="text" name="password" id=""/>
+                        <button id="signupBtn">Sign Up</button>
                         <button id="gotologin" onClick={showLogin}>Login instead</button>
                     </div>
 

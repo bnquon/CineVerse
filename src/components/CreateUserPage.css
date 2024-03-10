@@ -71,3 +71,37 @@
 .signup-form {
   transform: translateY(-100%);
 }
+
+.formname {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+}
+
+input[type=text] {
+  border: 1px solid transparent;
+  margin-bottom: 1.5rem;
+  width: 55%;
+  padding: 0.35rem;
+  font-size: 1.5rem;
+  outline: none;
+  border-radius: 10px;
+}
+
+#loginBtn,
+#signupBtn {
+  position: relative;
+  width: 30%;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+#gotologin, 
+#gotosignup {
+  position: absolute;
+  bottom: 5%;
+}
