@@ -40,11 +40,15 @@ export const CreateUserPage = () => {
     const showSignup = () => {
         document.getElementById('signup').classList.add('signup-form');
         document.getElementById('signup').classList.remove('login-form');
+        document.getElementById('login').classList.add('signup-form');
+        document.getElementById('login').classList.remove('login-form');
     }
 
     const showLogin = () => {
         document.getElementById('signup').classList.add('login-form');
         document.getElementById('signup').classList.remove('signup-form');
+        document.getElementById('login').classList.add('login-form');
+        document.getElementById('login').classList.remove('signup-form');
     }
 
     // document.getElementById('gotosignup').addEventListener('click', () => {
