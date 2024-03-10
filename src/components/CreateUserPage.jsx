@@ -60,7 +60,7 @@ export const CreateUserPage = () => {
     return (
         <>    
             <div id="page-container">
-                <img src={backgroundImage} alt="" />
+                <img id='bgImage' src={backgroundImage} alt="" />
 
                 <div id="form">
         
