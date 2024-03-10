@@ -79,7 +79,8 @@
   top: 0;
 }
 
-#form > input[type=text] {
+#login > input[type=text],
+#signup > input[type=text] {
   border: 1px solid transparent;
   margin-bottom: 1.5rem;
   width: 55%;
