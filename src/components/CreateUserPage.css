@@ -79,7 +79,7 @@
   top: 0;
 }
 
-input[type=text] {
+#form > input[type=text] {
   border: 1px solid transparent;
   margin-bottom: 1.5rem;
   width: 55%;
@@ -98,10 +98,12 @@ input[type=text] {
   padding: 0.25rem;
   font-size: 1.5rem;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 #gotologin, 
 #gotosignup {
   position: absolute;
   bottom: 5%;
+  cursor: pointer;
 }

@@ -64,8 +64,8 @@ export const CreateUserPage = () => {
                         <div class="formname">
                             <h1>LOGIN</h1>
                         </div>
-                        <input type="text" name="username" id="loginUsername"/>
-                        <input type="text" name="password" id=""/>
+                        <input type="text" name="username" id="loginUsername" placeholder='Username'/>
+                        <input type="text" name="password" id="" placeholder='Password'/>
                         <button id='loginBtn' onClick={handleClick}>Login</button>
                         <button id='gotosignup' onClick={showSignup}>Sign up instead</button>
                     </div>
@@ -74,8 +74,8 @@ export const CreateUserPage = () => {
                         <div class="formname">
                             <h1>Sign Up</h1>
                         </div>
-                        <input type="text" name="username" id=""/>
-                        <input type="text" name="password" id=""/>
+                        <input type="text" name="username" id="" placeholder='Username'/>
+                        <input type="text" name="password" id="" placeholder='Password'/>
                         <button id="signupBtn">Sign Up</button>
                         <button id="gotologin" onClick={showLogin}>Login instead</button>
                     </div>
