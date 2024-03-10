@@ -24,12 +24,12 @@
 }
 
 #form {
-  position: absolute;
+  position: relative;
   width: 25vw;
   height: 40vh;
-  left: 50%;
+  /* left: 50%;
   transform: translateX(-50%);
-  top: 30vh;
+  top: 30vh; */
   border-radius: 20px;
   backdrop-filter: blur(20px);
   display: flex;
