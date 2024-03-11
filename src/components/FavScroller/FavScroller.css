@@ -9,6 +9,7 @@
 .scroller_inner {
     padding-block: 1rem;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 1rem;
     
@@ -24,11 +25,11 @@
 .scroller[data-animated="true"] .scroller_inner {
     width: fit-content;
     flex-wrap: nowrap;
-    animation: scroll 20s reverse linear infinite;
+    animation: scroll 40s reverse linear infinite;
 }
 
 @keyframes scroll {
     to {
-        transform: translateY(-100%);
+      transform: translateY(calc(-50% - 0.5rem));
     }
-}
+  }
