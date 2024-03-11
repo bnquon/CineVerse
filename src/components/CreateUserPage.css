@@ -31,7 +31,7 @@
   transform: translateX(-50%);
   top: 30vh; */
   border-radius: 20px;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -92,8 +92,8 @@
 
 #login > input[type=text]:focus,
 #signup > input[type=text]:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: hsl(17, 83%, 64%);
+  box-shadow: 0 0 0 0.2rem rgb(255, 0, 0);
 }
 
 #loginBtn,
