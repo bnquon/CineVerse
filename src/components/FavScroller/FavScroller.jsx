@@ -30,6 +30,7 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
+        runAnimation();
     }, [props.userID])
 
     // useEffect(() => {
