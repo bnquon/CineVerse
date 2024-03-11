@@ -63,7 +63,7 @@ export const FavScroller = (props) => {
         <div className="scroller">
             <div className="scroller_inner">
                 {favoriteList.map((element, index) => (
-                    <img key={index} src={element} alt="" width='175' height='275'/>
+                    <img key={index} src={element} alt="" width='175' height='100'/>
                 ))}
             </div>
         </div>
