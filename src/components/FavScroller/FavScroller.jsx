@@ -15,6 +15,7 @@ export const FavScroller = (props) => {
                 if (response.ok) {
                     const data = await response.json();
                     const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
+                    console.log(data.listOfFavorites);
                     setFavoriteList(listOfFavorites);
     
                 } else console.error('Failed to fetch favorite movies: ', response.statusText);
@@ -25,18 +26,18 @@ export const FavScroller = (props) => {
         populateScroller();
     }, [props.userID])
 
-    useEffect(() => {
-        if (favoriteList.length < 4) {
-            const temp = [...favoriteList];
-            for (let i = 0; i < (4-temp.length); i++) {
-                temp.push(placeholder);
-            }
-            console.log('TEMP IS IN FavScroller.jsx: ', temp);
-            setFavoriteList(temp);
-        }
+    // useEffect(() => {
+    //     if (favoriteList.length < 4) {
+    //         const temp = [...favoriteList];
+    //         for (let i = 0; i < (4-temp.length); i++) {
+    //             temp.push(placeholder);
+    //         }
+    //         console.log('TEMP IS IN FavScroller.jsx: ', temp);
+    //         setFavoriteList(temp);
+    //     }
 
-        runAnimation();
-    }, [favoriteList])
+    //     runAnimation();
+    // }, [favoriteList])
     
     
     function addAnimation(scrollers) {
