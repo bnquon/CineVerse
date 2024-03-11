@@ -1,7 +1,7 @@
 .scroller {
     border: 3px solid red;
     position: absolute;
-    height: 70vh;
+    height: 75vh;
     top: 20%;
     right: 15%;
 }
@@ -24,7 +24,7 @@
 .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll 10s reverse linear infinite;
+    animation: scroll 40s reverse linear infinite;
 }
 
 @keyframes scroll {
