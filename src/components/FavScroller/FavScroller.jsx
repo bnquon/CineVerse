@@ -35,6 +35,7 @@ export const FavScroller = (props) => {
             setFavoriteList(temp);
         }
 
+        runAnimation();
     }, [favoriteList])
     
     
@@ -58,10 +59,10 @@ export const FavScroller = (props) => {
         });
       }
 
-    useEffect(() => {
-        const scrollers = document.querySelectorAll(".scroller");
+    function runAnimation() {
+        const scrollers = document.querySelectorAll('.scroller');
         addAnimation(scrollers);
-    }, [])
+    }
     
     return (
         <div className="scroller">
