@@ -45,7 +45,7 @@ export const CreateUserPage = () => {
             alert('Username and password must be filled');
         } else {
             try {
-                const response = await fetch('/api/realLogin', {
+                const response = await fetch('/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
