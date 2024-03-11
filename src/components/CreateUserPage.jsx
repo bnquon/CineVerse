@@ -57,7 +57,7 @@ export const CreateUserPage = () => {
                     console.log('Data sent back by logging in is: ', loginUserData);
                     const temp = loginUserData.retrievedUserInfo;
                     const username = temp.username;
-                    const userID = temp.userID;
+                    const userID = temp.userid;
                     sessionStorage.setItem('username', username);
                     sessionStorage.setItem('userID', userID);
                     navigate("./user");
