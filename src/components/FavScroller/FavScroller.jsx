@@ -38,8 +38,8 @@ export const FavScroller = (props) => {
     }, [favoriteList])
     
     
-    function addAnimation(temp) {
-        temp.forEach((scroller) => {
+    function addAnimation(scrollers) {
+        scrollers.forEach((scroller) => {
           // add data-animated="true" to every `.scroller` on the page
           scroller.setAttribute("data-animated", true);
       
