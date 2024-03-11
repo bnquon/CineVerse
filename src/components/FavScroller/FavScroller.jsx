@@ -23,7 +23,6 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-        addAnimation();
     }, [props.userID])
 
     useEffect(() => {
@@ -37,9 +36,6 @@ export const FavScroller = (props) => {
         }
 
     }, [favoriteList])
-
-    
-
     
     function addAnimation() {
         const scrollers = document.querySelectorAll(".scroller");
@@ -57,6 +53,10 @@ export const FavScroller = (props) => {
             });
         });
     }
+
+    useEffect(() => {
+        addAnimation();
+    }, [])
     
     return (
         <div className="scroller">
