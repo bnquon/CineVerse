@@ -33,18 +33,9 @@ export const FavScroller = (props) => {
         runAnimation();
     }, [props.userID])
 
-    // useEffect(() => {
-    //     if (favoriteList.length < 4) {
-    //         const temp = [...favoriteList];
-    //         for (let i = 0; i < (4-temp.length); i++) {
-    //             temp.push(placeholder);
-    //         }
-    //         console.log('TEMP IS IN FavScroller.jsx: ', temp);
-    //         setFavoriteList(temp);
-    //     }
-
-    //     runAnimation();
-    // }, [favoriteList])
+    useEffect(() => {
+        runAnimation();
+    }, [favoriteList])
     
     
     function addAnimation(scrollers) {
@@ -75,12 +66,12 @@ export const FavScroller = (props) => {
     return (
         <div className="scroller">
             <div className="scroller__inner">
-                {/* {favoriteList.map((element, index) => (
+                {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='100'/>
-                ))} */}
-                <img src="https://placehold.co/300x100/orange/white" alt=""/>
+                ))}
+                {/* <img src="https://placehold.co/300x100/orange/white" alt=""/>
                 <img src="https://placehold.co/300x100/red/orange" alt="" />
-                <img src="https://placehold.co/300x100/black/white" alt=""  />
+                <img src="https://placehold.co/300x100/black/white" alt=""  /> */}
             </div>
         </div>
     );
