@@ -53,8 +53,10 @@ export const CreateUserPage = () => {
                 })
                 if (response.ok) {
                     const loginUserData = await response.json();
-                    const username = loginUserData.username;
-                    const userID = loginUserData.userID;
+                    console.log('Data sent back by logging in is: ', loginUserData);
+                    const temp = loginUserData.retrievedUserInfo;
+                    const username = temp.username;
+                    const userID = temp.userID;
                     sessionStorage.setItem('username', username);
                     sessionStorage.setItem('userID', userID);
                     navigate("./user");
@@ -81,9 +83,10 @@ export const CreateUserPage = () => {
                 });
                 if (response.ok) {
                     const newUserData = await response.json();
+                    const temp = newUserData.retrievedUserInfo;
                     console.log('Data sent back by creating user is: ', newUserData);
-                    const newUser = newUserData.username;
-                    const newUserID = newUserData.userID;
+                    const newUser = temp.username;
+                    const newUserID = temp.userID;
                     sessionStorage.setItem('username', newUser);
                     sessionStorage.setItem('userID', newUserID);
                     navigate("./user");
