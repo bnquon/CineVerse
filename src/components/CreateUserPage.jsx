@@ -40,6 +40,7 @@ export const CreateUserPage = () => {
     const loginUser = async () => {
         const loginUsername = document.getElementById('loginUsername').value;
         const loginPassword = document.getElementById('loginPassword').value;
+        console.log('Login button pressed: ', loginUsername, loginPassword);
         if (loginUsername == null || loginPassword == null) {
             alert('Username and password must be filled');
         } else {
