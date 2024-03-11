@@ -73,7 +73,7 @@
 }
 
 .formname {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   font-weight: 900;
   position: absolute;
   top: 0;
@@ -93,7 +93,7 @@
 #login > input[type=text]:focus,
 #signup > input[type=text]:focus {
   border-color: hsl(17, 83%, 64%);
-  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.375);
+  box-shadow: 0 0 0 0.1rem hsl(17, 83%, 64%);
 }
 
 #loginBtn,
