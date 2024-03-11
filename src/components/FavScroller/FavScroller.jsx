@@ -37,9 +37,9 @@ export const FavScroller = (props) => {
 
     }, [favoriteList])
     
-    const scrollers = document.querySelectorAll('.scroller');
     
     function addAnimation() {
+        const scrollers = document.querySelectorAll('.scroller');
         scrollers.forEach((scroller) => {
             scroller.setAttribute("data-animated", true);
             
