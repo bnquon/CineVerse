@@ -81,7 +81,7 @@
 
 #login > input[type=text],
 #signup > input[type=text] {
-  border: 1px solid transparent;
+  border: 1px solid black;
   margin-bottom: 1.5rem;
   width: 55%;
   padding: 0.7rem;
@@ -93,7 +93,7 @@
 #login > input[type=text]:focus,
 #signup > input[type=text]:focus {
   border-color: hsl(17, 83%, 64%);
-  box-shadow: 0 0 0 0.2rem rgb(255, 0, 0);
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.375);
 }
 
 #loginBtn,
@@ -143,6 +143,7 @@
 #loginBtn:hover, 
 #signupBtn:hover {
   color: #e8e8e8;
+  transform: scale(1.05);
 }
  
 #loginBtn:hover::before, 
