@@ -5,6 +5,7 @@ import placeholder from "../../assets/posterPlaceholder.png"
 export const FavScroller = (props) => {
 
     const [favoriteList, setFavoriteList] = useState([]);
+    const scrollers = document.querySelectorAll(".scroller");
 
     useEffect(() => {
         const populateScroller = async () => {
@@ -39,21 +40,24 @@ export const FavScroller = (props) => {
     
     
     function addAnimation() {
-        const scrollers = document.querySelectorAll('.scroller');
         scrollers.forEach((scroller) => {
-            scroller.setAttribute("data-animated", true);
-
-            const scrollerInner = scroller.querySelector(".scroller__inner"); // Corrected class name
-            const scrollerContent = Array.from(scrollerInner.children);
-
-            scrollerContent.forEach((item) => {
-                const duplicateItem = item.cloneNode(true);
-                console.log('Duplicate: ', duplicateItem);
-                duplicateItem.setAttribute("aria-hidden", true);
-                scrollerInner.appendChild(duplicateItem);
-            });
+          // add data-animated="true" to every `.scroller` on the page
+          scroller.setAttribute("data-animated", true);
+      
+          // Make an array from the elements within `.scroller-inner`
+          const scrollerInner = scroller.querySelector(".scroller__inner");
+          const scrollerContent = Array.from(scrollerInner.children);
+      
+          // For each item in the array, clone it
+          // add aria-hidden to it
+          // add it into the `.scroller-inner`
+          scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("aria-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+          });
         });
-    }
+      }
 
     useEffect(() => {
         addAnimation();

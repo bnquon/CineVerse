@@ -17,13 +17,12 @@
 
 .scroller[data-animated="true"] {
     overflow: hidden;
-    -webkit-mask: linear-gradient(180deg, transparent, white 5%, white 90%, transparent);
     mask: linear-gradient(180deg, transparent, white 5%, white 90%, transparent);
 }
 
 
 .scroller[data-animated="true"] .scroller__inner {
-    width: fit-content;
+    width: max-content;
     flex-wrap: nowrap;
     animation: scroll 10s reverse linear infinite;
 }
