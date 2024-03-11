@@ -5,7 +5,6 @@ import placeholder from "../../assets/posterPlaceholder.png"
 export const FavScroller = (props) => {
 
     const [favoriteList, setFavoriteList] = useState([]);
-    const scrollers = document.querySelectorAll(".scroller");
 
     useEffect(() => {
         const populateScroller = async () => {
@@ -60,6 +59,7 @@ export const FavScroller = (props) => {
       }
 
     useEffect(() => {
+        const scrollers = document.querySelectorAll(".scroller");
         addAnimation();
     }, [])
     
