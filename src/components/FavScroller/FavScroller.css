@@ -1,12 +1,12 @@
 .scroller {
-    border: 1px solid red;
+    border: 3px solid red;
     position: absolute;
-    max-height: 40vh;
+    max-height: 400px;
     top: 20%;
     right: 15%;
 }
 
-.scroller_inner {
+.scroller__inner {
     padding-block: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -22,7 +22,7 @@
 }
 
 
-.scroller[data-animated="true"] .scroller_inner {
+.scroller[data-animated="true"] .scroller__inner {
     width: fit-content;
     flex-wrap: nowrap;
     animation: scroll 10s reverse linear infinite;

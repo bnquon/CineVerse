@@ -42,10 +42,10 @@ export const FavScroller = (props) => {
         const scrollers = document.querySelectorAll('.scroller');
         scrollers.forEach((scroller) => {
             scroller.setAttribute("data-animated", true);
-            
-            const scrollerInner = scroller.querySelector(".scroller_inner");
+
+            const scrollerInner = scroller.querySelector(".scroller__inner"); // Corrected class name
             const scrollerContent = Array.from(scrollerInner.children);
-            
+
             scrollerContent.forEach((item) => {
                 const duplicateItem = item.cloneNode(true);
                 console.log('Duplicate: ', duplicateItem);
@@ -61,7 +61,7 @@ export const FavScroller = (props) => {
     
     return (
         <div className="scroller">
-            <div className="scroller_inner">
+            <div className="scroller__inner">
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='100'/>
                 ))}
