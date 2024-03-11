@@ -81,6 +81,7 @@ export const CreateUserPage = () => {
                 });
                 if (response.ok) {
                     const newUserData = await response.json();
+                    console.log('Data sent back by creating user is: ', newUserData);
                     const newUser = newUserData.username;
                     const newUserID = newUserData.userID;
                     sessionStorage.setItem('username', newUser);
