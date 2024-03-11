@@ -3,7 +3,7 @@ import { db } from '@vercel/postgres'
 
 export default async function handler(request, response) {
     const { username, password } = request.body;
-    const client = db.connect();
+    const client = await db.connect();
     try {
         const response = await client.sql`SELECT * FROM users WHERE username = ${username};`;
         if (response == null) {
