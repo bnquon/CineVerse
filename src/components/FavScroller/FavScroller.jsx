@@ -37,7 +37,7 @@ export const FavScroller = (props) => {
 
     }, [favoriteList])
     
-    const scrollers = document.querySelectorAll(".scroller");
+    const scrollers = document.getElementsByClassName('scroller');
     
     function addAnimation() {
         scrollers.forEach((scroller) => {
