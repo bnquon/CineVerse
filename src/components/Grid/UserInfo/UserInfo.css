@@ -55,3 +55,19 @@
 #bio-container textarea:focus {
     border: 1px solid black;
 }
+
+#watchlist {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#watchlistItems {
+    border: 1px solid black;
+    height: 90%;
+    width: 100%;
+    grid-template-columns: auto;
+    overflow-x: auto;
+}

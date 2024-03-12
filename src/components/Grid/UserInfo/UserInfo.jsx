@@ -55,9 +55,11 @@ export const UserInfo = () => {
 
   return (
     <div className="info-container">
+
       <div id="date-joined">
         <span><h3>Date Joined: INSERT DATE HERE</h3></span>
       </div>
+
       <div id="bio-container">
         <h3>Bio</h3>
         <textarea
@@ -66,6 +68,13 @@ export const UserInfo = () => {
           onChange={handleBioChange}
           onBlur={handleBioBlur}
         ></textarea>
+      </div>
+
+      <div id="watchlist">
+        <h3>Watchlist</h3>
+        <div id="watchlistItems">
+          
+        </div>
       </div>
 
     </div>
