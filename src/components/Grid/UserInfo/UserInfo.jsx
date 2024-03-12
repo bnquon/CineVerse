@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './UserInfo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarDay } from '@fortawesome/free-solid-svg-icons'
 
 export const UserInfo = () => {
   const userID = sessionStorage.getItem('userID');
@@ -57,7 +56,7 @@ export const UserInfo = () => {
   return (
     <div className="info-container">
       <div id="date-joined">
-        <span><FontAwesomeIcon icon={faCalendarDay}/><h3>Date Joined: INSERT DATE HERE</h3></span>
+        <span><h3>Date Joined: INSERT DATE HERE</h3></span>
       </div>
       <div id="bio-container">
         <h3>Bio</h3>
