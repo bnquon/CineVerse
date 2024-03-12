@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './UserInfo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import placeholder from '../../../assets/posterPlaceholder.png'
+
 export const UserInfo = () => {
   const userID = sessionStorage.getItem('userID');
 
@@ -73,7 +75,7 @@ export const UserInfo = () => {
       <div id="watchlist">
         <h3>Watchlist</h3>
         <div id="watchlistItems">
-          
+          <img src={placeholder} alt="" />
         </div>
       </div>
 
