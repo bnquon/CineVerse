@@ -128,7 +128,7 @@ export const CreateUserPage = () => {
                         </div>
                         <div class="inputs">
                             <input type="text" name="username" id="loginUsername" placeholder='Username' required/>
-                            <input type="text" name="password" id="loginPassword" placeholder='Password' required/>
+                            <input type="password" name="password" id="loginPassword" placeholder='Password' required/>
                         </div>
                         <button id='loginBtn' onClick={loginUser}>Login</button>
                         <div class="loginnav">
@@ -147,7 +147,7 @@ export const CreateUserPage = () => {
                         </div>
                         <div class="inputs">
                             <input type="text" name="username" id="newUsername" placeholder='New Username' required/>
-                            <input type="text" name="password" id="newPassword" placeholder='New Password' required/>
+                            <input type="password" name="password" id="newPassword" placeholder='New Password' required/>
                         </div>
                         <button id="signupBtn" onClick={registerUser}>Sign Up</button>
                         <div class="loginnav">

@@ -94,7 +94,7 @@
 }
 
 .inputs > input[type=text],
-.inputs > input[type=text] {
+.inputs > input[type=password] {
   border: 1px solid black;
   width: 55%;
   padding: 0.7rem;
@@ -105,7 +105,7 @@
 }
 
 .inputs > input[type=text]:focus,
-.inputs > input[type=text]:focus {
+.inputs > input[type=password]:focus {
   border-color: hsl(17, 83%, 64%);
   box-shadow: 0 0 0 0.1rem hsl(17, 83%, 64%);
 }
