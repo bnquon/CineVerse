@@ -1,7 +1,7 @@
 #noUserReviews {
     position: relative;
     width: 100%;
-    margin-top: auto;
+    margin: auto;
 }
 
 #noUserReviews > span {
