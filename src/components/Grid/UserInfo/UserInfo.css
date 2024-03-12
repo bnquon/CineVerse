@@ -71,10 +71,11 @@
 #watchlistGrid {
     position: relative;
     border: 1px solid black;
-    height: 80%;
+    height: 60%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-x: auto;
+    gap: 0.3rem;
 }
 

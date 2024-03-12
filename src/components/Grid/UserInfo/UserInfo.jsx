@@ -77,6 +77,7 @@ export const UserInfo = () => {
         <div id="watchlistGrid">
           <img src={placeholder} alt="" />
           <img src={placeholder} alt="" />
+          <img src={placeholder} alt="" />
         </div>
       </div>
 
