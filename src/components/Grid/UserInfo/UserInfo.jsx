@@ -55,6 +55,9 @@ export const UserInfo = () => {
 
   return (
     <div className="info-container">
+      <div id="date-joined">
+        <h3>Date Joined: INSERT DATE HERE</h3>
+      </div>
       <div id="bio-container">
         <h3>Bio</h3>
         <textarea
