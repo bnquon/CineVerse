@@ -64,10 +64,16 @@
     text-align: center;
 }
 
-#watchlistItems {
+#watchlist > h3 {
+    margin-bottom: 0.25rem;
+}
+
+#watchlistGrid {
     border: 1px solid black;
     height: 90%;
     width: 100%;
-    grid-template-columns: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     overflow-x: auto;
 }
+
