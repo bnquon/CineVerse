@@ -94,5 +94,5 @@
 .tempGridItem > img {
     width: 100%;
     /* height: 100%; */
-    object-fit: cover; /* This property ensures the image covers the entire container */
+    object-fit: contain; /* This property ensures the image covers the entire container */
 }
