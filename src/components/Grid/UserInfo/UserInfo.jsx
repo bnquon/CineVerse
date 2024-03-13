@@ -76,7 +76,7 @@ export const UserInfo = () => {
         <h3>Watchlist</h3>
         <div id="watchlistGrid">
           <div className="tempGridItem"><img src={placeholder} alt="" /></div>
-          <div className="tempGridItem">ME TESTING GRID HEIGHT 2</div>
+          <div className="tempGridItem"><img src={placeholder} alt="" /></div>
         </div>
       </div>
 

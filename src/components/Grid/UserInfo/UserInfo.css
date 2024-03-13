@@ -89,6 +89,6 @@
     background-color: red;
 }
 
-.tempGridItem img {
-    object-fit: fill;
+.tempGridItem > img {
+    height: 100%;
 }
