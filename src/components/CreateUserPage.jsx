@@ -37,67 +37,73 @@ export const CreateUserPage = () => {
     //     }
     // }
 
-    const loginUser = async () => {
-        const loginUsername = document.getElementById('loginUsername').value;
-        const loginPassword = document.getElementById('loginPassword').value;
-        console.log('Login button pressed: ', loginUsername, loginPassword);
-        if (loginUsername == null || loginPassword == null) {
-            alert('Username and password must be filled');
+    // val = true for login, val = false for register
+    const loginOrRegisterUser = async (val) => {
+
+        var username, password;
+
+        if (val == 1) {
+            username = document.getElementById('loginUsername').value;
+            password = document.getElementById('loginPassword').value;
         } else {
-            try {
-                const response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username: loginUsername, password: loginPassword}),
-                })
-                if (response.ok) {
-                    const loginUserData = await response.json();
-                    console.log('Data sent back by logging in is: ', loginUserData);
-                    const temp = loginUserData.retrievedUserInfo;
-                    const username = temp.username;
-                    const userID = temp.userid;
-                    sessionStorage.setItem('username', username);
-                    sessionStorage.setItem('userID', userID);
-                    navigate("./user");
-                } else console.error('Failed to login: ', response.statusText);
-            } catch (error) {
-                console.error('Error creating user: ', error.message);
-            }
+            username = document.getElementById('newUsername').value;
+            password = document.getElementById('newPassword').value;
+        }
+
+        try {
+            const response = await fetch(`/api/loginOrRegister?val=${val}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username: username, password: password}),
+            })
+            if (response.ok) {
+                const userData = await response.json();
+                console.log('Data sent back by logging in is: ', userData);
+                const temp = userData.retrievedUserInfo;
+                const username = temp.username;
+                const userID = temp.userid;
+                sessionStorage.setItem('username', username);
+                sessionStorage.setItem('userID', userID);
+                navigate("./user");
+            } else console.error('Failed to login: ', response.statusText);
+        } catch (error) {
+            console.error('Error creating user: ', error.message);
         }
     }
 
-    const registerUser = async () => {
-        const registerUsername = document.getElementById('newUsername').value;
-        const registerPassword = document.getElementById('newPassword').value;
-        if (registerUsername == null || registerPassword == null) {
-            alert('Username and password must be filled');
-        } else {
-            try {
-                const response = await fetch('/api/createUser', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username: registerUsername, password: registerPassword}),
-                });
-                if (response.ok) {
-                    const newUserData = await response.json();
-                    const temp = newUserData.retrievedUserInfo;
-                    console.log('Data sent back by creating user is: ', newUserData);
-                    const newUser = temp.username;
-                    const newUserID = temp.userID;
-                    sessionStorage.setItem('username', newUser);
-                    sessionStorage.setItem('userID', newUserID);
-                    navigate("./user");
-                } else console.error('Failed to create new user: ', response.statusText);
-            } catch (error) {
-                console.error('Error creating user: ', error.message);
-            }
-        }
 
-    }
+    // const registerUser = async () => {
+    //     const registerUsername = document.getElementById('newUsername').value;
+    //     const registerPassword = document.getElementById('newPassword').value;
+    //     if (registerUsername == null || registerPassword == null) {
+    //         alert('Username and password must be filled');
+    //     } else {
+    //         try {
+    //             const response = await fetch('/api/createUser', {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify({ username: registerUsername, password: registerPassword}),
+    //             });
+    //             if (response.ok) {
+    //                 const newUserData = await response.json();
+    //                 const temp = newUserData.retrievedUserInfo;
+    //                 console.log('Data sent back by creating user is: ', newUserData);
+    //                 const newUser = temp.username;
+    //                 const newUserID = temp.userID;
+    //                 sessionStorage.setItem('username', newUser);
+    //                 sessionStorage.setItem('userID', newUserID);
+    //                 navigate("./user");
+    //             } else console.error('Failed to create new user: ', response.statusText);
+    //         } catch (error) {
+    //             console.error('Error creating user: ', error.message);
+    //         }
+    //     }
+
+    // }
 
     const showSignup = () => {
         document.getElementById('signup').classList.add('signup-form');
@@ -130,7 +136,7 @@ export const CreateUserPage = () => {
                             <input type="text" name="username" id="loginUsername" placeholder='Username' required/>
                             <input type="password" name="password" id="loginPassword" placeholder='Password' required/>
                         </div>
-                        <button id='loginBtn' onClick={loginUser}>Login</button>
+                        <button id='loginBtn' onClick={() => loginOrRegisterUser(1)}>Login</button>
                         <div class="loginnav">
                             <h3>Don't have an account? </h3>
                             <button id='gotosignup' onClick={showSignup}>Create User</button>
@@ -149,7 +155,7 @@ export const CreateUserPage = () => {
                             <input type="text" name="username" id="newUsername" placeholder='New Username' required/>
                             <input type="password" name="password" id="newPassword" placeholder='New Password' required/>
                         </div>
-                        <button id="signupBtn" onClick={registerUser}>Sign Up</button>
+                        <button id="signupBtn" onClick={() => loginOrRegisterUser(0)}>Sign Up</button>
                         <div class="loginnav">
                             <h3>Already have an account? </h3>
                             <button id="gotologin" onClick={showLogin}>Login</button>
