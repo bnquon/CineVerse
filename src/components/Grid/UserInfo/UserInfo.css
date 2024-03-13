@@ -83,7 +83,7 @@
 .tempGridItem {
     box-sizing: border-box;
     height: 100%;
-    width: 50%;
+    min-width: 50%;
     background-color: red;
     display: flex;
     justify-content: center;
