@@ -85,12 +85,11 @@
 .tempGridItem {
     box-sizing: border-box;
     width: 100%;
-    height: 50%;
+    height: 100%;
     background-color: red;
 }
 
-#watchlistGrid img {
+.tempGridItem img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-height: 50%;
 }
