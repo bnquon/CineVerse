@@ -165,11 +165,6 @@
   width: 100%;
 }
 
-#loginBtn:active, 
-#signupBtn:active {
-  background-color: hsla(17, 83%, 64%, 0.75);
-}
-
 .loginnav {
   position: absolute;
   display: flex;
