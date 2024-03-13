@@ -75,7 +75,7 @@ export const UserInfo = () => {
       <div id="watchlist">
         <h3>Watchlist</h3>
         <div id="watchlistGrid">
-          <div className="tempGridItem"><img src={placeholder} alt="" /></div>
+          <div className="tempGridItem"><img src="https://image.tmdb.org/t/p/w500/lkZ9gqCEjzX85lKR6Jjd1uGAXNp.jpg" alt="" /></div>
           <div className="tempGridItem"><img src={placeholder} alt="" /></div>
           <div className="tempGridItem"><img src={placeholder} alt="" /></div>
         </div>
