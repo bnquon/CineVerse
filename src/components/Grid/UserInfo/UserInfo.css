@@ -76,7 +76,7 @@
     height: 80%;
     width: 100%;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: repeat(auto, 50%);
     gap: 0.75rem;
     overflow-x: auto;
 }
