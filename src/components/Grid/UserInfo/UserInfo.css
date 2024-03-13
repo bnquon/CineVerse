@@ -82,7 +82,7 @@
 
 .tempGridItem {
     box-sizing: border-box;
-    height: 100%;
+    min-height: 100%;
     min-width: 50%;
     background-color: red;
     display: flex;
@@ -93,7 +93,5 @@
 
 .tempGridItem > img {
     width: 100%;
-    height: auto;
-    /* height: 100%; */
-    object-fit: fill; /* This property ensures the image covers the entire container */
+    height: 100%;
 }
