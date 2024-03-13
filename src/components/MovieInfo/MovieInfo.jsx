@@ -85,8 +85,7 @@ export const MovieInfo = (props) => {
         <div className="movieinfo-container">
 
             <div id="movie-title">
-                <FontAwesomeIcon icon={faBookmark} size='sm' />
-                {props.title}
+                <span><FontAwesomeIcon icon={faBookmark} size='xs' /> {props.title}</span>
                 <button onClick={toggleFavorite} style={favButtonStyles}>
                     {favoriteMsg}
                 </button>
