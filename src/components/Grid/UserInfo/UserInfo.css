@@ -81,8 +81,9 @@
     gap: 0.3rem;
 }
 
+
+
 .tempGridItem img {
-    max-height: 100%;
     width: 100%;
-    object-fit: cover; /* Maintain aspect ratio */
+    height: auto;
 }
