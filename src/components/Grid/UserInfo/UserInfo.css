@@ -95,5 +95,5 @@
     width: 100%;
     height: auto;
     /* height: 100%; */
-    object-fit: contain; /* This property ensures the image covers the entire container */
+    object-fit: fill; /* This property ensures the image covers the entire container */
 }
