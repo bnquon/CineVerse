@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import "./MovieInfo.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 export const MovieInfo = (props) => {
     const userID = sessionStorage.getItem('userID');
@@ -66,7 +68,7 @@ export const MovieInfo = (props) => {
         }
     }
 
-    const buttonStyles = {
+    const favButtonStyles = {
         cursor: 'pointer',
         fontSize: '1.2rem',
         fontWeight: 600,
@@ -83,8 +85,9 @@ export const MovieInfo = (props) => {
         <div className="movieinfo-container">
 
             <div id="movie-title">
+                <FontAwesomeIcon icon={faBookmark}/>
                 {props.title}
-                <button onClick={toggleFavorite} style={buttonStyles}>
+                <button onClick={toggleFavorite} style={favButtonStyles}>
                     {favoriteMsg}
                 </button>
             </div>
