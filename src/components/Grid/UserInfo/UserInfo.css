@@ -89,7 +89,7 @@
     background-color: red;
 }
 
-.tempGridItem img {
+#watchlistGrid img {
     position: relative;
     width: 100%;
     height: auto;
