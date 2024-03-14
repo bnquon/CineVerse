@@ -5,13 +5,17 @@ export default async function handler(request, response) {
     const client = await db.connect();
 
     try {
-        const existingBio = await client.sql`SELECT * FROM userInfo WHERE userID = ${userID};`;
-        var sendBio;
-        if (existingBio) sendBio = (existingBio.rows[0]).bio;
+        let existingBio = null;
+        const existingBioResult = await client.sql`SELECT bio FROM userInfo WHERE userID = ${userID};`;
         
-        const temp = await client.sql`SELECT movieposterURL FROM watchlist WHERE userID = ${userID};`;
-        const watchlist = temp.rows;
-        return response.status(200).json({ bio: sendBio, savedWatchlist: watchlist });
+        if (existingBioResult.rows.length > 0 ) {
+            existingBio = existingBioResult.rows[0].bio;
+        }
+
+        const watchlistResult = await client.sql`SELECT movieposterURL FROM watchlist WHERE userID = ${userID};`;
+        const watchlist = watchlistResult.rows;
+
+        return response.status(200).json({ bio: existingBio, savedWatchlist: watchlist });
 
     } catch (error) {
         console.error('Error creating user:', error);
