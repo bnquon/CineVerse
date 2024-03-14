@@ -9,7 +9,7 @@ export default async function handler(request, response) {
         const existingBioResult = await client.sql`SELECT bio FROM userInfo WHERE userID = ${userID};`;
         
         if (existingBioResult.rows.length > 0 ) {
-            existingBio = existingBioResult.rows[0].bio;
+            existingBio = existingBioResult;
         }
 
         const watchlistResult = await client.sql`SELECT movieposterURL FROM watchlist WHERE userID = ${userID};`;
