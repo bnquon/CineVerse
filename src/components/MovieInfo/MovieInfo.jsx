@@ -60,21 +60,41 @@ export const MovieInfo = (props) => {
             operation = 'REMOVE';
         } else operation = 'INSERT';
 
-        try {
-            const response = await fetch (`/api/bookmarkAndFavorite?userID=${userID}&operation=${operation}&method=${table}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ movieName: props.title, posterURL: posterURL }),
-            });
+        if (table == 'favorites') {
+            try {
+                const response = await fetch (`/api/handleFavorites?userID=${userID}&operation=${operation}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ movieName: props.title, posterURL: posterURL }),
+                });
+    
+                if (!response.ok) {
+                    console.error('Failed to add to favorites or watchlist: ', response.statusText);
+                  }
+    
+            } catch (error) {
+                console.error('Error saving bio:', error.message);
+            }
 
-            if (!response.ok) {
-                console.error('Failed to add to favorites or watchlist: ', response.statusText);
-              }
-
-        } catch (error) {
-            console.error('Error saving bio:', error.message);
+        } else {
+            try {
+                const response = await fetch (`/api/bookmarkAndFavorites?userID=${userID}&operation=${operation}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ movieName: props.title, posterURL: posterURL }),
+                });
+    
+                if (!response.ok) {
+                    console.error('Failed to add to favorites or watchlist: ', response.statusText);
+                  }
+    
+            } catch (error) {
+                console.error('Error saving bio:', error.message);
+            }
         }
     }
 
