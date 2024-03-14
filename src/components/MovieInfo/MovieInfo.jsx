@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import "./MovieInfo.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faL, faBookmark as solidBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark as solidBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faBookmark as emptyBookmark} from '@fortawesome/free-regular-svg-icons'
 
 export const MovieInfo = (props) => {
