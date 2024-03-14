@@ -8,6 +8,7 @@ export const UserInfo = () => {
   const userID = sessionStorage.getItem('userID');
 
   const [bioValue, setBioValue] = useState('');
+  const [watchlist, setWatchlist] = useState([]);
 
   useEffect(() => {
     const getUserBio = async () => {
