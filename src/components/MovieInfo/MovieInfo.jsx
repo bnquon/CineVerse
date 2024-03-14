@@ -80,7 +80,7 @@ export const MovieInfo = (props) => {
 
         } else {
             try {
-                const response = await fetch (`/api/bookmarkAndFavorites?userID=${userID}&operation=${operation}`, {
+                const response = await fetch (`/api/bookmarkAndFavorite?userID=${userID}&operation=${operation}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
