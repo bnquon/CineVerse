@@ -42,18 +42,24 @@ export const MovieInfo = (props) => {
     const toggleFavorite = () => {
         setFavorite(!isFavorite);
         setFavoriteMsg(isFavorite ? "Add To Favorites" : "Remove from Favorites");
-        handleFavorites(isFavorite);    
+        handleFavorites(isFavorite, true);    
     }
 
-    const handleFavorites = async (add) => {
+    // SECOND PARAMETER TRUE = HANDLING FAVORITING, IF FALSE HANDLING BOOKMARKING
+    const handleFavorites = async (add, favoriteBool) => {
         var operation = '';
+        var table = '';
+
+        if (favoriteBool) {
+            table = 'favorites';
+        } else table = 'watchlist';
 
         if (add) {
             operation = 'REMOVE';
         } else operation = 'INSERT';
 
         try {
-            const response = await fetch (`/api/handleFavorites?userID=${userID}&operation=${operation}`, {
+            const response = await fetch (`/api/handleFavorites?userID=${userID}&operation=${operation}&method=${table}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +68,7 @@ export const MovieInfo = (props) => {
             });
 
             if (!response.ok) {
-                console.error('Failed to add to favorites: ', response.statusText);
+                console.error('Failed to add to favorites or watchlist: ', response.statusText);
               }
 
         } catch (error) {
@@ -72,6 +78,7 @@ export const MovieInfo = (props) => {
 
     const toggleBookmark = async () => {
         setBookmark(!isBookmark);
+        handleFavorites(isBookmark, false)
     }
 
     const favButtonStyles = {
