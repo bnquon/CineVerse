@@ -59,7 +59,7 @@ export const MovieInfo = (props) => {
         } else operation = 'INSERT';
 
         try {
-            const response = await fetch (`/api/handleFavorites?userID=${userID}&operation=${operation}&method=${table}`, {
+            const response = await fetch (`/api/bookmarkAndFavorite?userID=${userID}&operation=${operation}&method=${table}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
