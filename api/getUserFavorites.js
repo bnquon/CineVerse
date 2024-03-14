@@ -4,7 +4,7 @@ export default async function handler(request, response) {
     const userID = request.query.userID;
     const client = await db.connect();
     try {
-        const data = await client.sql`SELECT Movieposterurl FROM favorites WHERE user_ID = ${userID};`;
+        const data = await client.sql`SELECT movieposterURL FROM favorites WHERE userID = ${userID};`;
         const listOfFavorites = data.rows;
         return response.status(200).json({ listOfFavorites: listOfFavorites});
     } catch (error) {
