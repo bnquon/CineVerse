@@ -86,12 +86,16 @@ export const MovieInfo = (props) => {
         padding: '0.5rem 1rem',
     };
 
+    const bookmarkStyles = {
+        cursor: 'pointer',
+        transition: '250ms linear',
+    };
 
     return (
         <div className="movieinfo-container">
 
             <div id="movie-title">
-                <span>{ isBookmark ? <FontAwesomeIcon icon={solidBookmark} size='xs' onClick={toggleBookmark}/> : <FontAwesomeIcon icon={emptyBookmark} size='xs' onClick={toggleBookmark}/>} {props.title}</span>
+                <span>{ isBookmark ? <FontAwesomeIcon icon={solidBookmark} size='xs' onClick={toggleBookmark} className='bookmark' style={bookmarkStyles}/> : <FontAwesomeIcon icon={emptyBookmark} size='xs' onClick={toggleBookmark} className='bookmark' style={bookmarkStyles}/>} {props.title}</span>
                 <button onClick={toggleFavorite} style={favButtonStyles}>
                     {favoriteMsg}
                 </button>

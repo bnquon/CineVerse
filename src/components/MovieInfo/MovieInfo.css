@@ -52,3 +52,7 @@
     margin-top: 0.5rem;
     margin-bottom: 0.25rem;
 }
+
+.bookmark:hover {
+    transform: scale(1.05);
+}
