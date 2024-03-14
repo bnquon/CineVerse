@@ -54,6 +54,8 @@ export const MovieInfo = (props) => {
             table = 'favorites';
         } else table = 'watchlist';
 
+        console.log('Table that im editing, ', table);
+
         if (add) {
             operation = 'REMOVE';
         } else operation = 'INSERT';
