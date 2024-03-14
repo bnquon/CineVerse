@@ -11,6 +11,7 @@ export const MovieInfo = (props) => {
     const backdropURL = "https://image.tmdb.org/t/p/w500" + props.backdrop;
 
     let [isFavorite, setFavorite] = useState(false);
+    let [isBookmark, setBookmark] = useState(false);
     let [favoriteMsg, setFavoriteMsg] = useState("Add To Favorites");
 
     useEffect(() => {
@@ -69,6 +70,10 @@ export const MovieInfo = (props) => {
         }
     }
 
+    const toggleBookmark = async () => {
+        setBookmark(!isBookmark);
+    }
+
     const favButtonStyles = {
         cursor: 'pointer',
         fontSize: '1.2rem',
@@ -86,7 +91,7 @@ export const MovieInfo = (props) => {
         <div className="movieinfo-container">
 
             <div id="movie-title">
-                <span><FontAwesomeIcon icon={emptyBookmark} size='xs' /> {props.title}</span>
+                <span>{ isBookmark ? <FontAwesomeIcon icon={solidBookmark} size='xs' onClick={toggleBookmark}/> : <FontAwesomeIcon icon={emptyBookmark} size='xs' onClick={toggleBookmark}/>} {props.title}</span>
                 <button onClick={toggleFavorite} style={favButtonStyles}>
                     {favoriteMsg}
                 </button>
