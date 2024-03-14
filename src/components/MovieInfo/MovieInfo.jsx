@@ -78,7 +78,7 @@ export const MovieInfo = (props) => {
         }
     }
 
-    const toggleBookmark = async () => {
+    const toggleBookmark = () => {
         setBookmark(!isBookmark);
         handleFavorites(isBookmark, false)
     }
