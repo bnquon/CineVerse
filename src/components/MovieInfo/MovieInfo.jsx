@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import "./MovieInfo.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark as solidBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faL, faBookmark as solidBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faBookmark as emptyBookmark} from '@fortawesome/free-regular-svg-icons'
 
 export const MovieInfo = (props) => {
@@ -30,6 +30,10 @@ export const MovieInfo = (props) => {
                         setFavorite(false);
                         setFavoriteMsg("Add To Favorites");
                     }
+
+                    if (temp.isBookmarked == 1) {
+                        setBookmark(true);
+                    } else setBookmark(false);
                 }
             } catch (error) {
                 console.error('Error checking if movie is favorited: ', error.message);
