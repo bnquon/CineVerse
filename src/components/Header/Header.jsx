@@ -57,7 +57,9 @@ export const Header = (props) => {
           if (response.ok) {
             const data = await response.json();
             console.log(data);
-            navigate('/user', { state: { data } });
+            if (data) {
+              navigate('/user', { state: { data } });
+            }
           } else console.error('Failed to fetch search results: ', response.statusText); 
 
         } catch (error) {
