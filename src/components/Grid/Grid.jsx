@@ -25,6 +25,7 @@ export const Grid = () => {
           const data = await response.json();
           console.log('BIG DATA CALL FROM GRID IS: ', data);
           setUserData(data);
+          setLoaded(true);
         } else console.error('Failed to fetch user data:', response.statusText);
 
       } catch (error) {
@@ -33,12 +34,9 @@ export const Grid = () => {
     }
 
     retrieveUserInfo();
-  }, []);
+  }, [storedUserID]);
 
   console.log('USERDATA IS: ', userData);
-  if (userData.dateJoined) {
-    setLoaded(true);
-  }
 
   return (
     <div className="grid-container">
