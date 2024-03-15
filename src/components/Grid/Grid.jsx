@@ -7,7 +7,7 @@ import "./Grid.css"
 
 export const Grid = () => {
   // need userinfo creation and stored
-  var isEmpty = false;
+  const [loaded, setLoaded] = useState(false);
   const [userData, setUserData] = useState({});
   const storedUsername = sessionStorage.getItem('username');
   const storedUserID = sessionStorage.getItem('userID');
@@ -37,12 +37,12 @@ export const Grid = () => {
 
   console.log('USERDATA IS: ', userData);
   if (userData.dateJoined) {
-    isEmpty = true;
+    setLoaded(true);
   }
 
   return (
     <div className="grid-container">
-        { isEmpty ? 
+        { loaded ? 
           <>
             <Profile username = {storedUsername} userID={storedUserID}/>
             <Graph distribution = {userData.ratings}/>
