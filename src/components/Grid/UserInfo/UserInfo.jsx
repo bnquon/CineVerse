@@ -20,6 +20,8 @@ export const UserInfo = () => {
             const data = await response.json();
             console.log(data);
             setBioValue(data.bio);
+            const temp = (data.savedWatchlist).map(item => item.movieposterurl);
+            setWatchlist(temp);
           } else {
             console.error('Failed to fetch user bio: ', response.statusText);
           }
@@ -76,9 +78,12 @@ export const UserInfo = () => {
       <div id="watchlist">
         <h3>Watchlist</h3>
         <div id="watchlistGrid">
-          <div className="tempGridItem"><img src="https://image.tmdb.org/t/p/w500/lkZ9gqCEjzX85lKR6Jjd1uGAXNp.jpg" alt="" /></div>
+          {watchlist.map((element, index) => (
+            <img key={index} src={element} alt="" className='tempGridItem'/>
+          ))}
+          {/* <div className="tempGridItem"><img src="https://image.tmdb.org/t/p/w500/lkZ9gqCEjzX85lKR6Jjd1uGAXNp.jpg" alt="" /></div>
           <div className="tempGridItem"><img src={placeholder} alt="" /></div>
-          <div className="tempGridItem"><img src={placeholder} alt="" /></div>
+          <div className="tempGridItem"><img src={placeholder} alt="" /></div> */}
         </div>
       </div>
 
