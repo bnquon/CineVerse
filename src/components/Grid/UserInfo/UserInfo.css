@@ -34,7 +34,7 @@
     height: fit-content;
     width: 100%;
     height: fit-content;
-    margin-top: 0;
+    margin-top: 0.75rem;
 }
 
 #bio-container textarea {
@@ -78,6 +78,7 @@
     align-items: center;
     font-size: 1.25rem;
     font-weight: 700;
+    margin-bottom: 0.3rem;
 }
 
 #watchlistGrid {
