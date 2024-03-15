@@ -201,3 +201,8 @@
   /* padding: 0.5rem; */
   font-size: 0.9rem;
 }
+
+#gotologin:active, 
+#gotosignup:active {
+  background-color: hsla(0, 0%, 100%, 0.775);
+}
