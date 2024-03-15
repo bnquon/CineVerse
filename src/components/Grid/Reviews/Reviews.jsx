@@ -4,29 +4,15 @@ import { Card } from './Card/Card.jsx'
 import { NoUserReviews } from './NoUserReviews/NoUserReviews.jsx'
 // import placeholder from "../../../assets/inception.jpg"
 
-export const Reviews = () => {
+export const Reviews = (props) => {
 
   const userID = sessionStorage.getItem('userID');
   const [userReviews, setUserReviews] = useState([]);
   useEffect(() => {
-    const getUserReviews = async () => {
-      try {
-        const response = await fetch(`/api/getUserReviews?userID=${userID}`, {
-          method: 'GET',
-        });
-        if (response.ok) {
-          const data = await response.json();
-          console.log(data.reviews);
-          setUserReviews(data.reviews);
-        } else console.error('Failed to fetch user reviews: ', response.statusText);
-          
-      } catch (error) {
-        console.error('Error fetching user reviews: ', error.message);
-      }
-    }
+    console.log('PROPS RECEIVED FROM REVIEWS.JSX: ', props);
+    setUserReviews(props.reviews);
 
-    getUserReviews();
-  }, []);
+  }, [props]);
 
   return (
     <div className='review-container'>
