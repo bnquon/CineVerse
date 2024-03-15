@@ -20,7 +20,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
-    height: min-content;
+    height: 10%;
+    border: 1px solid red;
 }
 
 #bio-container {
@@ -105,11 +106,3 @@
     width: 100%;
     height: 100%;
 }
-
-/* .userInfoTitles {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
