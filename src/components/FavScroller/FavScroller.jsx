@@ -46,8 +46,9 @@ export const FavScroller = (props) => {
       
           // Make an array from the elements within `.scroller-inner`
           const scrollerInner = scroller.querySelector(".scroller__inner");
+          scrollerInner.innerHTML = '';
           const scrollerContent = Array.from(scrollerInner.children);
-      
+            
           // For each item in the array, clone it
           // add aria-hidden to it
           // add it into the `.scroller-inner`
