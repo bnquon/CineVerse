@@ -5,35 +5,20 @@ import { faTicket, faCalendar, faPenToSquare } from '@fortawesome/free-solid-svg
 
 import placeholder from '../../../assets/posterPlaceholder.png'
 
-export const UserInfo = () => {
+export const UserInfo = (props) => {
   const userID = sessionStorage.getItem('userID');
-
+  console.log('PROPS IN USERINFO.jsx: ', props);
   const [bioValue, setBioValue] = useState('');
   const [watchlist, setWatchlist] = useState([]);
   const [dateJoined, setDatejoined] = useState('');
 
   useEffect(() => {
-    const getUserBio = async () => {
-        try {
-          const response = await fetch(`/api/getUserBio?userID=${userID}`, {
-            method: 'GET',
-          });
-          if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            setBioValue((data.bio).bio);
-            setDatejoined((data.dateJoined).datejoined);
-            const temp = (data.savedWatchlist).map(item => item.movieposterurl);
-            setWatchlist(temp);
-          } else {
-            console.error('Failed to fetch user bio: ', response.statusText);
-          }
-        } catch (error) {
-          console.error('Error fetching user bio: ', error.message);
-        }
-      }
 
-    getUserBio();
+    setBioValue(props.bio);
+    setDatejoined(props.dateJoined);
+    const temp = (props.userWatchlist).map(item => item.movieposterurl);
+    setWatchlist(temp);
+         
   }, []);
 
   const handleBioChange = (event) => {

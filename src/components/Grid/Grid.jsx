@@ -39,7 +39,7 @@ export const Grid = () => {
     <div className="grid-container">
         <Profile username = {storedUsername} userID={storedUserID}/>
         <Graph distribution = {userData.ratings}/>
-        <UserInfo/>
+        <UserInfo dateJoined = {(userData.dateJoined).datejoined} bio = {(userData.bio).bio} userWatchlist = {userData.saveWatchlist}/>
         <Reviews/>
     </div>
   );
