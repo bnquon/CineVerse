@@ -15,8 +15,10 @@
 #date-joined {
     box-sizing: border-box;
     position: relative;
+    display: flex;
     width: 100%;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0;
     height: 10%;
 }
@@ -100,8 +102,8 @@
     height: 100%;
 }
 
-#watchlist > span,
-#bio-container > span,
-#date-joined {
+.userInfoTitles {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -69,7 +69,9 @@ export const UserInfo = () => {
       </div>
 
       <div id="bio-container">
-        <span><FontAwesomeIcon icon={faPenToSquare}/> <h3>Bio</h3></span>
+        <div className="userInfoTitles">
+          <span><FontAwesomeIcon icon={faPenToSquare}/> <h3>Bio</h3></span>
+        </div>
         <textarea
           placeholder="Type your bio here"
           value={bioValue}
@@ -79,7 +81,9 @@ export const UserInfo = () => {
       </div>
 
       <div id="watchlist">
-        <span><FontAwesomeIcon icon={faTicket}/> <h3>Watchlist</h3></span>
+        <div className="userInfoTitles">
+          <span><FontAwesomeIcon icon={faTicket}/> <h3>Watchlist</h3></span>
+        </div>
         <div id="watchlistGrid">
           {watchlist.map((element, index) => (
             <img key={index} src={element} alt="" className='tempGridItem'/>
