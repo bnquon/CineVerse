@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Profile } from './Profile/Profile.jsx'
 import { Graph } from './Graph/Graph.jsx'
 import { UserInfo } from './UserInfo/UserInfo.jsx'
@@ -8,7 +8,7 @@ import "./Grid.css"
 export const Grid = () => {
   // need userinfo creation and stored
   const isSearching = false;
-
+  const [userData, setUserData] = useState({});
   const storedUsername = sessionStorage.getItem('username');
   const storedUserID = sessionStorage.getItem('userID');
 
@@ -24,10 +24,11 @@ export const Grid = () => {
         if (response.ok) {
           const data = await response.json();
           console.log(data);
-        }
+          setUserData(data);
+        } else console.error('Failed to fetch user data:', response.statusText);
 
       } catch (error) {
-        
+        console.error('Error fetching user data:', error);
       }
     }
 
@@ -37,7 +38,7 @@ export const Grid = () => {
   return (
     <div className="grid-container">
         <Profile username = {storedUsername} userID={storedUserID}/>
-        {/* <Graph/> */}
+        <Graph distribution = {userData.ratings}/>
         <UserInfo/>
         <Reviews/>
     </div>
