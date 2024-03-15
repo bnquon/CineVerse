@@ -47,6 +47,21 @@ export const Header = (props) => {
         } catch (error) {
           console.error('Error fetching search results: ', error.message);
         }
+      } else {
+        
+        try {         
+          const response = await fetch(`/api/searchUser?username=${item}`, {
+            method: 'GET',
+          })
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+          } else console.error('Failed to fetch search results: ', response.statusText); 
+
+        } catch (error) {
+          console.error('Error fetching search results: ', error.message);        
+        }
       }
     }
 
