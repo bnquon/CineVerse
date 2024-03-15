@@ -99,3 +99,9 @@
     width: 100%;
     height: 100%;
 }
+
+#watchlist > span,
+#bio-container > span,
+#date-joined {
+    display: flex;
+}

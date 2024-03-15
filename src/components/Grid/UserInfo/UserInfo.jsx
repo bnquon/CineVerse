@@ -65,11 +65,11 @@ export const UserInfo = () => {
     <div className="info-container">
 
       <div id="date-joined">
-        <FontAwesomeIcon icon={faCalendar}/><h3>Joined on: {dateJoined}</h3>
+        <span><FontAwesomeIcon icon={faCalendar}/> <h3>Joined on: {dateJoined}</h3></span>
       </div>
 
       <div id="bio-container">
-        <FontAwesomeIcon icon={faPenToSquare}/> <h3>Bio</h3>
+        <span><FontAwesomeIcon icon={faPenToSquare}/> <h3>Bio</h3></span>
         <textarea
           placeholder="Type your bio here"
           value={bioValue}
@@ -79,7 +79,7 @@ export const UserInfo = () => {
       </div>
 
       <div id="watchlist">
-        <FontAwesomeIcon icon={faTicket}/> <h3>Watchlist</h3>
+        <span><FontAwesomeIcon icon={faTicket}/> <h3>Watchlist</h3></span>
         <div id="watchlistGrid">
           {watchlist.map((element, index) => (
             <img key={index} src={element} alt="" className='tempGridItem'/>
