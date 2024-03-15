@@ -12,7 +12,7 @@ export const Header = (props) => {
     const navigate = useNavigate();
 
     const logoClick = () => {
-        navigate('/user', {state: null});
+        navigate('./user', {state: null});
     }
 
     const [searchType, setSearchType] = useState("movie");
