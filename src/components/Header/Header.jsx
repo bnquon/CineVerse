@@ -47,12 +47,12 @@ export const Header = (props) => {
         } catch (error) {
           console.error('Error fetching search results: ', error.message);
         }
-      } else {
+      } else if (searchType === 'user') {
         
         try {         
           const response = await fetch(`/api/searchUser?username=${item}`, {
             method: 'GET',
-          })
+          });
 
           if (response.ok) {
             const data = await response.json();
