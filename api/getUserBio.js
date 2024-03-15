@@ -16,7 +16,7 @@ export default async function handler(request, response) {
         const watchlist = watchlistResult.rows;
 
         const datejoinedResult = await client.sql`SELECT datejoined FROM users WHERE userID = ${userID};`;
-        const dateJoined = datejoinedResult.rows;
+        const dateJoined = datejoinedResult.rows[0];
 
         return response.status(200).json({ bio: existingBio, savedWatchlist: watchlist, dateJoined: dateJoined});
 

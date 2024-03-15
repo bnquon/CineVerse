@@ -9,6 +9,7 @@ export const UserInfo = () => {
 
   const [bioValue, setBioValue] = useState('');
   const [watchlist, setWatchlist] = useState([]);
+  const [dateJoined, setDatejoined] = useState('');
 
   useEffect(() => {
     const getUserBio = async () => {
@@ -20,6 +21,7 @@ export const UserInfo = () => {
             const data = await response.json();
             console.log(data);
             setBioValue(data.bio);
+            setDatejoined(data.datejoined);
             const temp = (data.savedWatchlist).map(item => item.movieposterurl);
             setWatchlist(temp);
           } else {
@@ -62,7 +64,7 @@ export const UserInfo = () => {
     <div className="info-container">
 
       <div id="date-joined">
-        <span><h3>Date Joined: INSERT DATE HERE</h3></span>
+        <span><h3>Date Joined: {dateJoined}</h3></span>
       </div>
 
       <div id="bio-container">
