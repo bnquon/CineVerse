@@ -33,6 +33,7 @@ export const FavScroller = (props) => {
     }, [props.userID])
 
     useEffect(() => {
+        console.log('favoriteList before animation is: ', favoriteList);
         runAnimation();
     }, [favoriteList])
     
