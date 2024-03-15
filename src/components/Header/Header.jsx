@@ -62,6 +62,7 @@ export const Header = (props) => {
             // console.log(data);
             if (data) {
               const temp = data.searchedUser;
+              console.log('REFINED TEMP SEARCH IS', temp);
               navigate('/user', { state: { temp } });
             }
           } else console.error('Failed to fetch search results: ', response.statusText); 
