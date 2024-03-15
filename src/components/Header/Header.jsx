@@ -12,7 +12,10 @@ export const Header = (props) => {
     const navigate = useNavigate();
 
     const logoClick = () => {
-        navigate('/user', { state: {} });
+        const temp1 = sessionStorage.getItem('userID');
+        const temp2 = sessionStorage.getItem('username');
+        const data = {userID: temp1, username: temp2};
+        navigate('/user', { state: { data }});
     }
 
     const [searchType, setSearchType] = useState("movie");
