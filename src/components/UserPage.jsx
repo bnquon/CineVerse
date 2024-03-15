@@ -12,7 +12,9 @@ export const UserPage = () => {
   const searchedUserData = location.state?.data;
   console.log('SEARCHEDUSERDATA IS', searchedUserData)
   useEffect(() => {
-    if (searchedUserData) setSearch(true);
+    if (searchedUserData) {
+      setSearch(true)
+    } else setSearch(false);
   }, [searchedUserData])
 
   const storedUsername = sessionStorage.getItem('username');
