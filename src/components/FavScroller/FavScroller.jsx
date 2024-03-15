@@ -7,8 +7,8 @@ export const FavScroller = (props) => {
     const [favoriteList, setFavoriteList] = useState([]);
 
     useEffect(() => {
+        setFavoriteList([])
         const populateScroller = async () => {
-            setFavoriteList([])
             try {
                 const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
                     method: 'GET',
