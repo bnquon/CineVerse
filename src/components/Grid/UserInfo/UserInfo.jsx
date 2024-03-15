@@ -20,7 +20,7 @@ export const UserInfo = () => {
           if (response.ok) {
             const data = await response.json();
             console.log(data);
-            setBioValue(data.bio);
+            setBioValue((data.bio).bio);
             setDatejoined((data.dateJoined).datejoined);
             const temp = (data.savedWatchlist).map(item => item.movieposterurl);
             setWatchlist(temp);
