@@ -61,7 +61,8 @@ export const Header = (props) => {
             const data = await response.json();
             // console.log(data);
             if (data) {
-              navigate('/user', { state: { data } });
+              const temp = data.searchedUser;
+              navigate('/user', { state: { temp } });
             }
           } else console.error('Failed to fetch search results: ', response.statusText); 
 
