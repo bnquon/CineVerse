@@ -4,7 +4,7 @@ import noPFP from '../../../assets/noPFP.jpg';
 
 export const Profile = (props) => {
 
-  const userID = sessionStorage.getItem('userID');
+  const storedUserID = sessionStorage.getItem('userID');
 
   const [profilePicture, setProfilePicture] = useState(noPFP);
   const imageUploader = useRef(null);
@@ -35,15 +35,17 @@ export const Profile = (props) => {
   // }, [props.userID]);
 
   const handleImageUpload = (e) => {
-    const [file] = e.target.files;
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setProfilePicture(e.target.result);
-        console.log(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
+    if (props.userID == storedUserID) {
+      const [file] = e.target.files;
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setProfilePicture(e.target.result);
+          console.log(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    } else return;
   };
 
   return (
