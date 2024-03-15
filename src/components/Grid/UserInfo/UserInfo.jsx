@@ -5,7 +5,9 @@ import { faTicket, faCalendar, faPenToSquare } from '@fortawesome/free-solid-svg
 
 import placeholder from '../../../assets/posterPlaceholder.png'
 
-export const UserInfo = (props) => {
+export const UserInfo = (props) => {  
+
+  const storedUserID = sessionStorage.getItem('userID');
 
   const [bioValue, setBioValue] = useState('');
   const [watchlist, setWatchlist] = useState([]);
@@ -25,7 +27,7 @@ export const UserInfo = (props) => {
 
   const handleBioBlur = async () => {
     try {
-      const response = await fetch(`/api/saveUserBio?userID=${userID}`, {
+      const response = await fetch(`/api/saveUserBio?userID=${storedUserID}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,12 +56,22 @@ export const UserInfo = (props) => {
         <div className="userInfoTitles">
           <span><FontAwesomeIcon icon={faPenToSquare}/> Bio</span>
         </div>
-        <textarea
+
+        {props.userID != storedUserID ? 
+          <textarea
+          placeholder="User has no bio"
+          value={bioValue}
+          readOnly
+          ></textarea>
+          :
+          <textarea
           placeholder="Type your bio here"
           value={bioValue}
           onChange={handleBioChange}
           onBlur={handleBioBlur}
-        ></textarea>
+          ></textarea>
+        }
+
       </div>
 
       <div id="watchlist">
