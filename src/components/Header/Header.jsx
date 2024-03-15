@@ -58,14 +58,14 @@ export const Header = (props) => {
           });
 
           if (response.ok) {
-            const data = await response.json();
+            const userResult = await response.json();
             // console.log(data);
-            if (data) {
-              var bridge = data.searchedUser;
+            if (userResult) {
+              var bridge = userResult.searchedUser;
               var temp = bridge.userid;
               var temp2 = bridge.username;
-              var refinedData = {userID: temp, username: temp2};
-              navigate('/user', { state: { refinedData } });
+              var data = {userID: temp, username: temp2};
+              navigate('/user', { state: { data } });
             }
           } else console.error('Failed to fetch search results: ', response.statusText); 
 
