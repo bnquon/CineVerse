@@ -5,19 +5,17 @@ import { UserInfo } from './UserInfo/UserInfo.jsx'
 import { Reviews } from './Reviews/Reviews.jsx'
 import "./Grid.css"
 
-export const Grid = () => {
+export const Grid = (props) => {
   // need userinfo creation and stored
   const [loaded, setLoaded] = useState(false);
   const [userData, setUserData] = useState({});
-  const storedUsername = sessionStorage.getItem('username');
-  const storedUserID = sessionStorage.getItem('userID');
 
   useEffect(() => {
 
     const retrieveUserInfo = async () => {
       try {
         
-        const response = await fetch(`/api/getUserData?userID=${storedUserID}`, {
+        const response = await fetch(`/api/getUserData?userID=${props.userID}`, {
           method: 'GET',
         });
         
@@ -42,7 +40,7 @@ export const Grid = () => {
     <div className="grid-container">
         { loaded ? 
           <>
-            <Profile username = {storedUsername} userID={storedUserID}/>
+            <Profile username = {props.username} userID={props.userID}/>
             <Graph distribution = {userData.ratings}/>
             <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.savedWatchlist} dateJoined = {(userData.dateJoined).datejoined}/>
             <Reviews reviews = {userData.reviews}/> 
