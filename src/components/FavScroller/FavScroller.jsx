@@ -3,7 +3,6 @@ import "./FavScroller.css";
 import placeholder from "../../assets/posterPlaceholder.png"
 
 export const FavScroller = (props) => {
-
     const [favoriteList, setFavoriteList] = useState([]);
 
     useEffect(() => {
