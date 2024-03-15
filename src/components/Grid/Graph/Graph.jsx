@@ -14,7 +14,7 @@ export const Graph = (props) => {
     const temp = props.distribution;
     const valuesArray = Object.values(temp);
     setRatingCount(valuesArray);
-  }, [props.distribution]);
+  }, [props]);
   
   return (
       <div className='graph-container'>
