@@ -10,11 +10,13 @@ export const UserPage = () => {
   const searchedUserData = location.state?.data;
   console.log('SEARCHEDUSERDATA IS', searchedUserData);
 
+  const storedUsername = sessionStorage.getItem('username');
+
   return (
     <>         
         <Header username={storedUsername}/>
-        <Grid username = {(searchedUserData).username} userID = {(searchedUserData).userid}/>
-        <FavScroller userID={userID}/>
+        <Grid username = {(searchedUserData).username} userID = {(searchedUserData).userID}/>
+        <FavScroller userID={searchedUserData.userID}/>
     </>
   )
 }
