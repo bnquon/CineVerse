@@ -156,7 +156,11 @@
  
 #loginBtn:hover, 
 #signupBtn:hover {
-  color: #e8e8e8;
+  color: white;
+}
+
+#loginBtn:active,
+#signupBtn:active {
   transform: scale(1.05);
 }
  
