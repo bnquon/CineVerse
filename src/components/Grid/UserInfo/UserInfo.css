@@ -62,7 +62,7 @@
 
 #watchlist {
     box-sizing: border-box;
-    /* height: 60%; */
+    height: 65%;
     position: relative;
     width: 100%;
     display: flex;
