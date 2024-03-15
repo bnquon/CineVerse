@@ -14,12 +14,12 @@ export const UserInfo = (props) => {
 
   useEffect(() => {
 
-    setBioValue('props.bio');
-    setDatejoined('props.dateJoined');
+    setBioValue(props.bio);
+    setDatejoined(props.dateJoined);
     const temp = (props.userWatchlist).map(item => item.movieposterurl);
     setWatchlist(temp);
          
-  }, []);
+  }, [props]);
 
   const handleBioChange = (event) => {
     setBioValue(event.target.value);
