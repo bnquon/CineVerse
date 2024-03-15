@@ -45,3 +45,14 @@ movie page fetch {
 I HAVE FINALLY CONNECTED IT TO TEH BACKEND OFEDNSOFNDOSHJFOSDJFIOSDF
 
 ADD DATE JOINED INTO THE USER INFO AND REWORK THE REST OF IT BECAUSE I DONT LIKE IT
+
+Due to free website hosting limitations, need to make one big api call instead of all the little ones
+
+Variable to see isSearching because then it would display user's info
+Big fetch would need to do 
+
+**userpfp
+- username
+- datejoined, bio, watchlist
+- reviews + ratings and distribute it in the two grid cells
+- 
