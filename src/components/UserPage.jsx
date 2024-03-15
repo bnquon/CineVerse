@@ -28,7 +28,7 @@ export const UserPage = () => {
           :
           <>
             <Header username={storedUsername}/>
-            <Grid/>
+            <Grid username = {storedUsername} userID = {userID}/>
             <FavScroller userID={userID}/>
           </>
         }

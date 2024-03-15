@@ -5,37 +5,7 @@ import backgroundImage from '../assets/test.webp'
 
 export const CreateUserPage = () => {
 
-
     const navigate = useNavigate();
-
-    // const handleClick = async () => {
-    //     const input = document.getElementById('loginUsername').value;
-
-    //     try {
-    //         const response = await fetch('/api/login', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({ username: input }),
-    //         });
-
-    //         if (response.ok) {
-    //             const responseData = await response.json(); // Parse response body as JSON
-    //             // console.log(responseData);
-    //             const newUser = responseData.user.username;
-    //             const newUserID = responseData.user.userid;
-    //             sessionStorage.setItem('username', newUser);
-    //             sessionStorage.setItem('userID', newUserID);
-    //             console.log(newUser + ' ' + newUserID);
-    //             navigate("./user");
-    //         } else {
-    //             console.error('Failed to create user:', response.statusText);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error creating user:', error.message);
-    //     }
-    // }
 
     // val = true for login, val = false for register
     const loginOrRegisterUser = async (val) => {
@@ -66,45 +36,12 @@ export const CreateUserPage = () => {
                 const userID = temp.userid;
                 sessionStorage.setItem('username', username);
                 sessionStorage.setItem('userID', userID);
-                const data = {userid: userID, username: username};
-                navigate("./user", { state: { data } });
+                navigate("./user", { state: null });
             } else console.error('Failed to login: ', response.statusText);
         } catch (error) {
             console.error('Error creating user: ', error.message);
         }
     }
-
-
-    // const registerUser = async () => {
-    //     const registerUsername = document.getElementById('newUsername').value;
-    //     const registerPassword = document.getElementById('newPassword').value;
-    //     if (registerUsername == null || registerPassword == null) {
-    //         alert('Username and password must be filled');
-    //     } else {
-    //         try {
-    //             const response = await fetch('/api/createUser', {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'Content-Type': 'application/json',
-    //                 },
-    //                 body: JSON.stringify({ username: registerUsername, password: registerPassword}),
-    //             });
-    //             if (response.ok) {
-    //                 const newUserData = await response.json();
-    //                 const temp = newUserData.retrievedUserInfo;
-    //                 console.log('Data sent back by creating user is: ', newUserData);
-    //                 const newUser = temp.username;
-    //                 const newUserID = temp.userID;
-    //                 sessionStorage.setItem('username', newUser);
-    //                 sessionStorage.setItem('userID', newUserID);
-    //                 navigate("./user");
-    //             } else console.error('Failed to create new user: ', response.statusText);
-    //         } catch (error) {
-    //             console.error('Error creating user: ', error.message);
-    //         }
-    //     }
-
-    // }
 
     const showSignup = () => {
         document.getElementById('signup').classList.add('signup-form');

@@ -32,7 +32,7 @@ export const Grid = (props) => {
     }
 
     retrieveUserInfo();
-  }, [storedUserID]);
+  }, [props]);
 
   console.log('USERDATA IS: ', userData);
 
