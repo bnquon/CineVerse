@@ -61,9 +61,11 @@ export const Header = (props) => {
             const data = await response.json();
             // console.log(data);
             if (data) {
-              const temp = data.searchedUser;
-              console.log('REFINED TEMP SEARCH IS', temp);
-              navigate('/user', { state: { temp } });
+              var bridge = data.searchedUser;
+              var temp = bridge.userid;
+              var temp2 = bridge.username;
+              var refinedData = {userID: temp, username: temp2};
+              navigate('/user', { state: { refinedData } });
             }
           } else console.error('Failed to fetch search results: ', response.statusText); 
 
