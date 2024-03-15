@@ -7,7 +7,7 @@ export const FavScroller = (props) => {
     const [favoriteList, setFavoriteList] = useState([]);
 
     useEffect(() => {
-        setFavoriteList([]);
+
         const populateScroller = async () => {
             try {
                 const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
@@ -24,6 +24,7 @@ export const FavScroller = (props) => {
                         }
                     }
                     setFavoriteList(listOfFavorites);
+                    runAnimation();
     
                 } else console.error('Failed to fetch favorite movies: ', response.statusText);
             } catch (error) {
@@ -31,7 +32,7 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-        runAnimation();
+    
     }, [props])
 
     useEffect(() => {
