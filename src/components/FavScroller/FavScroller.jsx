@@ -4,10 +4,11 @@ import placeholder from "../../assets/posterPlaceholder.png"
 
 export const FavScroller = (props) => {
 
-    const [favoriteList, setFavoriteList] = useState(null);
+    const [favoriteList, setFavoriteList] = useState([]);
 
     useEffect(() => {
         const populateScroller = async () => {
+            setFavoriteList([])
             try {
                 const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
                     method: 'GET',
