@@ -14,7 +14,7 @@ export const UserPage = () => {
   useEffect(() => {
     if (searchedUserData) {
       setSearch(true)
-    } else setSearch(false);
+    } 
   }, [searchedUserData])
 
   const storedUsername = sessionStorage.getItem('username');
