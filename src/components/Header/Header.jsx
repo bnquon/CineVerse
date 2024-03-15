@@ -12,7 +12,7 @@ export const Header = (props) => {
     const navigate = useNavigate();
 
     const logoClick = () => {
-        navigate('/user')
+        navigate('/user', {state: null});
     }
 
     const [searchType, setSearchType] = useState("movie");
@@ -58,7 +58,7 @@ export const Header = (props) => {
             const data = await response.json();
             // console.log(data);
             if (data) {
-              navigate('/user', { state: { data, searched: true } });
+              navigate('/user', { state: { data } });
             }
           } else console.error('Failed to fetch search results: ', response.statusText); 
 
