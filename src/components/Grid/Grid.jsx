@@ -37,7 +37,7 @@ export const Grid = () => {
   return (
     <div className="grid-container">
         <Profile username = {storedUsername} userID={storedUserID}/>
-        <Graph/>
+        {/* <Graph/> */}
         <UserInfo/>
         <Reviews/>
     </div>
