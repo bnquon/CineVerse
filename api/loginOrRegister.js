@@ -33,7 +33,11 @@ export default async function handler(request, response) {
             }
 
             const hashedPassword = await bcrypt.hash(password, 10);
-            const insertResult = await client.sql`INSERT INTO users (username, password) VALUES (${username}, ${hashedPassword}) RETURNING *;`;
+            const curDate = new Date();
+            const options = { month: 'short', day: '2-digit', year: 'numeric' };
+            const formattedDate = curDate.toLocaleDateString('en-US', options);
+            // await client.sql`INSERT INTO userinfo (datejoined) VALUES (${formattedDate});`;
+            const insertResult = await client.sql`INSERT INTO users (username, password, datejoined) VALUES (${username}, ${hashedPassword}, ${formattedDate}) RETURNING *;`;
             return response.status(200).json({ success: true, retrievedUserInfo: insertResult.rows[0] });
 
         } catch (error) {

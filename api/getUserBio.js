@@ -15,7 +15,9 @@ export default async function handler(request, response) {
         const watchlistResult = await client.sql`SELECT movieposterURL FROM watchlist WHERE userID = ${userID};`;
         const watchlist = watchlistResult.rows;
 
-        return response.status(200).json({ bio: existingBio, savedWatchlist: watchlist });
+        const datejoinedResult = await client.sql`SELECT datejoined FROM userinfo WHERE userID = ${userID};`;
+
+        return response.status(200).json({ bio: existingBio, savedWatchlist: watchlist, dateJoined: datejoinedResult});
 
     } catch (error) {
         console.error('Error creating user:', error);
