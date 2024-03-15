@@ -6,7 +6,7 @@ export default async function handler(request, response) {
 
     try {
         let searchedUser = null;
-        const searchResult = await client.sql`SELECT userID, username FROM users WHERE username LIKE '${username}%';`;
+        const searchResult = await client.sql`SELECT userID, username FROM users WHERE username ILIKE ${username}%;`;
 
         if (searchResult.rows.length > 0) {
             searchedUser = searchResult.rows[0];
