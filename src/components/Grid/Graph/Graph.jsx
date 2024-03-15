@@ -7,7 +7,6 @@ defaults.maintainAspectRatio = false;
 
 export const Graph = (props) => {
 
-  console.log('PROPS IN GRAPH.jsx: ', props);
   const [ratingCount, setRatingCount] = useState([]);
 
   useEffect(() => {

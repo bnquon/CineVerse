@@ -6,12 +6,10 @@ import { NoUserReviews } from './NoUserReviews/NoUserReviews.jsx'
 
 export const Reviews = (props) => {
 
-  const userID = sessionStorage.getItem('userID');
   const [userReviews, setUserReviews] = useState([]);
+  
   useEffect(() => {
-    console.log('PROPS RECEIVED FROM REVIEWS.JSX: ', props);
     setUserReviews(props.reviews);
-
   }, [props]);
 
   return (

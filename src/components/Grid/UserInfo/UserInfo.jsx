@@ -6,19 +6,16 @@ import { faTicket, faCalendar, faPenToSquare } from '@fortawesome/free-solid-svg
 import placeholder from '../../../assets/posterPlaceholder.png'
 
 export const UserInfo = (props) => {
-  const userID = sessionStorage.getItem('userID');
-  console.log('PROPS IN USERINFO.jsx: ', props);
+
   const [bioValue, setBioValue] = useState('');
   const [watchlist, setWatchlist] = useState([]);
   const [dateJoined, setDatejoined] = useState('');
 
   useEffect(() => {
-
     setBioValue(props.bio);
     setDatejoined(props.dateJoined);
     const temp = (props.userWatchlist).map(item => item.movieposterurl);
     setWatchlist(temp);
-         
   }, [props]);
 
   const handleBioChange = (event) => {
