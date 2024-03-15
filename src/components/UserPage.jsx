@@ -13,7 +13,7 @@ export const UserPage = () => {
   console.log('SEARCHEDUSERDATA IS', searchedUserData)
   useEffect(() => {
     if (searchedUserData) setSearch(true);
-  }, [])
+  }, [searchedUserData])
 
   const storedUsername = sessionStorage.getItem('username');
   const userID = sessionStorage.getItem('userID');
