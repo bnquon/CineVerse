@@ -7,7 +7,7 @@ import "./Grid.css"
 
 export const Grid = () => {
   // need userinfo creation and stored
-  const isEmpty = false;
+  var isEmpty = false;
   const [userData, setUserData] = useState({});
   const storedUsername = sessionStorage.getItem('username');
   const storedUserID = sessionStorage.getItem('userID');
