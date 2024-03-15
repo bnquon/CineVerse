@@ -35,10 +35,12 @@ export const Grid = () => {
     retrieveUserInfo();
   }, []);
 
+  console.log('USERDATA IS: ', userData);
+
   return (
     <div className="grid-container">
         <Profile username = {storedUsername} userID={storedUserID}/>
-        <Graph distribution = {userData.ratings}/>
+        {/* <Graph distribution = {userData.ratings}/> */}
         {/* <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.saveWatchlist}/> */}
         <Reviews/>
     </div>
