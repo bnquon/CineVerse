@@ -48,7 +48,7 @@ export const Header = (props) => {
           console.error('Error fetching search results: ', error.message);
         }
       } else if (searchType === 'user') {
-        
+        console.log('User is searching for: ', item);
         try {         
           const response = await fetch(`/api/searchUser?username=${item}`, {
             method: 'GET',
