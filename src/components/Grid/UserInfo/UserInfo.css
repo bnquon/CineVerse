@@ -16,7 +16,7 @@
     box-sizing: border-box;
     position: relative;
     display: flex;
-    align-items: center; /* Align items vertically */
+    flex-direction: row;
     width: 100%;
     margin-bottom: 0;
     height: 10%;
