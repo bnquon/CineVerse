@@ -30,7 +30,7 @@ export const CreateUserPage = () => {
             })
             if (response.ok) {
                 const userData = await response.json();
-                console.log('Data sent back by logging in is: ', userData);
+                // console.log('Data sent back by logging in is: ', userData);
                 const temp = userData.retrievedUserInfo;
                 const username = temp.username;
                 const userID = temp.userid;

@@ -47,8 +47,8 @@ export const Header = (props) => {
         } catch (error) {
           console.error('Error fetching search results: ', error.message);
         }
-      } else if (searchType === 'user') {
-        console.log('User is searching for: ', item);
+      } else {
+        // console.log('User is searching for: ', item);
         try {         
           const response = await fetch(`/api/searchUser?username=${item}`, {
             method: 'GET',
@@ -56,9 +56,9 @@ export const Header = (props) => {
 
           if (response.ok) {
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
             if (data) {
-              navigate('/user', { state: { data } });
+              navigate('/user', { state: { data, searched: true } });
             }
           } else console.error('Failed to fetch search results: ', response.statusText); 
 
