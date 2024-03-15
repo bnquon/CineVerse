@@ -24,7 +24,6 @@ export const FavScroller = (props) => {
                         }
                     }
                     setFavoriteList(listOfFavorites);
-                    runAnimation();
     
                 } else console.error('Failed to fetch favorite movies: ', response.statusText);
             } catch (error) {
