@@ -13,16 +13,14 @@
 }
 
 #date-joined {
+    box-sizing: border-box;
     position: relative;
     width: 100%;
     text-align: center;
     margin-bottom: 0;
     border: 1px solid red;
     padding-bottom: 0;
-}
-
-#date-joined > span {
-    margin-bottom: 0;
+    height: 10%;
 }
 
 #bio-container {
@@ -65,8 +63,9 @@
 }
 
 #watchlist {
+    box-sizing: border-box;
     border: 1px solid green;
-    height: 60%;
+    /* height: 60%; */
     position: relative;
     width: 100%;
     display: flex;
