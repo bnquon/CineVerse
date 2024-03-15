@@ -2,7 +2,7 @@ import { db } from "@vercel/postgres";
 
 export default async function handler(request, response) {
     const username = request.query.username;
-    const client = db.connect();
+    const client = await db.connect();
 
     try {
         let searchedUser = null;
