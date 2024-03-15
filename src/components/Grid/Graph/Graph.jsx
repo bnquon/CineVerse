@@ -7,13 +7,17 @@ defaults.maintainAspectRatio = false;
 
 export const Graph = (props) => {
 
+  const userID = sessionStorage.getItem('userID');
   const [ratingCount, setRatingCount] = useState([]);
+  
+  useEffect(() => {
+    const temp = props;
+    const valuesArray = Object.values(temp);
+    console.log('VALUES ARRAY:', valuesArray);
+    setRatingCount(valuesArray);
 
-  const temp = props;
-  const valuesArray = Object.values(temp);
-  console.log('VALUES ARRAY:', valuesArray);
-  setRatingCount(valuesArray);
-
+  }, []);
+  
   return (
       <div className='graph-container'>
 
