@@ -77,7 +77,7 @@
 #watchlistGrid {
     box-sizing: border-box;
     position: relative;
-    height: 80%;
+    /* height: 80%; */
     width: 100%;
     display: flex;
     gap: 1rem;

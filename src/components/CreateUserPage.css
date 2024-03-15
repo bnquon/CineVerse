@@ -196,11 +196,11 @@
   transition: 250ms;
 }
 
-#gotologin:hover, 
+/* #gotologin:hover, 
 #gotosignup:hover {
-  /* padding: 0.5rem; */
+  padding: 0.5rem;
   font-size: 0.9rem;
-}
+} */
 
 #gotologin:active, 
 #gotosignup:active {
