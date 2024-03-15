@@ -6,10 +6,9 @@ import { Bar } from "react-chartjs-2";
 defaults.maintainAspectRatio = false;
 
 export const Graph = (props) => {
-
-  const userID = sessionStorage.getItem('userID');
-  const [ratingCount, setRatingCount] = useState([]);
   
+  const [ratingCount, setRatingCount] = useState([]);
+  console.log('PROPS IN GRAPH.jsx is: ', props);
   useEffect(() => {
     const temp = props;
     const valuesArray = Object.values(temp);
