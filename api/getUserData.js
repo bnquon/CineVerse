@@ -45,8 +45,22 @@ export default async function handler(request, response) {
                 WHERE 
                     userID = ${userID};`;
         
-        const listOfRatings = listOfRatingsResults.rows[0];
+        let listOfRatings = {
+            n1: 0,
+            n2: 0,
+            n3: 0,
+            n4: 0,
+            n5: 0,
+            n6: 0,
+            n7: 0,
+            n8: 0,
+            n9: 0,
+            n10: 0
+        };
 
+        if (listOfRatingsResults) {
+            listOfRatings = listOfRatingsResults.rows[0];
+        }
         // return response.status(200).json({ratingDistribution : listOfRatings.rows[0]});
 
         return response.status(200).json({
