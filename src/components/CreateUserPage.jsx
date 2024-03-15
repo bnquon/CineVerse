@@ -36,7 +36,7 @@ export const CreateUserPage = () => {
                 const userID = temp.userid;
                 sessionStorage.setItem('username', username);
                 sessionStorage.setItem('userID', userID);
-                navigate("./user", { state: null });
+                navigate("./user", { state: {} });
             } else console.error('Failed to login: ', response.statusText);
         } catch (error) {
             console.error('Error creating user: ', error.message);
