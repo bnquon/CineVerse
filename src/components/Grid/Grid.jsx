@@ -23,7 +23,7 @@ export const Grid = () => {
         
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+          console.log('BIG DATA CALL FROM GRID IS: ', data);
           setUserData(data);
         } else console.error('Failed to fetch user data:', response.statusText);
 
@@ -39,7 +39,7 @@ export const Grid = () => {
     <div className="grid-container">
         <Profile username = {storedUsername} userID={storedUserID}/>
         <Graph distribution = {userData.ratings}/>
-        <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.saveWatchlist}/>
+        {/* <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.saveWatchlist}/> */}
         <Reviews/>
     </div>
   );
