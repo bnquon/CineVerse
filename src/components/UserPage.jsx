@@ -9,7 +9,7 @@ export const UserPage = () => {
   const [isSearch, setSearch] = useState(false);
 
   const location = useLocation();
-  const searchedUserData = location.state.data;
+  const searchedUserData = location.state?.data;
 
   useEffect(() => {
     if (searchedUserData) setSearch(true);
