@@ -50,7 +50,8 @@ export const FavScroller = (props) => {
           var tracker = 0;
           var temp = [];
           scrollerContent.forEach((item) => {
-            if (item == favoriteList[tracker]) {
+            if (item === favoriteList[tracker]) {
+                console.log(favoriteList[tracker]);
                 temp.push(item);
                 tracker++;
             }
