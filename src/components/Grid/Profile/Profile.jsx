@@ -20,7 +20,9 @@ export const Profile = (props) => {
           const data = await response.json();
           console.log('RETRIEVED PF{ ON LOAD IS: ', data)
           const temp = data.retrievedPFP;
-          setProfilePicture(temp.pfp);
+          console.log('TEMP IS: ', temp);
+
+          setProfilePicture(temp);
 
         } else console.error('Failed to fetch user pfp:', response.statusText);
 
