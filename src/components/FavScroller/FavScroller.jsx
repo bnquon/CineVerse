@@ -59,6 +59,7 @@ export const FavScroller = (props) => {
 
     function runAnimation() {
         const scrollers = document.querySelectorAll('.scroller');
+        console.log('SCROLLERS IS: ', scrollers);
         addAnimation(scrollers);
     }
     
