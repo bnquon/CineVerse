@@ -61,11 +61,11 @@ export const Profile = (props) => {
         reader.onload = (e) => {
           setProfilePicture(e.target.result);
           console.log(e.target.result);
+          setPFP();
         };
         reader.readAsDataURL(file);
         
       }
-      setPFP();
     } else return;
   };
 
