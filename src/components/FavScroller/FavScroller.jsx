@@ -6,6 +6,12 @@ export const FavScroller = (props) => {
     const [favoriteList, setFavoriteList] = useState([]);
 
     useEffect(() => {
+        
+        var scrollers = document.querySelectorAll('.scroller');
+        scrollers.forEach((scroller) => {
+            scroller.setAttribute("data-animated", false);
+        });
+
         const populateScroller = async () => {
             try {
                 const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
@@ -51,7 +57,6 @@ export const FavScroller = (props) => {
           var temp = [];
           scrollerContent.forEach((item) => {
             if (item.src === favoriteList[tracker]) {
-                console.log(favoriteList[tracker]);
                 temp.push(item);
                 tracker++;
             }
@@ -72,7 +77,7 @@ export const FavScroller = (props) => {
       }
 
     function runAnimation() {
-        const scrollers = document.querySelectorAll('.scroller');
+        var scrollers = document.querySelectorAll('.scroller');
         addAnimation(scrollers);
     }
     
