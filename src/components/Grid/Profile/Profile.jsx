@@ -36,17 +36,13 @@ export const Profile = (props) => {
   useEffect(() => {
     const setPFP = async () => {
       try {
-        const response = await fetch(`/api/pfp?userID=${storedUserID}&operation=post`, {
+        await fetch(`/api/pfp?userID=${storedUserID}&operation=post`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({newPFP: profilePicture}),
         })
-        
-        if (response.ok) {
-          console.log('pfp successfully saved!');
-        }
   
       } catch (error) {
         console.error('Error saving user profile picture: ', error.message);
