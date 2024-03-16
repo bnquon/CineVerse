@@ -36,7 +36,7 @@ export const Profile = (props) => {
   useEffect(() => {
     const setPFP = async () => {
       try {
-        await fetch(`/api/pfp?userID=${storedUserID}&operation=post`, {
+        await fetch(`/api/pfp?userID=${props.userID}&operation=post`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
