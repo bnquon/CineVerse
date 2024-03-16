@@ -15,6 +15,7 @@ export const FavScroller = (props) => {
                     const data = await response.json();
                     const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
                     console.log(listOfFavorites);
+                    setFavoriteList([]);
                     if ((listOfFavorites).length < 4) {
                         for (let i = 0; i < (4 - (listOfFavorites).length); i++) {
                             listOfFavorites.push(placeholder);
@@ -68,9 +69,6 @@ export const FavScroller = (props) => {
                 {favoriteList.map((element, index) => (
                     <img key={index} src={element} alt="" width='175' height='275'/>
                 ))}
-                {/* <img src="https://placehold.co/300x100/orange/white" alt=""/>
-                <img src="https://placehold.co/300x100/red/orange" alt="" />
-                <img src="https://placehold.co/300x100/black/white" alt=""  /> */}
             </div>
         </div>
     );
