@@ -7,6 +7,7 @@ export const FavScroller = (props) => {
 
     useEffect(() => {
         var clearScroller = document.querySelectorAll('.scroller');
+        console.log('clearScroller innerhtml is: ', clearScroller.innerHTML);
         clearScroller.innerHTML = '';
         const populateScroller = async () => {
             try {
