@@ -31,13 +31,7 @@ export const FavScroller = (props) => {
         populateScroller();
         runAnimation();
     }, [props.userID])
-
-    // useEffect(() => {
-    //     console.log('favoriteList before animation is: ', favoriteList);
-    //     runAnimation();
-    // }, [favoriteList])
-    
-    
+        
     function addAnimation(scrollers) {
         scrollers.forEach((scroller) => {
           // add data-animated="true" to every `.scroller` on the page
@@ -60,6 +54,9 @@ export const FavScroller = (props) => {
 
     function runAnimation() {
         const scrollers = document.querySelectorAll('.scroller');
+        scrollers.forEach((scroller) => {
+            scroller.innerHTML = '';  
+        })
         addAnimation(scrollers);
     }
     
