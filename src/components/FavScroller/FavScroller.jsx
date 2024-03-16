@@ -8,7 +8,6 @@ export const FavScroller = (props) => {
     useEffect(() => {
         const populateScroller = async () => {
             try {
-                setFavoriteList([]);
                 const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
                     method: 'GET',
                 });
@@ -30,13 +29,13 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-    
+        runAnimation();
     }, [props.userID])
 
-    useEffect(() => {
-        console.log('favoriteList before animation is: ', favoriteList);
-        runAnimation();
-    }, [favoriteList])
+    // useEffect(() => {
+    //     console.log('favoriteList before animation is: ', favoriteList);
+    //     runAnimation();
+    // }, [favoriteList])
     
     
     function addAnimation(scrollers) {
