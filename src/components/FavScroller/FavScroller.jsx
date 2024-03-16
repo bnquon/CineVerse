@@ -47,9 +47,16 @@ export const FavScroller = (props) => {
           const scrollerInner = scroller.querySelector(".scroller__inner");
           const scrollerContent = Array.from(scrollerInner.children);
             
-          scrollerContent.forEach((item) => {
-            if (!item.hasAttribute('data-user-id')) item.setAttribute('data-user-id', props.userID);
+          var tracker = 0;
+          var temp = [];
+          scrollerContent.forEach((item, index) => {
+            if (item[index] == favoriteList[tracker]) {
+                temp.push(item);
+                tracker++;
+            }
           })
+
+          console.log('TEMP FOR CHECKING IF IT MATCHES FAV LIST IS :', temp);
           // For each item in the array, clone it
           // add aria-hidden to it
           // add it into the `.scroller-inner`
