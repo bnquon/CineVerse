@@ -61,7 +61,7 @@ export const FavScroller = (props) => {
           // For each item in the array, clone it
           // add aria-hidden to it
           // add it into the `.scroller-inner`
-          scrollerContent.forEach((item) => {
+          temp.forEach((item) => {
             console.log(item);
             const duplicatedItem = item.cloneNode(true);
             duplicatedItem.setAttribute("aria-hidden", true);
