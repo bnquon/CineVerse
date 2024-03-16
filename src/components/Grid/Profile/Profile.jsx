@@ -9,24 +9,27 @@ export const Profile = (props) => {
   console.log('props.userpfp in the profile.jsx is: ', props.userPFP);
   const [profilePicture, setProfilePicture] = useState(props.userPFP || noPFP);
 
-  const setPFP = async () => {
-    try {
-      const response = await fetch(`/api/pfp?userID=${storedUserID}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({newPFP: profilePicture}),
-      })
-      
-      if (response.ok) {
-        console.log('pfp successfully saved!');
-      }
+  useEffect(() => {
+    const setPFP = async () => {
+      try {
+        const response = await fetch(`/api/pfp?userID=${storedUserID}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({newPFP: profilePicture}),
+        })
+        
+        if (response.ok) {
+          console.log('pfp successfully saved!');
+        }
+  
+      } catch (error) {
+        console.error('Error saving user profile picture: ', error.message);
+      } 
+    }
 
-    } catch (error) {
-      console.error('Error saving user profile picture: ', error.message);
-    } 
-  }
+  }, [profilePicture])
 
   const imageUploader = useRef(null);
 
@@ -42,9 +45,6 @@ export const Profile = (props) => {
         reader.readAsDataURL(file);
       }
     } else return;
-
-    setPFP();
-
   };
 
   return (
