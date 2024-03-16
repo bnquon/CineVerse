@@ -9,31 +9,6 @@ export const Profile = (props) => {
   const [profilePicture, setProfilePicture] = useState(noPFP);
   const imageUploader = useRef(null);
 
-  // useEffect(() => {
-  //   const getUserPFP = async () => {
-  //     try {
-  //       const response = await fetch(`/api/getUserPFP?userID=${userID}`, {
-  //         method: 'GET',
-  //       });
-
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         console.log(data);
-  //         if (data.profilePicture != null) {
-  //           setProfilePicture(data.profilePicture);
-  //         }
-
-  //       } else {
-  //         console.error('Failed to fetch user profile picture: ', response.statusText);
-  //       }
-  //     } catch (error) {
-  //       console.error('Error fetching user profile picture: ', error.message);
-  //     }
-  //   };
-
-  //   getUserPFP();
-  // }, [props.userID]);
-
   const handleImageUpload = (e) => {
     if (props.userID == storedUserID) {
       const [file] = e.target.files;
@@ -47,6 +22,30 @@ export const Profile = (props) => {
       }
     } else return;
   };
+
+  useEffect(() => {
+
+    const setPFP = async () => {
+      try {
+        const response = await fetch(`/api/pfp?userID=${storedUserID}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(profilePicture),
+        })
+        
+        if (response.ok) {
+          console.log('pfp successfully saved!');
+        }
+
+      } catch (error) {
+        console.error('Error saving user profile picture: ', error.message);
+      } 
+    }
+    
+    setPFP();
+  }, [profilePicture])
 
   return (
     <div className="profile-container">
