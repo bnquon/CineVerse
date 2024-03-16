@@ -77,7 +77,7 @@ export const Profile = (props) => {
       }
       
       <div id="image-container" onClick={() => imageUploader.current.click()}>
-        <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
+        <img src={profilePicture != null ? profilePicture : noPFP} key={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
       </div>
       <h2 id="username">{props.username}</h2>
     </div>
