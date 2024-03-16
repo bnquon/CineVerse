@@ -29,7 +29,8 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-        runAnimation();
+        const scrollers = document.querySelectorAll('.scroller');
+        addAnimation(scrollers);
     }, [props.userID])
         
     function addAnimation(scrollers) {
@@ -52,13 +53,10 @@ export const FavScroller = (props) => {
         });
       }
 
-    function runAnimation() {
-        const scrollers = document.querySelectorAll('.scroller');
-        scrollers.forEach((scroller) => {
-            scroller.innerHTML = '';  
-        })
-        addAnimation(scrollers);
-    }
+    // function runAnimation() {
+    //     const scrollers = document.querySelectorAll('.scroller');
+    //     addAnimation(scrollers);
+    // }
     
     return (
         <div className="scroller">
