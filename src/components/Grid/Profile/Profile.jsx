@@ -28,7 +28,7 @@ export const Profile = (props) => {
         console.error('Error saving user profile picture: ', error.message);
       } 
     }
-
+    setPFP();
   }, [profilePicture])
 
   const imageUploader = useRef(null);
