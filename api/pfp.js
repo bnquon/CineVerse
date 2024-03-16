@@ -5,8 +5,8 @@ export default async function handler(request, response) {
     const client = await db.connect();
 
     try {
-        const { picture } = request.body;
-        await client.sql`INSERT INTO userInfo (userID, pfp)
+        const { newPFP } = request.body;
+        await client.sql`INSERT INTO userinfo (userID, pfp)
                         VALUES (${userID}, ${picture})
                         ON CONFLICT (userID)
                         DO UPDATE SET pfp = ${picture};`;

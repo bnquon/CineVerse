@@ -32,7 +32,7 @@ export const Profile = (props) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(profilePicture),
+          body: JSON.stringify({newPFP: profilePicture}),
         })
         
         if (response.ok) {
