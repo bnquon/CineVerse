@@ -6,7 +6,10 @@ export const Profile = (props) => {
 
   const storedUserID = sessionStorage.getItem('userID');
 
-  const [profilePicture, setProfilePicture] = useState(noPFP);
+  const [profilePicture, setProfilePicture] = useState(props.userPFP || noPFP);
+
+
+
   const imageUploader = useRef(null);
 
   const handleImageUpload = (e) => {
