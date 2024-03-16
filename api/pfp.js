@@ -29,7 +29,7 @@ export default async function handler(request, response) {
             
             if (getPFPResult.rows.length > 0) pfp = getPFPResult.rows[0];
 
-            return response.status(200).json({ retreivedPFP: pfp });
+            return response.status(200).json({ retrievedPFP: pfp });
     
         } catch (error) {
             console.error('Error saving user pfp:', error);
