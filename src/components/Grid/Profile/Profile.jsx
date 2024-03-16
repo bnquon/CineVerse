@@ -6,6 +6,7 @@ export const Profile = (props) => {
 
   const storedUserID = sessionStorage.getItem('userID');
 
+  console.log('props.userpfp in the profile.jsx is: ', props.userPFP);
   const [profilePicture, setProfilePicture] = useState(props.userPFP || noPFP);
 
   const setPFP = async () => {
