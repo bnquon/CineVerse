@@ -7,7 +7,7 @@ export const Profile = (props) => {
   const storedUserID = sessionStorage.getItem('userID');
 
   const [count, setCount] = useState(1);
-  const [profilePicture, setProfilePicture] = useState();
+  const [profilePicture, setProfilePicture] = useState(null);
 
   useEffect(() => {
     const getPFP = async () => {
@@ -60,8 +60,8 @@ export const Profile = (props) => {
         const reader = new FileReader();
         reader.onload = (e) => {
           setProfilePicture(e.target.result);
-          setCount(count + 1);
           console.log(e.target.result);
+          setCount(count + 1);
         };
         reader.readAsDataURL(file);
       }
