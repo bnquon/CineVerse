@@ -9,10 +9,12 @@ export default async function handler(request, response) {
 
         try {
             const { newPFP } = request.body;
-            await client.sql`INSERT INTO userinfo (userID, pfp)
-                            VALUES (${userID}, ${newPFP})
-                            ON CONFLICT (userID)
-                            DO UPDATE SET pfp = ${newPFP};`;
+            if (newPFP != null) {
+                await client.sql`INSERT INTO userinfo (userID, pfp)
+                                VALUES (${userID}, ${newPFP})
+                                ON CONFLICT (userID)
+                                DO UPDATE SET pfp = ${newPFP};`;
+            }
             
             return response.status(200).json();
     
