@@ -52,7 +52,9 @@ export const Profile = (props) => {
 
   return (
     <div className="profile-container">
-      <input
+      
+      {storedUserID == props.userID ?
+        <input
         type="file"
         accept="image/*"
         multiple={false}
@@ -60,7 +62,20 @@ export const Profile = (props) => {
         ref={imageUploader}
         onChange={handleImageUpload}
         style={{ display: 'none' }}
-      />
+        /> 
+          :
+        null
+        // <input
+        // type="file"
+        // accept="image/*"
+        // multiple={false}
+        // id="pfp"
+        // ref={imageUploader}
+        // onChange={handleImageUpload}
+        // style={{ display: 'none' }}
+        // />
+      }
+      
       <div id="image-container" onClick={() => imageUploader.current.click()}>
         <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
       </div>
