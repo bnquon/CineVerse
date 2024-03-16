@@ -29,8 +29,7 @@ export const FavScroller = (props) => {
             }
         };
         populateScroller();
-        const scrollers = document.querySelectorAll('.scroller');
-        addAnimation(scrollers);
+        runAnimation();
     }, [props.userID])
         
     function addAnimation(scrollers) {
@@ -53,10 +52,10 @@ export const FavScroller = (props) => {
         });
       }
 
-    // function runAnimation() {
-    //     const scrollers = document.querySelectorAll('.scroller');
-    //     addAnimation(scrollers);
-    // }
+    function runAnimation() {
+        const scrollers = document.querySelectorAll('.scroller');
+        addAnimation(scrollers);
+    }
     
     return (
         <div className="scroller">
