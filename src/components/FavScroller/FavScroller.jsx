@@ -47,16 +47,17 @@ export const FavScroller = (props) => {
           const scrollerInner = scroller.querySelector(".scroller__inner");
           const scrollerContent = Array.from(scrollerInner.children);
             
+          scrollerContent.forEach((item) => {
+            item.setAttribute('data-user-id', props.userID);
+          })
           // For each item in the array, clone it
           // add aria-hidden to it
           // add it into the `.scroller-inner`
           scrollerContent.forEach((item) => {
             console.log(item);
-            if (!item.hasAttribute('aria-hidden')) {
-                const duplicatedItem = item.cloneNode(true);
-                duplicatedItem.setAttribute("aria-hidden", true);
-                scrollerInner.appendChild(duplicatedItem);
-            } else item.innerHTML = '';
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("aria-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
 
           });
         });
