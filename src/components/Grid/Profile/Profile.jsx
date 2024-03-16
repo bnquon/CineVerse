@@ -7,7 +7,7 @@ export const Profile = (props) => {
   const storedUserID = sessionStorage.getItem('userID');
 
   console.log('props.userpfp in the profile.jsx is: ', props.userPFP);
-  const [profilePicture, setProfilePicture] = useState(props.userPFP || noPFP);
+  const [profilePicture, setProfilePicture] = useState(props.userPFP);
 
   useEffect(() => {
     const setPFP = async () => {
@@ -59,7 +59,7 @@ export const Profile = (props) => {
         style={{ display: 'none' }}
       />
       <div id="image-container" onClick={() => imageUploader.current.click()}>
-        <img src={profilePicture} alt="Profile" />
+        <img src={profilePicture ? {profilePicture} : {noPFP}} alt="Profile" />
       </div>
       <h2 id="username">{props.username}</h2>
     </div>
