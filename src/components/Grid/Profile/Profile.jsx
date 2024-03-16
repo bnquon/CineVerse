@@ -18,6 +18,7 @@ export const Profile = (props) => {
         
         if (response.ok) {
           const data = await response.json();
+          console.log('RETRIEVED PF{ ON LOAD IS: ', data)
           const temp = data.retrievedPFP;
           setProfilePicture(temp);
 
