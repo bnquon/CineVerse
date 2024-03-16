@@ -6,7 +6,7 @@ export const Profile = (props) => {
 
   const storedUserID = sessionStorage.getItem('userID');
 
-  const [profilePicture, setProfilePicture] = useState('');
+  const [profilePicture, setProfilePicture] = useState();
 
   useEffect(() => {
     const getPFP = async () => {
