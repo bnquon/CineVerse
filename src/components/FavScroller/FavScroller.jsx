@@ -6,11 +6,9 @@ export const FavScroller = (props) => {
     const [favoriteList, setFavoriteList] = useState([]);
 
     useEffect(() => {
-        var clearScroller = document.querySelectorAll('.scroller');
-        console.log('clearScroller innerhtml is: ', clearScroller.innerHTML);
-        clearScroller.innerHTML = '';
         const populateScroller = async () => {
             try {
+                setFavoriteList([]);
                 const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
                     method: 'GET',
                 });
@@ -18,7 +16,7 @@ export const FavScroller = (props) => {
                     const data = await response.json();
                     const listOfFavorites = (data.listOfFavorites).map(item => item.movieposterurl);
                     console.log(listOfFavorites);
-                    setFavoriteList([]);
+
                     if ((listOfFavorites).length < 4) {
                         for (let i = 0; i < (4 - (listOfFavorites).length); i++) {
                             listOfFavorites.push(placeholder);
