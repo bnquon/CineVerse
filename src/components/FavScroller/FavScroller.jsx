@@ -48,7 +48,7 @@ export const FavScroller = (props) => {
           const scrollerContent = Array.from(scrollerInner.children);
             
           scrollerContent.forEach((item) => {
-            item.setAttribute('data-user-id', props.userID);
+            if (!item.hasAttribute('data-user-id')) item.setAttribute('data-user-id', props.userID);
           })
           // For each item in the array, clone it
           // add aria-hidden to it
