@@ -7,9 +7,9 @@ export default async function handler(request, response) {
     try {
         const { newPFP } = request.body;
         await client.sql`INSERT INTO userinfo (userID, pfp)
-                        VALUES (${userID}, ${picture})
+                        VALUES (${userID}, ${newPFP})
                         ON CONFLICT (userID)
-                        DO UPDATE SET pfp = ${picture};`;
+                        DO UPDATE SET pfp = ${newPFP};`;
         
         return response.status(200).json();
 
