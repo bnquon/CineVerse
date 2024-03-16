@@ -8,6 +8,7 @@ export const Profile = (props) => {
 
   console.log('props.userpfp in the profile.jsx is: ', props.userPFP);
   const [profilePicture, setProfilePicture] = useState(props.userPFP);
+  const [key, setKey] = useState(Date.now()); // Initialize key with current timestamp
 
     useEffect(() => {
       if (props.userID == storedUserID) {
@@ -23,6 +24,7 @@ export const Profile = (props) => {
             
             if (response.ok) {
               console.log('pfp successfully saved!');
+              setKey(Date.now());
             }
       
           } catch (error) {
@@ -77,7 +79,7 @@ export const Profile = (props) => {
       }
       
       <div id="image-container" onClick={() => imageUploader.current.click()}>
-        <img src={profilePicture != null ? profilePicture : noPFP} key={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
+        <img src={profilePicture != null ? profilePicture : noPFP} key={key} alt="Profile" />
       </div>
       <h2 id="username">{props.username}</h2>
     </div>
