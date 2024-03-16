@@ -39,12 +39,7 @@ export const FavScroller = (props) => {
     
     function addAnimation(scrollers) {
         scrollers.forEach((scroller) => {
-          console.log('LOGGING SCROLLER IN THE SCROLLERS: ', scroller);
-          // GET RID OF LEFTOVER ONES
-          const hiddenElements = scroller.querySelectorAll(".aria-hidden");
-          hiddenElements.forEach((element) => {
-              scroller.removeChild(element);
-          });
+    
           // add data-animated="true" to every `.scroller` on the page
           scroller.setAttribute("data-animated", true);
       
@@ -56,9 +51,12 @@ export const FavScroller = (props) => {
           // add aria-hidden to it
           // add it into the `.scroller-inner`
           scrollerContent.forEach((item) => {
-            const duplicatedItem = item.cloneNode(true);
-            duplicatedItem.setAttribute("aria-hidden", true);
-            scrollerInner.appendChild(duplicatedItem);
+            if (!item.hasAttribute('aria-hidden')) {
+                const duplicatedItem = item.cloneNode(true);
+                duplicatedItem.setAttribute("aria-hidden", true);
+                scrollerInner.appendChild(duplicatedItem);
+            } else item.innerHTML = '';
+
           });
         });
       }
