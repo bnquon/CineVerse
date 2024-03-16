@@ -40,7 +40,7 @@ export const Grid = (props) => {
     <div className="grid-container">
         { loaded ? 
           <>
-            <Profile username = {props.username} userID = {props.userID} userPFP = {(userData.userPFP).pfp}/>
+            <Profile username = {props.username} userID = {props.userID}/>
             <Graph distribution = {userData.ratings}/>
             <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.savedWatchlist} dateJoined = {(userData.dateJoined).datejoined}/>
             <Reviews reviews = {userData.reviews}/> 
