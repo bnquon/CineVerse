@@ -39,6 +39,7 @@ export const FavScroller = (props) => {
     
     function addAnimation(scrollers) {
         scrollers.forEach((scroller) => {
+          console.log('LOGGING SCROLLER IN THE SCROLLERS: ', scroller);
           // add data-animated="true" to every `.scroller` on the page
           scroller.setAttribute("data-animated", true);
       
@@ -59,7 +60,6 @@ export const FavScroller = (props) => {
 
     function runAnimation() {
         const scrollers = document.querySelectorAll('.scroller');
-        console.log('SCROLLERS IS: ', scrollers);
         addAnimation(scrollers);
     }
     
