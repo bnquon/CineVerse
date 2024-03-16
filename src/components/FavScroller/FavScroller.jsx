@@ -40,6 +40,11 @@ export const FavScroller = (props) => {
     function addAnimation(scrollers) {
         scrollers.forEach((scroller) => {
           console.log('LOGGING SCROLLER IN THE SCROLLERS: ', scroller);
+          // GET RID OF LEFTOVER ONES
+          const hiddenElements = scroller.querySelectorAll(".aria-hidden");
+          hiddenElements.forEach((element) => {
+              scroller.removeChild(element);
+          });
           // add data-animated="true" to every `.scroller` on the page
           scroller.setAttribute("data-animated", true);
       
