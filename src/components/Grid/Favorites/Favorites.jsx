@@ -57,10 +57,10 @@ export const Favorites = (props) => {
       if (!last.isIntersecting) return
       loadNewPosters()
       lastObserver.unobserve(last.target)
-      lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
+      lastObserver.observe(document.querySelector('#favoriteScroller:last-child'))
     }, {})
   
-    lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
+    lastObserver.observe(document.querySelector('#favoriteScroller:last-child'))
 
     const scrollerItems = document.querySelectorAll('.scrollerItem');
     scrollerItems.forEach(item => {
@@ -80,11 +80,7 @@ export const Favorites = (props) => {
       <div id="favoriteScroller">
         {favoriteList.map((item, index) => (
           <div className='scrollerItem' key={index}>
-            {favoriteList.length === index + 1 ? (
-              <img src={item} alt=""/>
-            ) : (
-              <img src={item} alt=""/>
-            )}
+            <img src={item} alt="" srcset="" />
           </div>
         ))}
     </div>
