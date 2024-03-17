@@ -32,7 +32,7 @@
 
 #favoriteScroller > img {
     box-sizing: border-box;
-    padding: 1rem 1.5rem 1.5rem 0;
+    padding: 1rem 1.5rem 0;
     position: relative;
     width: 100%;
     height: auto;
@@ -40,5 +40,5 @@
 }
 
 #favoriteScroller > img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
