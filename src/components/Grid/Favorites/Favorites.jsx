@@ -7,7 +7,7 @@ import "./Favorites.css"
 export const Favorites = (props) => {
 
   const [favoriteList, setFavoriteList] = useState([]);
-  // const [lastItem, setLastItem] = useState(null);
+  const lastItemRef = useRef(null);
 
   useEffect(() => {
     const populateScroller = async () => {
@@ -29,17 +29,6 @@ export const Favorites = (props) => {
   };
   populateScroller();
   }, [props])
-  
-  function loadNewPosters() {
-    favoriteList.forEach((item) => {
-      const temp = document.createElement('div');
-      temp.classList.add('scrollerItem');
-      const img = document.createElement('img');
-      img.src = item;
-      temp.appendChild(img);
-      document.querySelector('#favoriteScroller').appendChild(temp);
-    });
-  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -53,14 +42,15 @@ export const Favorites = (props) => {
     })
 
     const lastObserver = new IntersectionObserver(entries => {
-      const last = entries[0]
-      if (!last.isIntersecting) return
-      loadNewPosters()
-      lastObserver.unobserve(last.target)
-      lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
-    }, {})
-  
-    lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
+      const last = entries[0];
+      if (!last.isIntersecting) return;
+      loadNewPosters();
+      lastObserver.unobserve(last.target);
+    });
+
+    if (lastItemRef.current) {
+      lastObserver.observe(lastItemRef.current);
+    }
 
     const scrollerItems = document.querySelectorAll('.scrollerItem');
     scrollerItems.forEach(item => {
@@ -69,7 +59,16 @@ export const Favorites = (props) => {
 
   }, [favoriteList])
 
-
+  function loadNewPosters() {
+    favoriteList.forEach((item) => {
+      const temp = document.createElement('div');
+      temp.classList.add('scrollerItem');
+      const img = document.createElement('img');
+      img.src = item;
+      temp.appendChild(img);
+      document.querySelector('#favoriteScroller').appendChild(temp);
+    });
+  }
 
   return (
     <div id="favoritesContainer">
@@ -80,7 +79,7 @@ export const Favorites = (props) => {
       <div id="favoriteScroller">
         {favoriteList.map((item, index) => (
           <div className='scrollerItem' key={index}>
-            <img src={item} alt="" srcset="" />
+            <img src={item} alt="" srcset="" ref={index === favoriteList.length - 1 ? lastItemRef : null}/>
           </div>
         ))}
     </div>
