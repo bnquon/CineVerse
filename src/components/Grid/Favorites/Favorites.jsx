@@ -53,15 +53,17 @@ export const Favorites = (props) => {
 
   useEffect(() => {
     console.log('LAST ITEM VISIBLE');
-    favoriteList.forEach((item) => {
-      console.log('ITEM IS :', item);
-      const temp = document.createElement('div');
-      temp.classList.add('scrollerItem');
-      const img = document.createElement('img');
-      img.src = item;
-      temp.appendChild(img);
-      document.querySelector('#favoriteScroller').appendChild(temp);
-    });
+    if (inView) {
+      favoriteList.forEach((item) => {
+        console.log('ITEM IS :', item);
+        const temp = document.createElement('div');
+        temp.classList.add('scrollerItem');
+        const img = document.createElement('img');
+        img.src = item;
+        temp.appendChild(img);
+        document.querySelector('#favoriteScroller').appendChild(temp);
+      });
+    }
   }, [inView])
 
 
