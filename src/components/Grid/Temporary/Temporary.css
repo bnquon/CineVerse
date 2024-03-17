@@ -1,0 +1,5 @@
+.random {
+    position: relative;
+    grid-column: 3;
+    grid-row: 1 / 2;
+}
