@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Profile.css';
 import noPFP from '../../../assets/noPFP.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faI, faIdBadge } from '@fortawesome/free-solid-svg-icons';
 
 export const Profile = (props) => {
 
@@ -97,7 +99,11 @@ export const Profile = (props) => {
       <div id="image-container" onClick={() => imageUploader.current.click()}>
         <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
       </div>
-      <h2 id="username">{props.username}</h2>
+
+      <div id="username">
+        <span><FontAwesomeIcon icon={faIdBadge}/> {props.username}</span>
+      </div>
+    
     </div>
   );
 };
