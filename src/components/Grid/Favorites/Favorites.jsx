@@ -7,7 +7,6 @@ import "./Favorites.css"
 export const Favorites = (props) => {
 
   const [favoriteList, setFavoriteList] = useState([]);
-  const [tempFavList, setTempList] = useState([]);
 
   const {ref, inView} = useInView({
     threshold: 0.5,
@@ -37,8 +36,11 @@ export const Favorites = (props) => {
   
   useEffect(() => {
     if (inView) {
-      tempFavList.forEach((item) => {
-        document.querySelector('#favoriteScroller').append(item);
+      favoriteList.forEach((item) => {
+        const temp = document.createElement('div');
+        temp.classList.add('scrollerItem');
+        temp.src = item;
+        document.querySelector('#favoriteScroller').append(temp);
       })
     }
   }, [inView]);
