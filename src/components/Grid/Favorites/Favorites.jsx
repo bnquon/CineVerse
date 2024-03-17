@@ -39,33 +39,14 @@ export const Favorites = (props) => {
       threshold: 0.5
     })
 
-    const lastObserver = new IntersectionObserver(entries => {
-      const last = entries[0];
-      if (!last.isIntersecting) return
-      loadNewPosters();
-      lastObserver.unobserve(last.target)
-      lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
-    })
-
-    lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
-
-    const tempList = document.querySelectorAll('.scrollerItem');
-    tempList.forEach(item => {
-      observer.observe(item);
-    })
-
-    function loadNewPosters() {
-      favoriteList.forEach((item) => {
-        const temp = document.createElement('div');
-        temp.classList.add('scrollerItem');
-        const img = document.createElement('img');
-        img.src = item;
-        temp.appendChild(img);
-        document.querySelector('#favoriteScroller').appendChild(temp);
-      })
-    }
+    const scrollerItems = document.querySelectorAll('#favoriteScroller .scrollerItem');
+    scrollerItems.forEach(item => {
+        observer.observe(item);
+    });
 
   }, [favoriteList])
+
+
 
   return (
     <div id="favoritesContainer">
