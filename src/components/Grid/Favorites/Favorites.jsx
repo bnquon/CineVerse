@@ -39,8 +39,10 @@ export const Favorites = (props) => {
       favoriteList.forEach((item) => {
         const temp = document.createElement('div');
         temp.classList.add('scrollerItem');
-        temp.src = item;
-        document.querySelector('#favoriteScroller').append(temp);
+        const img = document.createElement('img');
+        img.src = item;
+        temp.appendChild(img);
+        document.querySelector('#favoriteScroller').appendChild(temp);
       })
     }
   }, [inView]);
