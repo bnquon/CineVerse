@@ -3,7 +3,7 @@ import { Profile } from './Profile/Profile.jsx'
 import { Graph } from './Graph/Graph.jsx'
 import { UserInfo } from './UserInfo/UserInfo.jsx'
 import { Reviews } from './Reviews/Reviews.jsx'
-import { Temporary } from './Temporary/Temporary.jsx'
+import { Favorites } from './Favorites/Favorites.jsx'
 import "./Grid.css"
 
 export const Grid = (props) => {
@@ -43,7 +43,7 @@ export const Grid = (props) => {
           <>
             <Profile username = {props.username} userID = {props.userID}/>
             <Graph distribution = {userData.ratings}/>
-            <Temporary/>
+            <Favorites/>
             <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.savedWatchlist} dateJoined = {(userData.dateJoined).datejoined}/>
             <Reviews reviews = {userData.reviews}/> 
           </>
