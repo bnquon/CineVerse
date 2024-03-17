@@ -29,3 +29,9 @@
     border: 1px solid red;
     overflow-y: auto;
 }
+
+#favoriteScroller > img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
