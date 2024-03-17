@@ -7,7 +7,7 @@ import "./Favorites.css"
 export const Favorites = (props) => {
 
   const {ref, inView} = useInView({
-    threshold: 0.75,
+    threshold: 0.5,
   });
 
   const [favoriteList, setFavoriteList] = useState([]);

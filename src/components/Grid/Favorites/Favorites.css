@@ -34,7 +34,7 @@
 @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(75px);
     }
     to {
       opacity: 1;
@@ -52,5 +52,5 @@
     position: relative;
     width: 100%;
     height: auto;
-    transition: 250ms;
+    transition: 350ms;
 }
