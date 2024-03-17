@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { useInView } from 'react-intersection-observer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import "./Favorites.css"
 
 export const Favorites = (props) => {
+
+  const {ref, inView} = useInView({
+    threshold: 0.75,
+  });
 
   const [favoriteList, setFavoriteList] = useState([]);
 
@@ -36,7 +41,7 @@ export const Favorites = (props) => {
 
       <div id="favoriteScroller">
         {favoriteList.map((item, index) => (
-          <img src={item} key={index} alt="" />
+            <img ref={ref} src={item} key={index} alt="" className={inView ? 'show': '' } />
         ))}
       </div>
 

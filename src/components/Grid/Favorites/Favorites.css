@@ -38,6 +38,11 @@
     width: 100%;
     height: auto;
     transition: 250ms;
+    transform: translateY(-50%);
+}
+
+img.show {
+    transform: translateY(0);
 }
 
 #favoriteScroller > img:hover {
