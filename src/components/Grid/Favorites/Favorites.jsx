@@ -53,11 +53,6 @@ export const Favorites = (props) => {
 
   useEffect(() => {
     console.log('LAST ITEM VISIBLE');
-    loadNewPosters();
-  }, [inView])
-
-  function loadNewPosters() {
-    console.log("NEW POSTERS FUNCTION CALLED");
     favoriteList.forEach((item) => {
       const temp = document.createElement('div');
       temp.classList.add('scrollerItem');
@@ -66,7 +61,8 @@ export const Favorites = (props) => {
       temp.appendChild(img);
       document.querySelector('#favoriteScroller').appendChild(temp);
     });
-  }
+  }, [inView])
+
 
   return (
     <div id="favoritesContainer">
