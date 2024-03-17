@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import "./Graph.css"
 import { Chart as Chartjs, Legend, defaults, elements} from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquarePollVertical, fas } from '@fortawesome/free-solid-svg-icons'
 
 defaults.maintainAspectRatio = false;
 
@@ -18,7 +20,9 @@ export const Graph = (props) => {
   return (
       <div className='graph-container'>
 
-        <h1 id='chart-title'>Rating Distribution</h1>
+        <div id="chart-title">
+          <span><FontAwesomeIcon icon={faSquarePollVertical}/> Rating Distribution</span>
+        </div>
         <div id="chart-container">
           <Bar
             data={{
