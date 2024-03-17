@@ -49,7 +49,7 @@ export const Favorites = (props) => {
         observer.observe(item);
     });
 
-  }, [favoriteList])
+  }, [favoriteList, inView])
 
   useEffect(() => {
     console.log('LAST ITEM VISIBLE');
