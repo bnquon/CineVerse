@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import "./Reviews.css"
 import { Card } from './Card/Card.jsx'
 import { NoUserReviews } from './NoUserReviews/NoUserReviews.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComments } from '@fortawesome/free-solid-svg-icons'
 // import placeholder from "../../../assets/inception.jpg"
 
 export const Reviews = (props) => {
@@ -14,7 +16,9 @@ export const Reviews = (props) => {
 
   return (
     <div className='review-container'>
-      <h1 id="title">Reviews</h1>
+      <div id="userReview-title">
+        <span><FontAwesomeIcon icon={faComments}/> Reviews</span>
+      </div>
 
         <div className="review-grid">
 
