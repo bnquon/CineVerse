@@ -43,9 +43,9 @@ export const Grid = (props) => {
           <>
             <Profile username = {props.username} userID = {props.userID}/>
             <Graph distribution = {userData.ratings}/>
+            <Temporary/>
             <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.savedWatchlist} dateJoined = {(userData.dateJoined).datejoined}/>
             <Reviews reviews = {userData.reviews}/> 
-            <Temporary/>
           </>
           : 
           null
