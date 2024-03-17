@@ -60,6 +60,7 @@ export const Favorites = (props) => {
   }, [favoriteList])
 
   function loadNewPosters() {
+    console.log("NEW POSTERS FUNCTION CALLED");
     favoriteList.forEach((item) => {
       const temp = document.createElement('div');
       temp.classList.add('scrollerItem');
