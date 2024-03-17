@@ -34,12 +34,12 @@
 #favoriteScoller > .scrollerItem {
     position: relative;
     box-sizing: border-box;
-    padding: 1rem 2rem 0;
+    padding: 1rem auto 0;
     width: 100%;
     height: fit-content;
 }
 
 .scrollerItem > img {
-    width: 100%;
+    width: 80%;
     height: auto;
 }
