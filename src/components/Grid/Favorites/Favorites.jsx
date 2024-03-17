@@ -35,9 +35,9 @@ export const Favorites = (props) => {
       </div>
 
       <div id="favoriteScroller">
-        {favoriteList.map((item, index) => {
+        {favoriteList.map((item, index) => (
           <img src={item} key={index} alt="" />
-        })}
+        ))}
       </div>
 
     </div>
