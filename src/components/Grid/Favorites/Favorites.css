@@ -42,7 +42,7 @@
     transition: 200ms;
 }
 
-#favoriteScoller > .scrollerItem.show {
+#favoriteScroller > .scrollerItem.show {
     transform: translateY(0);
     opacity: 1;
 }
