@@ -24,7 +24,6 @@ export const Favorites = (props) => {
               console.log(listOfFavorites);
   
               setFavoriteList(listOfFavorites);
-              setTempList(listOfFavorites);
   
           } else console.error('Failed to fetch favorite movies: ', response.statusText);
       } catch (error) {
@@ -36,6 +35,7 @@ export const Favorites = (props) => {
   
   useEffect(() => {
     if (inView) {
+      console.log('LAST ITEM IS VISIBLE');
       favoriteList.forEach((item) => {
         const temp = document.createElement('div');
         temp.classList.add('scrollerItem');
