@@ -65,7 +65,7 @@ export const Favorites = (props) => {
       })
     }
 
-  }, [])
+  }, [favoriteList])
 
   return (
     <div id="favoritesContainer">
