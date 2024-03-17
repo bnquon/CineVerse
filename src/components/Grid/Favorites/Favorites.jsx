@@ -38,8 +38,7 @@ export const Favorites = (props) => {
   useEffect(() => {
     if (inView) {
       tempFavList.forEach((item) => {
-        const temp = item.cloneNode(true);
-        document.querySelector('#favoriteScroller').append(temp);
+        document.querySelector('#favoriteScroller').append(item);
       })
     }
   }, [inView]);
