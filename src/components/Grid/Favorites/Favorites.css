@@ -31,7 +31,7 @@
     overflow-x: hidden;
 }
 
-#favoriteScoller > .scrollerItem {
+#favoriteScroller > .scrollerItem {
     position: relative;
     box-sizing: border-box;
     padding: 1rem 2rem 0;
@@ -51,14 +51,3 @@
     width: 85%;
     height: auto;
 }
-
-/* .item {
-    transform: translateY(50px);
-    opacity: 0;
-    transition: 200ms;
-}
-
-.item.show {
-    transform: translateY(0);
-    opacity: 1;
-} */
