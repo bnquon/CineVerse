@@ -31,14 +31,16 @@
     overflow-x: hidden;
 }
 
-#favoriteScroller > img {
+#favoriteScoller > .scrollerItem {
+    position: relative;
     box-sizing: border-box;
     padding: 1rem 2rem 0;
+    width: 100%;
+    height: fit-content;
+}
+
+#favoriteScroller > img {
     position: relative;
     width: 100%;
     height: auto;
-}
-
-.show {
-    
 }
