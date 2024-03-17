@@ -28,11 +28,12 @@
     height: 100%;
     border: 1px solid red;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #favoriteScroller > img {
     box-sizing: border-box;
-    padding: 1rem 1.5rem 0;
+    padding: 1rem 2rem 0;
     position: relative;
     width: 100%;
     height: auto;
