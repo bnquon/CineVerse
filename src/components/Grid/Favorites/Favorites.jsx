@@ -35,9 +35,31 @@ export const Favorites = (props) => {
   }, [props])
   
   useEffect(() => {
-    if (inView) {
-      console.log('LAST ITEM IS VISIBLE');
-      favoriteList.forEach((item, index) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('show', entry.isIntersecting);
+      })
+    }, {
+      threshold: 0.5
+    })
+
+    const lastObserver = new IntersectionObserver(entries => {
+      const last = entries[0];
+      if (!last.isIntersecting) return
+      loadNewPosters();
+      lastObserver.unobserve(last.target)
+      lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
+    })
+
+    lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
+
+    const tempList = document.querySelectorAll('.scrollerItem');
+    tempList.forEach(item => {
+      observer.observe(item);
+    })
+
+    function loadNewPosters() {
+      favoriteList.forEach((item) => {
         const temp = document.createElement('div');
         temp.classList.add('scrollerItem');
         const img = document.createElement('img');
@@ -46,7 +68,8 @@ export const Favorites = (props) => {
         document.querySelector('#favoriteScroller').appendChild(temp);
       })
     }
-  }, [inView]);
+
+  }, [])
 
   return (
     <div id="favoritesContainer">
