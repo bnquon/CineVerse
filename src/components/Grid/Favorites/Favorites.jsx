@@ -7,6 +7,7 @@ import "./Favorites.css"
 export const Favorites = (props) => {
 
   const [favoriteList, setFavoriteList] = useState([]);
+  const [lastItem, setLastItem] = useState(null);
 
   const {ref, inView} = useInView({
     threshold: 0.5,
@@ -36,12 +37,15 @@ export const Favorites = (props) => {
   useEffect(() => {
     if (inView) {
       console.log('LAST ITEM IS VISIBLE');
-      favoriteList.forEach((item) => {
+      favoriteList.forEach((item, index) => {
         const temp = document.createElement('div');
         temp.classList.add('scrollerItem');
         const img = document.createElement('img');
         img.src = item;
         temp.appendChild(img);
+        if (index === favoriteList.length - 1) {
+          setLastItem(temp); // Set ref to the last item
+        }
         document.querySelector('#favoriteScroller').appendChild(temp);
       })
     }
@@ -57,7 +61,7 @@ export const Favorites = (props) => {
         {favoriteList.map((item, index) => (
           <div className='scrollerItem' key={index}>
             {favoriteList.length === index + 1 ? (
-              <img src={item} ref={ref} alt=""/>
+              <img src={item} ref={lastItem || ref} alt=""/>
             ) : (
               <img src={item} alt=""/>
             )}
