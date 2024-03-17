@@ -7,7 +7,7 @@ export const Favorites = () => {
   return (
     <div id="favoritesContainer">
       <div id="favoritesTitle">
-        <span><FontAwesomeIcon icon={faHeart} style={{color: "#ff0000",}} /><h1> Favorites</h1></span>
+        <span><FontAwesomeIcon icon={faHeart} style={{color: "#ff0000"}}/>Favorites</span>
       </div>
     </div>
   )
