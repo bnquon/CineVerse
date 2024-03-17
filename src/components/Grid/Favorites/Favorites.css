@@ -39,8 +39,7 @@
     height: fit-content;
 }
 
-#favoriteScroller > img {
-    position: relative;
+.scrollerItem > img {
     width: 100%;
     height: auto;
 }
