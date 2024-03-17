@@ -18,7 +18,7 @@
     width: 50%;
     aspect-ratio: 1;
     overflow: hidden;
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 #image-container img {
@@ -31,8 +31,7 @@
     position: relative;
     padding: 0.5rem;
     width: 100%;
-    margin-bottom: 0;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     font-weight: bold;
 }
