@@ -57,10 +57,10 @@ export const Favorites = (props) => {
       if (!last.isIntersecting) return
       loadNewPosters()
       lastObserver.unobserve(last.target)
-      lastObserver.observe(document.querySelector('#favoriteScroller:last-child'))
+      lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
     }, {})
   
-    lastObserver.observe(document.querySelector('#favoriteScroller:last-child'))
+    lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
 
     const scrollerItems = document.querySelectorAll('.scrollerItem');
     scrollerItems.forEach(item => {
