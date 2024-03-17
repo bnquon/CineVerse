@@ -7,7 +7,10 @@ import "./Favorites.css"
 export const Favorites = (props) => {
 
   const [favoriteList, setFavoriteList] = useState([]);
-  const lastItemRef = useRef(null);
+
+  const {ref, inView} = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     const populateScroller = async () => {
@@ -41,23 +44,17 @@ export const Favorites = (props) => {
       threshold: 0.5
     })
 
-    const lastObserver = new IntersectionObserver(entries => {
-      const last = entries[0];
-      if (!last.isIntersecting) return;
-      loadNewPosters();
-      lastObserver.unobserve(last.target);
-    });
-
-    if (lastItemRef.current) {
-      lastObserver.observe(lastItemRef.current);
-    }
-
     const scrollerItems = document.querySelectorAll('.scrollerItem');
     scrollerItems.forEach(item => {
         observer.observe(item);
     });
 
   }, [favoriteList])
+
+  useEffect(() => {
+    console.log('LAST ITEM VISIBLE');
+    loadNewPosters();
+  }, [inView])
 
   function loadNewPosters() {
     console.log("NEW POSTERS FUNCTION CALLED");
@@ -80,7 +77,7 @@ export const Favorites = (props) => {
       <div id="favoriteScroller">
         {favoriteList.map((item, index) => (
           <div className='scrollerItem' key={index}>
-            <img src={item} alt="" srcset="" ref={index === favoriteList.length - 1 ? lastItemRef : null}/>
+            <img src={item} alt="" srcset="" ref={index === favoriteList.length - 1 ? ref : null}/>
           </div>
         ))}
     </div>
