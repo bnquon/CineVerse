@@ -16,7 +16,7 @@ export const UserPage = () => {
     <>         
         <Header username={storedUsername}/>
         <Grid username = {(searchedUserData).username} userID = {(searchedUserData).userID}/>
-        <FavScroller userID={searchedUserData.userID}/>
+        {/* <FavScroller userID={searchedUserData.userID}/> */}
     </>
   )
 }
