@@ -17,30 +17,32 @@ export const ReviewModal = ( {toggleModal , title, poster} ) => {
   const postReview = async () => {
     const reviewText = document.getElementById('reviewText').value;
     console.log('Post button pressed, values passed through: ', username, userID, title, reviewText, rating, posterURL);
-    try {
-        const response = await fetch(`/api/postReview`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: username,
-                userID: userID,
-                movieName: title,
-                review: reviewText,
-                rating: rating,
-                poster: posterURL,
-            }),
-        })
+    if (rating && reviewText) {
+        try {
+            const response = await fetch(`/api/postReview`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    userID: userID,
+                    movieName: title,
+                    review: reviewText,
+                    rating: rating,
+                    poster: posterURL,
+                }),
+            })
+            
+            if (!response.ok) {
+                console.error('Failed to post review: ', response.statusText);
+            }
         
-        if (!response.ok) {
-            console.error('Failed to post review: ', response.statusText);
+        } catch (error) {
+            console.error('Error posting review:', error.message);
         }
-    
-    } catch (error) {
-        console.error('Error posting review:', error.message);
-    }
-    toggleModal();
+        toggleModal();
+    } else alert("Review and rating must be filled out");
   }
 
   return (
