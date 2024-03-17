@@ -18,6 +18,7 @@
     width: 50%;
     aspect-ratio: 1;
     overflow: hidden;
+    margin-top: 0.5rem;
 }
 
 #image-container img {
@@ -32,6 +33,6 @@
     width: 100%;
     margin-bottom: 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: bold;
 }
