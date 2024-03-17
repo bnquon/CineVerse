@@ -34,12 +34,13 @@ export const Favorites = (props) => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         entry.target.classList.toggle('show', entry.isIntersecting);
+        console.log(entry.isIntersecting ,entry.target);
       })
     }, {
       threshold: 0.5
     })
 
-    const scrollerItems = document.querySelectorAll('#favoriteScroller .scrollerItem');
+    const scrollerItems = document.querySelectorAll('.scrollerItem');
     scrollerItems.forEach(item => {
         observer.observe(item);
     });
