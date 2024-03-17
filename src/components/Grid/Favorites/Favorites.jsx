@@ -7,6 +7,11 @@ import "./Favorites.css"
 export const Favorites = (props) => {
 
   const [favoriteList, setFavoriteList] = useState([]);
+  const [tempFavList, setTempList] = useState([]);
+
+  const {ref, inView} = useInView({
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     const populateScroller = async () => {
@@ -20,6 +25,7 @@ export const Favorites = (props) => {
               console.log(listOfFavorites);
   
               setFavoriteList(listOfFavorites);
+              setTempList(listOfFavorites);
   
           } else console.error('Failed to fetch favorite movies: ', response.statusText);
       } catch (error) {
@@ -28,7 +34,16 @@ export const Favorites = (props) => {
   };
   populateScroller();
   }, [props])
- 
+  
+  useEffect(() => {
+    if (inView) {
+      tempFavList.forEach((item) => {
+        const temp = item.cloneNode(true);
+        document.querySelector('#favoriteScroller').append(temp);
+      })
+    }
+  }, [inView]);
+
   return (
     <div id="favoritesContainer">
       <div id="favoritesTitle">
@@ -37,9 +52,15 @@ export const Favorites = (props) => {
 
       <div id="favoriteScroller">
         {favoriteList.map((item, index) => (
-            <div className='scrollerItem'><img src={item} key={index} alt=""/></div>
+          <div className='scrollerItem' key={index}>
+            {favoriteList.length === index + 1 ? (
+              <img src={item} ref={ref} alt=""/>
+            ) : (
+              <img src={item} alt=""/>
+            )}
+          </div>
         ))}
-      </div>
+    </div>
 
     </div>
   )
