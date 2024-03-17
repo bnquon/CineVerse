@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import "./Favorites.css"
@@ -7,10 +6,6 @@ import "./Favorites.css"
 export const Favorites = (props) => {
 
   const [favoriteList, setFavoriteList] = useState([]);
-
-  const {ref, inView} = useInView({
-    threshold: 0.5,
-  });
 
   useEffect(() => {
     const populateScroller = async () => {
@@ -49,24 +44,7 @@ export const Favorites = (props) => {
         observer.observe(item);
     });
 
-  }, [favoriteList, inView])
-
-  useEffect(() => {
-    console.log('LAST ITEM VISIBLE');
-    if (inView) {
-      favoriteList.forEach((item, index) => {
-        console.log('ITEM IS :', item);
-        const temp = document.createElement('div');
-        temp.classList.add('scrollerItem');
-        const img = document.createElement('img');
-        img.src = item;
-        temp.appendChild(img);
-        if (index == favoriteList.length - 1) ref(temp);
-        document.querySelector('#favoriteScroller').appendChild(temp);
-      });
-    }
-  }, [inView])
-
+  }, [favoriteList])
 
   return (
     <div id="favoritesContainer">
@@ -77,7 +55,7 @@ export const Favorites = (props) => {
       <div id="favoriteScroller">
         {favoriteList.map((item, index) => (
           <div className='scrollerItem' key={index}>
-            <img src={item} alt="" srcset="" ref={index == favoriteList.length - 1 ? ref : null}/>
+            <img src={item} alt="" srcset=""/>
           </div>
         ))}
     </div>
