@@ -31,7 +31,7 @@
     overflow-x: hidden;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(75px);
@@ -40,10 +40,10 @@
       opacity: 1;
       transform: translateY(0);
     }
-}
+} */
 
 .show {
-    animation: fadeIn 0.5s linear forwards;
+    opacity: 1;
 }
 
 #favoriteScroller > img {
@@ -52,5 +52,6 @@
     position: relative;
     width: 100%;
     height: auto;
+    opacity: 0;
     transition: 350ms;
 }
