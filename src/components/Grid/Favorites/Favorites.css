@@ -32,7 +32,7 @@
 
 #favoriteScroller > img {
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     width: 100%;
     height: auto;
