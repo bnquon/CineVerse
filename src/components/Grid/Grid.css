@@ -8,4 +8,5 @@
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 35% 65%;
     gap: 1.4rem;
+    border: 3px solid red;
 }
