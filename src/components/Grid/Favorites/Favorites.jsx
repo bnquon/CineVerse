@@ -6,10 +6,6 @@ import "./Favorites.css"
 
 export const Favorites = (props) => {
 
-  const {ref, inView} = useInView({
-    threshold: 0.5,
-  });
-
   const [favoriteList, setFavoriteList] = useState([]);
 
   useEffect(() => {
@@ -41,7 +37,7 @@ export const Favorites = (props) => {
 
       <div id="favoriteScroller">
         {favoriteList.map((item, index) => (
-            <img ref={ref} src={item} key={index} alt="" className={inView ? 'show': '' } />
+            <div><img src={item} key={index} alt=""/></div>
         ))}
       </div>
 

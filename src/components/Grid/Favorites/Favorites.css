@@ -31,27 +31,14 @@
     overflow-x: hidden;
 }
 
-/* @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(75px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-} */
-
-.show {
-    opacity: 1;
-}
-
 #favoriteScroller > img {
     box-sizing: border-box;
     padding: 1rem 2rem 0;
     position: relative;
     width: 100%;
     height: auto;
-    opacity: 0;
-    transition: 350ms;
+}
+
+.show {
+    
 }
