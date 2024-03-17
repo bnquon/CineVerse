@@ -37,9 +37,28 @@
     padding: 1rem 2rem 0;
     width: 100%;
     height: fit-content;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 200ms;
+}
+
+#favoriteScoller > .scrollerItem.show {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .scrollerItem > img {
     width: 85%;
     height: auto;
 }
+
+/* .item {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 200ms;
+}
+
+.item.show {
+    transform: translateY(0);
+    opacity: 1;
+} */
