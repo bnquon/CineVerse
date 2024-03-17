@@ -30,6 +30,17 @@ export const Favorites = (props) => {
   populateScroller();
   }, [props])
   
+  function loadNewPosters() {
+    favoriteList.forEach((item) => {
+      const temp = document.createElement('div');
+      temp.classList.add('scrollerItem');
+      const img = document.createElement('img');
+      img.src = item;
+      temp.appendChild(img);
+      document.querySelector('#favoriteScroller').appendChild(temp);
+    });
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -40,6 +51,16 @@ export const Favorites = (props) => {
     }, {
       threshold: 0.5
     })
+
+    const lastObserver = new IntersectionObserver(entries => {
+      const last = entries[0]
+      if (!last.isIntersecting) return
+      loadNewPosters()
+      lastObserver.unobserve(last.target)
+      lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
+    }, {})
+  
+    lastObserver.observe(document.querySelector('.scrollerItem:last-child'))
 
     const scrollerItems = document.querySelectorAll('.scrollerItem');
     scrollerItems.forEach(item => {
