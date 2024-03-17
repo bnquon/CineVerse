@@ -1,5 +1,5 @@
 import React from 'react'
-import './Temporary.css'
+import "./Temporary.css"
 
 export const Temporary = () => {
   return (
