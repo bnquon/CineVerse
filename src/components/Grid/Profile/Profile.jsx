@@ -2,12 +2,14 @@ import React, { useEffect, useState, useRef } from 'react';
 import './Profile.css';
 import noPFP from '../../../assets/noPFP.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faI, faIdBadge } from '@fortawesome/free-solid-svg-icons';
+import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
+import { TailSpin } from 'react-loading-icons'
 
 export const Profile = (props) => {
 
   const storedUserID = sessionStorage.getItem('userID');
 
+  const [pfpLoaded, isPfpLoaded] = useState(false);
   const [count, setCount] = useState(1);
   const [profilePicture, setProfilePicture] = useState(null);
 
@@ -25,7 +27,7 @@ export const Profile = (props) => {
           const temp = data.retrievedPFP;
 
           setProfilePicture(temp.pfp);
-
+          isPfpLoaded(true);
         } else console.error('Failed to fetch user pfp:', response.statusText);
 
       } catch (error) {
@@ -97,7 +99,11 @@ export const Profile = (props) => {
       }
       
       <div id="image-container" onClick={() => imageUploader.current.click()}>
-        <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
+        {pfpLoaded ?
+          <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
+          :
+          <TailSpin stroke="#000000" fill='black' strokeWidth={4}/>
+        }
       </div>
 
       <div id="username">
