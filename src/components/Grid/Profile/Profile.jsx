@@ -41,7 +41,7 @@ export const Profile = (props) => {
     const setPFP = async () => {
       try {
         await fetch(`/api/pfp?userID=${props.userID}&operation=post`, {
-          method: 'POST',
+          method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
           },
