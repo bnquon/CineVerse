@@ -38,6 +38,7 @@ export default async function handler(request, response) {
             const formattedDate = curDate.toLocaleDateString('en-US', options);
             // await client.sql`INSERT INTO userinfo (datejoined) VALUES (${formattedDate});`;
             const insertResult = await client.sql`INSERT INTO users (username, password, datejoined) VALUES (${username}, ${hashedPassword}, ${formattedDate}) RETURNING *;`;
+            await client.sql`INSERT INTO userinfo (userID) VALUES (${(insertResult.rows[0]).userid})`
             return response.status(200).json({ success: true, retrievedUserInfo: insertResult.rows[0] });
 
         } catch (error) {

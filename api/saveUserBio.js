@@ -10,10 +10,7 @@ export default async function handler(request, response) {
         console.log('Bio received from server code, ', bio);
 
         // Use the sql template tag to safely insert data into the database
-        await client.sql`INSERT INTO userInfo (userID, bio)
-                        VALUES (${userID}, ${bio})
-                        ON CONFLICT (userID)
-                        DO UPDATE SET bio = ${bio};`;
+        await client.sql`UPDATE userInfo SET bio = ${bio} WHERE userID = ${userID};`;
 
         return response.status(200).json();
     } catch (error) {

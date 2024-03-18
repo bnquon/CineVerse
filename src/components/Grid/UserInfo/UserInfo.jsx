@@ -14,9 +14,7 @@ export const UserInfo = (props) => {
   const [dateJoined, setDatejoined] = useState('');
 
   useEffect(() => {
-    if (props.bio != null) {
-      setBioValue(props.bio);
-    }
+    setBioValue(props.bio);
     setDatejoined(props.dateJoined);
     const temp = (props.userWatchlist).map(item => item.movieposterurl);
     setWatchlist(temp);
@@ -30,7 +28,7 @@ export const UserInfo = (props) => {
   const handleBioBlur = async () => {
     try {
       const response = await fetch(`/api/saveUserBio?userID=${storedUserID}`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
