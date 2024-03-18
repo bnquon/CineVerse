@@ -9,12 +9,12 @@ import "./Grid.css"
 
 export const Grid = (props) => {
   // need userinfo creation and stored
-  const [loaded, setLoaded] = useState(false);
+  const [isLoading, setLoaded] = useState(false);
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
     const retrieveUserInfo = async () => {
-      setLoaded(false);
+      setLoaded(true);
       try {
         
         const response = await fetch(`/api/getUserData?userID=${props.userID}`, {
@@ -25,7 +25,7 @@ export const Grid = (props) => {
           const data = await response.json();
           // console.log('BIG DATA CALL FROM GRID IS: ', data);
           setUserData(data);
-          setLoaded(true);
+          setLoaded(false);
         } else console.error('Failed to fetch user data:', response.statusText);
 
       } catch (error) {
@@ -40,17 +40,16 @@ export const Grid = (props) => {
 
   return (
     <div className="grid-container">
-        { loaded ? 
-          <>
-            <Profile username = {props.username} userID = {props.userID}/>
-            <Graph distribution = {userData.ratings}/>
-            <Favorites userID = {props.userID}/>
-            <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.savedWatchlist} dateJoined = {(userData.dateJoined).datejoined}/>
-            <Reviews reviews = {userData.reviews}/> 
-          </>
-          : 
-          <Puff stroke="#98ff98"/>
-        }
+        { loaded ? <Puff stroke="#98ff98"/> : null}
+        
+        <>
+          <Profile username = {props.username} userID = {props.userID}/>
+          <Graph distribution = {userData.ratings}/>
+          <Favorites userID = {props.userID}/>
+          <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.savedWatchlist} dateJoined = {(userData.dateJoined).datejoined}/>
+          <Reviews reviews = {userData.reviews}/> 
+        </>
+
 
     </div>
   );
