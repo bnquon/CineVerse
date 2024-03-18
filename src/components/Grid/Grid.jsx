@@ -50,7 +50,7 @@ export const Grid = (props) => {
         </>
         :
         <div id="loadingIcon">
-          <ThreeDots stroke="#000000" strokeWidth={5}/>
+          <ThreeDots stroke="#000000" fill='black' strokeWidth={7.5}/>
         </div>
         }
         
