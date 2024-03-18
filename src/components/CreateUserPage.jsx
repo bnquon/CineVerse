@@ -80,10 +80,6 @@ export const CreateUserPage = () => {
                             <h3>Don't have an account? </h3>
                             <button id='gotosignup' onClick={showSignup}>Create User</button>
                         </div>
-                        {/* <input type="text" name="username" id="loginUsername" placeholder='Username'/>
-                        <input type="text" name="password" id="loginPassword" placeholder='Password'/>
-                        <button id='loginBtn' onClick={loginUser}>Login</button>
-                        <button id='gotosignup' onClick={showSignup}>Create User</button> */}
                     </div>
 
                     <div id="signup">
@@ -99,10 +95,6 @@ export const CreateUserPage = () => {
                             <h3>Already have an account? </h3>
                             <button id="gotologin" onClick={showLogin}>Login</button>
                         </div>
-                        {/* <input type="text" name="username" id="newUsername" placeholder='New Username'/>
-                        <input type="text" name="password" id="newPassword" placeholder='New Password'/>
-                        <button id="signupBtn" onClick={registerUser}>Sign Up</button>
-                        <button id="gotologin" onClick={showLogin}>Login</button> */}
                     </div>
 
                 </div>
