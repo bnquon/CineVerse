@@ -49,7 +49,10 @@ export const Grid = (props) => {
         <Reviews reviews = {userData.reviews}/> 
         </>
         :
+        <>
         <h1>LOADING</h1>
+        <Puff stroke="#98ff98" />
+        </>
         }
         
     </div>
