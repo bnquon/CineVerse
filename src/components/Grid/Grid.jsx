@@ -4,6 +4,7 @@ import { Graph } from './Graph/Graph.jsx'
 import { UserInfo } from './UserInfo/UserInfo.jsx'
 import { Reviews } from './Reviews/Reviews.jsx'
 import { Favorites } from './Favorites/Favorites.jsx'
+import { Puff } from 'react-loading-icons'
 import "./Grid.css"
 
 export const Grid = (props) => {
@@ -48,7 +49,7 @@ export const Grid = (props) => {
             <Reviews reviews = {userData.reviews}/> 
           </>
           : 
-          null
+          <Puff stroke="#98ff98" speed={.75} />
         }
 
     </div>
