@@ -13,8 +13,8 @@ export const Grid = (props) => {
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
-    setLoaded(false);
     const retrieveUserInfo = async () => {
+      setLoaded(false);
       try {
         
         const response = await fetch(`/api/getUserData?userID=${props.userID}`, {
@@ -49,7 +49,7 @@ export const Grid = (props) => {
             <Reviews reviews = {userData.reviews}/> 
           </>
           : 
-          (<Puff stroke="#98ff98" speed={.75} />)
+          <Puff stroke="#98ff98"/>
         }
 
     </div>
