@@ -25,9 +25,12 @@ export const Profile = (props) => {
           const data = await response.json();
 
           const temp = data.retrievedPFP;
+          if (temp) {
+            setProfilePicture(temp.pfp);
+          } else setProfilePicture(null);
 
-          setProfilePicture(temp.pfp);
           isPfpLoaded(true);
+          
         } else console.error('Failed to fetch user pfp:', response.statusText);
 
       } catch (error) {
