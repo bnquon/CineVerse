@@ -13,7 +13,7 @@ export const Grid = (props) => {
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
-
+    setLoaded(false);
     const retrieveUserInfo = async () => {
       try {
         
@@ -25,6 +25,7 @@ export const Grid = (props) => {
           const data = await response.json();
           // console.log('BIG DATA CALL FROM GRID IS: ', data);
           setUserData(data);
+          setLoaded(true);
         } else console.error('Failed to fetch user data:', response.statusText);
 
       } catch (error) {
@@ -35,9 +36,7 @@ export const Grid = (props) => {
     retrieveUserInfo();
   }, [props]);
 
-  useEffect(() => {
-    setLoaded(true);
-  }, [userData])
+  
 
   return (
     <div className="grid-container">
