@@ -40,7 +40,7 @@ export const Grid = (props) => {
 
   return (
     <div className="grid-container">
-        { loaded ? <Puff stroke="#98ff98"/> : null}
+        { isLoading ? <Puff stroke="#98ff98"/> : null}
         
         <>
           <Profile username = {props.username} userID = {props.userID}/>
