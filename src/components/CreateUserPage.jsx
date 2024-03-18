@@ -31,13 +31,15 @@ export const CreateUserPage = () => {
             if (response.ok) {
                 const userData = await response.json();
                 // console.log('Data sent back by logging in is: ', userData);
-                const temp = userData.retrievedUserInfo;
-                const username = temp.username;
-                const userID = temp.userid;
-                sessionStorage.setItem('username', username);
-                sessionStorage.setItem('userID', userID);
-                const data = {userID: userID, username: username};
-                navigate("./user", { state: { data } });
+                if (userData.success) {
+                    const temp = userData.retrievedUserInfo;
+                    const username = temp.username;
+                    const userID = temp.userid;
+                    sessionStorage.setItem('username', username);
+                    sessionStorage.setItem('userID', userID);
+                    const data = {userID: userID, username: username};
+                    navigate("./user", { state: { data } });
+                } else alert('Login/Signup failed');
             } else console.error('Failed to login: ', response.statusText);
         } catch (error) {
             console.error('Error creating user: ', error.message);
