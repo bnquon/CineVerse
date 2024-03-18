@@ -20,7 +20,7 @@ export default async function handler(request, response) {
                 return response.status(401).json({ success: false });
             }
     
-        } catch (error) {
+        } catch (error) { 
             console.error('Error during login:', error.message);
             return response.status(500).json({ error: 'Internal Server Error' });
         }
