@@ -22,9 +22,10 @@ export const Grid = (props) => {
         
         if (response.ok) {
           const data = await response.json();
-          console.log('BIG DATA CALL FROM GRID IS: ', data);
           setUserData(data);
+          console.log('loading before: ', loading);
           setLoaded(true);
+          console.log('loading after: ', loading);
         } else console.error('Failed to fetch user data:', response.statusText);
 
       } catch (error) {
@@ -48,7 +49,7 @@ export const Grid = (props) => {
         <Reviews reviews = {userData.reviews}/> 
         </>
         :
-        <Puff stroke="#98ff98"/> 
+        <h1>LOADING</h1>
         }
         
     </div>
