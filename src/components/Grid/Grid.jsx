@@ -39,8 +39,7 @@ export const Grid = (props) => {
 
   return (
     <div className="grid-container">
-        { loading ? <Puff stroke="#98ff98"/> 
-          :
+        { loading ? 
         <>
         <Profile username = {props.username} userID = {props.userID}/>
         <Graph distribution = {userData.ratings}/>
@@ -48,6 +47,8 @@ export const Grid = (props) => {
         <UserInfo bio = {(userData.bio).bio} userWatchlist = {userData.savedWatchlist} dateJoined = {(userData.dateJoined).datejoined}/>
         <Reviews reviews = {userData.reviews}/> 
         </>
+        :
+        <Puff stroke="#98ff98"/> 
         }
         
     </div>
