@@ -4,7 +4,7 @@ import { Graph } from './Graph/Graph.jsx'
 import { UserInfo } from './UserInfo/UserInfo.jsx'
 import { Reviews } from './Reviews/Reviews.jsx'
 import { Favorites } from './Favorites/Favorites.jsx'
-import { Puff } from 'react-loading-icons'
+import { ThreeDots } from 'react-loading-icons'
 import "./Grid.css"
 
 export const Grid = (props) => {
@@ -51,7 +51,7 @@ export const Grid = (props) => {
         :
         <>
         <h1>LOADING</h1>
-        <Puff stroke="#98ff98" />
+        <ThreeDots stroke="#000000" strokeWidth={5}/>
         </>
         }
         
