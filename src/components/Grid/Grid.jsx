@@ -25,7 +25,6 @@ export const Grid = (props) => {
           const data = await response.json();
           // console.log('BIG DATA CALL FROM GRID IS: ', data);
           setUserData(data);
-          setLoaded(true);
         } else console.error('Failed to fetch user data:', response.statusText);
 
       } catch (error) {
@@ -36,7 +35,9 @@ export const Grid = (props) => {
     retrieveUserInfo();
   }, [props]);
 
-  console.log('USERDATA IS: ', userData);
+  useEffect(() => {
+    setLoaded(true);
+  }, [userData])
 
   return (
     <div className="grid-container">
@@ -49,7 +50,7 @@ export const Grid = (props) => {
             <Reviews reviews = {userData.reviews}/> 
           </>
           : 
-          <Puff stroke="#98ff98" speed={.75} />
+          (<Puff stroke="#98ff98" speed={.75} />)
         }
 
     </div>
