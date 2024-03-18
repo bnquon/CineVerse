@@ -23,7 +23,7 @@ export const Grid = (props) => {
         
         if (response.ok) {
           const data = await response.json();
-          // console.log('BIG DATA CALL FROM GRID IS: ', data);
+          console.log('BIG DATA CALL FROM GRID IS: ', data);
           setUserData(data);
           setLoaded(false);
         } else console.error('Failed to fetch user data:', response.statusText);

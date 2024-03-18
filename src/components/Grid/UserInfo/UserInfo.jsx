@@ -32,7 +32,7 @@ export const UserInfo = (props) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ bio: bioValue}),
+        body: JSON.stringify({ bio: bioValue }),
       });
 
       if (!response.ok) {
