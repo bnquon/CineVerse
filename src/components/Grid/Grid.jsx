@@ -13,6 +13,7 @@ export const Grid = (props) => {
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
+    console.log('PROPS IN GRID IS ',props);
     const retrieveUserInfo = async () => {
       try {
         
@@ -22,10 +23,11 @@ export const Grid = (props) => {
         
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           setUserData(data);
-          console.log('loading before: ', loading);
+
           setLoaded(true);
-          console.log('loading after: ', loading);
+
         } else console.error('Failed to fetch user data:', response.statusText);
 
       } catch (error) {
