@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Profile.css';
 import noPFP from '../../../assets/noPFP.jpg';
+import defaultPFP from '../../../assets/defaultPFP.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
 import { SpinningCircles } from 'react-loading-icons'
@@ -8,12 +9,13 @@ import { SpinningCircles } from 'react-loading-icons'
 export const Profile = (props) => {
 
   const storedUserID = sessionStorage.getItem('userID');
-
+  const [matchingID, setMatchingID] = useState(false);
   const [pfpLoaded, isPfpLoaded] = useState(false);
   const [count, setCount] = useState(1);
   const [profilePicture, setProfilePicture] = useState(null);
 
   useEffect(() => {
+    if (props.userID == storedUserID) setMatchingID(true); 
     const getPFP = async () => {
       try {
         
@@ -30,7 +32,7 @@ export const Profile = (props) => {
           } else setProfilePicture(null);
 
           isPfpLoaded(true);
-          
+
         } else console.error('Failed to fetch user pfp:', response.statusText);
 
       } catch (error) {
@@ -78,7 +80,7 @@ export const Profile = (props) => {
   return (
     <div className="profile-container">
       
-      {storedUserID == props.userID ?
+      {matchingID ?
         <input
         type="file"
         accept="image/*"
@@ -102,13 +104,13 @@ export const Profile = (props) => {
       }
       
       <div id="image-container" onClick={() => imageUploader.current.click()}>
-        {pfpLoaded ?
-          <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
-          :
+        {pfpLoaded ? (
+          <img src={profilePicture != null ? profilePicture : (matchingID ? noPFP : defaultPFP)} alt="Profile" />
+         ) : (
           <div id="pfpLoading">
             <SpinningCircles stroke="#000000" fill='black' strokeWidth={8}/>
           </div>
-        }
+        )}
       </div>
 
       <div id="username">

@@ -8,7 +8,7 @@ import placeholder from '../../../assets/posterPlaceholder.png'
 export const UserInfo = (props) => {  
 
   const storedUserID = sessionStorage.getItem('userID');
-
+  const [matchingID, setMatchingID] = useState(false);
   const [bioValue, setBioValue] = useState('');
   const [watchlist, setWatchlist] = useState([]);
   const [dateJoined, setDatejoined] = useState('');
@@ -19,6 +19,8 @@ export const UserInfo = (props) => {
     setDatejoined(props.dateJoined);
     const temp = (props.userWatchlist).map(item => item.movieposterurl);
     setWatchlist(temp);
+    if (props.userID === storedUserID) setMatchingID(true);
+    console.log('DOES PROPS.USERID MATCH STORED USER ID: ', props.userID, storedUserID, props.userID==storedUserID);
   }, [props]);
 
   const handleBioChange = (event) => {
@@ -58,7 +60,7 @@ export const UserInfo = (props) => {
           <span><FontAwesomeIcon icon={faPenToSquare}/> Bio</span>
         </div>
 
-        {props.userID !== storedUserID ? 
+        {!matchingID ? 
           <textarea
           placeholder="User has no bio"
           value={bioValue}
