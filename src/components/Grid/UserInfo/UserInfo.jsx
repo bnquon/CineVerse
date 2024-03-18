@@ -14,7 +14,9 @@ export const UserInfo = (props) => {
   const [dateJoined, setDatejoined] = useState('');
 
   useEffect(() => {
-    setBioValue(props.bio);
+    if (props.bio != null) {
+      setBioValue(props.bio);
+    }
     setDatejoined(props.dateJoined);
     const temp = (props.userWatchlist).map(item => item.movieposterurl);
     setWatchlist(temp);

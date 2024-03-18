@@ -61,11 +61,6 @@ export default async function handler(request, response) {
         if (listOfRatingsResults) {
             listOfRatings = listOfRatingsResults.rows[0];
         }
-        // return response.status(200).json({ratingDistribution : listOfRatings.rows[0]});
-        // let getPFP = null;
-        // const getPFPResult = await client.sql`SELECT pfp from userinfo WHERE userID = ${userID};`;
-
-        // if (getPFPResult) getPFP = getPFPResult.rows[0];
 
         return response.status(200).json({
                                             bio: existingBio,
@@ -73,10 +68,8 @@ export default async function handler(request, response) {
                                             dateJoined: dateJoined,
                                             reviews: listOfReviews,
                                             ratings: listOfRatings,
-                                            // userPFP: getPFP,
                                         })
                 
-
     } catch (error) {
         
         console.error('Error retrieving UserData:', error);
