@@ -3,7 +3,7 @@ import './Profile.css';
 import noPFP from '../../../assets/noPFP.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
-import { TailSpin } from 'react-loading-icons'
+import { SpinningCircles } from 'react-loading-icons'
 
 export const Profile = (props) => {
 
@@ -103,7 +103,7 @@ export const Profile = (props) => {
           <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
           :
           <div id="pfpLoading">
-            <TailSpin stroke="#000000" fill='black' strokeWidth={6}/>
+            <SpinningCircles stroke="#000000" fill='black' strokeWidth={8}/>
           </div>
         }
       </div>
