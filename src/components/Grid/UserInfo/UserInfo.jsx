@@ -64,7 +64,7 @@ export const UserInfo = (props) => {
           <textarea
           placeholder="User has no bio"
           value={bioValue}
-          disabled
+          readOnly
           onClick={(e) => e.preventDefault()}
           ></textarea>
           :
