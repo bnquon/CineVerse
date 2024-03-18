@@ -9,10 +9,6 @@ export const UserInfo = (props) => {
 
   const storedUserID = sessionStorage.getItem('userID');
 
-  console.log('Props userid is: ', props.userID);
-  console.log('Storeduserid is, ', storedUserID);
-  // s
-
   const [bioValue, setBioValue] = useState('');
   const [watchlist, setWatchlist] = useState([]);
   const [dateJoined, setDatejoined] = useState('');
@@ -66,6 +62,8 @@ export const UserInfo = (props) => {
           placeholder="User has no bio"
           value={bioValue}
           readOnly
+          onFocus={null}
+          onBlur={null}
           ></textarea>
           :
           <textarea
