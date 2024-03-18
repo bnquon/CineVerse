@@ -102,7 +102,9 @@ export const Profile = (props) => {
         {pfpLoaded ?
           <img src={profilePicture != null ? profilePicture : noPFP} alt="Profile" />
           :
-          <TailSpin stroke="#000000" fill='black' strokeWidth={4}/>
+          <div id="pfpLoading">
+            <TailSpin stroke="#000000" fill='black' strokeWidth={6}/>
+          </div>
         }
       </div>
 
