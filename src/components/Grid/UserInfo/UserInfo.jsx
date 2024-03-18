@@ -14,6 +14,7 @@ export const UserInfo = (props) => {
   const [dateJoined, setDatejoined] = useState('');
 
   useEffect(() => {
+    setBioValue('');
     setBioValue(props.bio);
     setDatejoined(props.dateJoined);
     const temp = (props.userWatchlist).map(item => item.movieposterurl);
@@ -61,7 +62,8 @@ export const UserInfo = (props) => {
           <textarea
           placeholder="User has no bio"
           value={bioValue}
-          disabled='yes'
+          disabled
+          onClick={(e) => e.preventDefault()}
           ></textarea>
           :
           <textarea
