@@ -9,6 +9,9 @@ export const UserInfo = (props) => {
 
   const storedUserID = sessionStorage.getItem('userID');
 
+  console.log('Props userid is: ', props.userID);
+  console.log('Storeduserid is, ', storedUserID);
+
   const [bioValue, setBioValue] = useState('');
   const [watchlist, setWatchlist] = useState([]);
   const [dateJoined, setDatejoined] = useState('');
