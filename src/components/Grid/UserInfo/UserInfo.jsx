@@ -57,13 +57,11 @@ export const UserInfo = (props) => {
           <span><FontAwesomeIcon icon={faPenToSquare}/> Bio</span>
         </div>
 
-        {props.userID != storedUserID ? 
+        {props.userID !== storedUserID ? 
           <textarea
           placeholder="User has no bio"
           value={bioValue}
-          readOnly
-          onFocus={null}
-          onBlur={null}
+          disabled='yes'
           ></textarea>
           :
           <textarea
