@@ -49,10 +49,9 @@ export const Grid = (props) => {
         <Reviews reviews = {userData.reviews}/> 
         </>
         :
-        <>
-        <h1>LOADING</h1>
-        <ThreeDots stroke="#000000" strokeWidth={5}/>
-        </>
+        <div id="loadingIcon">
+          <ThreeDots stroke="#000000" strokeWidth={5}/>
+        </div>
         }
         
     </div>
