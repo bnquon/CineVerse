@@ -21,8 +21,7 @@ export default async function handler(request, response) {
             }
     
         } catch (error) { 
-            console.error('Error during login:', error.message);
-            return response.status(500).json({ error: 'Internal Server Error' });
+            return response.status(500).json({ error: 'Login failed' , success: false });
         }
     } else {
         try {
@@ -42,8 +41,7 @@ export default async function handler(request, response) {
             return response.status(200).json({ success: true, retrievedUserInfo: insertResult.rows[0] });
 
         } catch (error) {
-            console.error('Error during registration:', error.message);
-            return response.status(500).json({ error: 'Internal Server Error' });
+            return response.status(500).json({ error: 'Signup failed' ,success: false });
         }
     }
 }
