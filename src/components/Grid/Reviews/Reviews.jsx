@@ -25,7 +25,7 @@ export const Reviews = (props) => {
           {userReviews.length > 0 ? userReviews.map(review => (
             <Card movieName={review.moviename} rating={review.rating} text={review.review} poster={review.movieposterurl}></Card>
           )) : 
-            <NoUserReviews/>
+            <NoUserReviews isMat/>
           }
 {/* 
           // {reviews.length > 0 ? 

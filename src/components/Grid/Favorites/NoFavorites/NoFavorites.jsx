@@ -6,7 +6,6 @@ export const NoFavorites = (props) => {
   const [favoriteMsg, setFavoriteMsg] = useState('');
 
   useEffect(() => {
-    console.log('Nowatchlist called');
       if (props.isUsersPage) {
         setFavoriteMsg('Save a movie to your favorites!');
       } else {
