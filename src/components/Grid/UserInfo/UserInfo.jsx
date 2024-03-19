@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTicket, faCalendar, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 import placeholder from '../../../assets/posterPlaceholder.png'
+import { NoWatchlist } from './NoWatchlist/NoWatchlist';
 
 export const UserInfo = (props) => {  
 
@@ -14,8 +15,7 @@ export const UserInfo = (props) => {
   const [dateJoined, setDatejoined] = useState('');
 
   useEffect(() => {
-    setBioValue('');
-    setBioValue(props.bio);
+    setBioValue(props.bio || '');
     setDatejoined(props.dateJoined);
     const temp = (props.userWatchlist).map(item => item.movieposterurl);
     setWatchlist(temp);
@@ -83,12 +83,14 @@ export const UserInfo = (props) => {
           <span><FontAwesomeIcon icon={faTicket}/> Watchlist</span>
         </div>
         <div id="watchlistGrid">
-          {watchlist.map((element, index) => (
-            <img key={index} src={element} alt="" className='tempGridItem'/>
-          ))}
-          {/* <div className="tempGridItem"><img src="https://image.tmdb.org/t/p/w500/lkZ9gqCEjzX85lKR6Jjd1uGAXNp.jpg" alt="" /></div>
-          <div className="tempGridItem"><img src={placeholder} alt="" /></div>
-          <div className="tempGridItem"><img src={placeholder} alt="" /></div> */}
+          {watchlist.length > 0 ? 
+            watchlist.map((element, index) => (
+              <img key={index} src={element} alt="" className='tempGridItem'/>
+            ))
+            :
+            <NoWatchlist isUsersPage = {matchingID}/>
+          }
+
         </div>
       </div>
 
