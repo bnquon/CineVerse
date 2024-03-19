@@ -1,6 +1,5 @@
 #noWatchList {
-    position: absolute;
-    left: 5%;
+    position: relative;
     box-sizing: border-box;
     padding: 1rem;
     width: 90%;
