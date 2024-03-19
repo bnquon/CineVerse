@@ -1,9 +1,8 @@
 #NoFavorites {
     position: relative;
     box-sizing: border-box;
-    padding: 0.5rem;
+    padding: 1rem 0;
     width: 90%;
-    height: 15%;
     margin: 0 auto; /* Center horizontally */
     display: flex;
     justify-content: center;
