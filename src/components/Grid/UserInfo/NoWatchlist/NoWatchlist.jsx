@@ -3,8 +3,10 @@ import './NoWatchlist.css'
 
 export const NoWatchlist = (props) => {
 
+  
   const [watchlistMsg, setwatchlistMsg] = useState('');
   useEffect(() => {
+    console.log('Nowatchlist called');
       if (props.isUsersPage) {
         setwatchlistMsg('Save a movie to your watchlist!');
       } else {
