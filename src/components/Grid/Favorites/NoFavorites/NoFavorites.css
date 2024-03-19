@@ -1,0 +1,18 @@
+#NoFavorites {
+    position: relative;
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#noFavorites > span {
+    font-size: 1.5rem;
+    font-weight: 600;
+}

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { NoFavorites } from './NoFavorites/NoFavorites'
 import "./Favorites.css"
 
 export const Favorites = (props) => {
 
   const [favoriteList, setFavoriteList] = useState([]);
+  const [matchingID, setMatchingID] = useState(false);
 
   useEffect(() => {
+    if (props.userID === storedUserID) setMatchingID(true);
     const populateScroller = async () => {
       try {
           const response = await fetch(`/api/getUserFavorites?userID=${props.userID}`, {
@@ -53,11 +56,16 @@ export const Favorites = (props) => {
       </div>
 
       <div id="favoriteScroller">
-        {favoriteList.map((item, index) => (
-          <div className='scrollerItem' key={index}>
-            <img src={item} alt="" srcset=""/>
-          </div>
-        ))}
+        {favoriteList.length > 0 ?
+          favoriteList.map((item, index) => (
+            <div className='scrollerItem' key={index}>
+              <img src={item} alt="" srcset=""/>
+            </div>
+          ))
+          :
+          <NoFavorites isUsersPage={matchingID}/>
+
+        }
     </div>
 
     </div>
