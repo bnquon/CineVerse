@@ -4,7 +4,7 @@
     padding: 1rem;
     width: 90%;
     height: 90%;
-    margin: 0.5rem auto; /* Center horizontally */
+    margin: 0 auto; /* Center horizontally */
     display: flex;
     justify-content: center;
     align-items: center;
