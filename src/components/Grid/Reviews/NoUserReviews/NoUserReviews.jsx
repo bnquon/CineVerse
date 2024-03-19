@@ -14,9 +14,11 @@ export const NoUserReviews = (props) => {
       }
   }, [props])
 
+  const textStyle = { textAlign : 'center'};
+
   return (
     <div id="noUserReviews">
-        <span>{reviewMsg}</span>
+        <span style={props.isUsersPage ? {}: textStyle }>{reviewMsg}</span>
     </div>
   )
 }

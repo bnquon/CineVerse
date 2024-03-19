@@ -8,9 +8,12 @@ import { faComments } from '@fortawesome/free-solid-svg-icons'
 
 export const Reviews = (props) => {
 
+  const storedUserID = sessionStorage.getItem('userID');
+  const [matchingID, setMatchingID] = useState(false);
   const [userReviews, setUserReviews] = useState([]);
   
   useEffect(() => {
+    if (props.userID === storedUserID) setMatchingID(true);
     setUserReviews(props.reviews);
   }, [props]);
 
@@ -25,7 +28,7 @@ export const Reviews = (props) => {
           {userReviews.length > 0 ? userReviews.map(review => (
             <Card movieName={review.moviename} rating={review.rating} text={review.review} poster={review.movieposterurl}></Card>
           )) : 
-            <NoUserReviews isMat/>
+            <NoUserReviews isUsersPage={matchingID}/>
           }
 {/* 
           // {reviews.length > 0 ? 
