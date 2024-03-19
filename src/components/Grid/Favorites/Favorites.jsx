@@ -6,6 +6,8 @@ import "./Favorites.css"
 
 export const Favorites = (props) => {
 
+  const storedUserID = sessionStorage.getItem('userID');
+
   const [favoriteList, setFavoriteList] = useState([]);
   const [matchingID, setMatchingID] = useState(false);
 
