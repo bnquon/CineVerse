@@ -13,3 +13,11 @@
     margin: 0.25rem;
 }
 
+#arrowIcon {
+    transition: 250ms;
+}
+
+#arrowIcon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
