@@ -12,5 +12,6 @@
 }
 
 #footer > span {
-    font-size: 2.25vw;
+    font-size: 2.5vw;
+    gap: 2vw;
 }
