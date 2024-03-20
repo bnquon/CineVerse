@@ -45,7 +45,7 @@
     grid-column: span 2; /* This will make the div span both columns */
     line-height: 1.5rem;
     font-weight: 500;
-    font-size: 1.6vw;
+    font-size: 1.6vh;
 }
 
 #movie-info #description {
