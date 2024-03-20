@@ -181,7 +181,7 @@ export const MovieReviews = (props) => {
       <div id="movieReviewContainer">
         
         <div id="movieReviewTitle">
-            <span>{reviews.length} Reviews for this Movie</span>
+            <span>{reviews.length} Reviews for this Movie &nbsp;</span>
             <button className='btn' onClick={toggleModal}><FontAwesomeIcon icon={faPlus} /> Add a Review!</button>        
         </div>
 

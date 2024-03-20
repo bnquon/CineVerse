@@ -21,7 +21,7 @@
     margin-bottom: 2rem;
     font-size: 1.5vw;
     font-weight: 700;
-    padding: 1vh 0;
+    padding: 1.2vh 0;
 }
 
 #graph-Container {
@@ -142,7 +142,7 @@
 }
 
 #no-review-message {
-    margin-top: 3vh;
+    margin-top: 2vh;
     font-size: 1.5vw;
     position: relative;
     box-sizing: border-box;
