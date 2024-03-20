@@ -10,9 +10,10 @@ export const Footer = () => {
   return (
     <div id='footer'> 
       <span>
-        <FontAwesomeIcon icon={faGithub}/>
-        &nbsp; &nbsp;
-        <FontAwesomeIcon icon={faLinkedin}/>
+
+        <a href="https://github.com/bnquon" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/></a>
+        &nbsp;
+        <a href="www.linkedin.com/in/brandon-quon" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin}/></a>
       </span>
     </div>
   )
