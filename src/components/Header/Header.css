@@ -8,7 +8,7 @@
     top: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    font-size: 1.8rem;
+    font-size: 1.5vw;
     color: white;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .center input {
-    font-size: 1.5rem;
+    font-size: 1.25vw;
     width: 30%;
     padding: 0.35rem 0.5rem;
     border: 2px solid transparent;
