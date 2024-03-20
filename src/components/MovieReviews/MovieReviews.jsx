@@ -4,6 +4,7 @@ import { ReviewModal } from '../ReviewModal/ReviewModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceGrinStars } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { Bar } from "react-chartjs-2";
 
 const MovieReviewItem = ({ rating, review, username }) => {
   return (
@@ -28,10 +29,30 @@ const NoMovieReviews= (props) => {
 
 export const MovieReviews = (props) => {
 
+  const [movieRatingCount, setMovieRatingCount] = useState([]);
+  const [averageRating, updateAverageRating] = useState(0);
+
   const [modalDisplay, setModalDisplay] = useState(false);
   const [reviews, updateReviews] = useState([]);
 
   useEffect(() => {
+    const populateMovieGraph = async () => {
+      try {
+          const response = await fetch(`/api/getMovieRatings?movieName=${props.title}`, {
+              method: 'GET',
+          });
+          if (response.ok) {
+              const data = await response.json();
+              const temp = data.movieInfo;
+              const movieValuesArray = Object.values(temp);
+              setMovieRatingCount(movieValuesArray);
+          }
+      } catch (error) {
+          console.error('Error fetching user ratings: ', error.message);
+      }
+  }
+  populateMovieGraph();
+
     const populateMovieReviews = async () => {
       try {
           const response = await fetch(`/api/getMovieReviews?movieName=${props.title}`, {
@@ -50,18 +71,24 @@ export const MovieReviews = (props) => {
   populateMovieReviews();
   }, [props.title, modalDisplay])
 
-  // const hardcodedReviews = [
-  //   { rating: 8, review: 'Great movie!', username: 'User1' },
-  //   { rating: 9, review: 'Amazing plot!', username: 'User2' },
-  //   { rating: 7, review: 'Good performances!', username: 'User3' },
-  //   { rating: 10, review: 'Must-watch!', username: 'User4' },
-  //   { rating: 6, review: 'Decent storyline.', username: 'User5' },
-  //   { rating: 8.5, review: 'Impressive direction!', username: 'User6' },
-  //   { rating: 9, review: 'Beautiful cinematography.', username: 'User7' },
-  //   { rating: 7.5, review: 'Interesting characters.', username: 'User8' },
-  //   { rating: 8, review: 'Enjoyed it!', username: 'User9' },
-  //   { rating: 9.5, review: 'Top-notch acting!', username: 'User10' },
-  // ];
+  useEffect(() => {
+    var numOfReviews = 0;
+    var sum = 0;
+    for (let i = 0; i < movieRatingCount.length; i++) {
+        if (movieRatingCount[i] != 0) {
+            numOfReviews += parseInt(movieRatingCount[i]);
+            sum += (movieRatingCount[i]*(i+1));
+        }
+    }
+    console.log('Sum: ', sum, ' numOfReviews: ', numOfReviews);
+
+    if (sum === 0) {
+        updateAverageRating(0);
+    } else {
+        var temp = (sum / numOfReviews);
+        updateAverageRating(Math.round(temp * 10) / 10)
+    }
+  }, [movieRatingCount])
 
   const toggleModal = () => {
     setModalDisplay(!modalDisplay);
@@ -71,6 +98,87 @@ export const MovieReviews = (props) => {
   return (
 
     <>
+      <div id="left-cell">
+
+        <div id="average">
+            <h2>Average Rating by Users ⭐ {averageRating}/10 </h2>
+        </div>
+        <div id='graph-Container'>
+            <Bar 
+                data={{
+                    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+                    datasets: [
+                    {
+                        data: movieRatingCount,
+                        backgroundColor: 'hsl(17, 83%, 64%)',
+                        borderWidth: 3,
+                        borderColor: 'hsl(0, 100%, 50%)',
+                        barPercentage: 0.7,
+                    },
+                    ],
+                }}
+                options={{
+                    scales: {
+                        x: {                        
+                            ticks: {
+                                color: 'black', 
+                                font: {
+                                    size: 18,
+                                    weight: 'bold',
+                                },
+                                display: true,
+                            },
+                            title: { 
+                                display: true,
+                                text: 'Rating',
+                                color: 'black', 
+                                font: {
+                                    size: 22,
+                                    weight: 'bold',
+                                },
+                            },
+                            grid: {
+                                display: false,
+                            },
+                            border: {
+                                display: false,
+                            },
+                        },
+                        y: {
+                            title: { 
+                                display: true,
+                                text: 'Count',
+                                color: 'black', 
+                                font: {
+                                    size: 22,
+                                    weight: 'bold',                               
+                                },
+                            },
+                            ticks: {
+                                precision: 0,
+                                color: 'black',
+                                font: {
+                                  size: 18,
+                                  weight: 'bold',
+                                },
+                              },
+                            grid: {
+                                display: false,
+                            },
+                            border: {
+                                display: false,
+                            },
+                        },
+                    },
+                    plugins: {
+                        legend: {
+                        display: false,
+                        },
+                    }
+                }}
+            />
+        </div>
+      </div>
       <div id="movieReviewContainer">
         
         <div id="movieReviewTitle">
