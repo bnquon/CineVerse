@@ -20,7 +20,7 @@ const NoMovieReviews= (props) => {
   return (
     <div id="no-review-message">
       <span>There are unfortunately no reviews for {props.title}. <br />
-        Be the first one! <FontAwesomeIcon icon={faFaceGrinStars} size='1.5x' style={{color: "#74C0FC"}} /></span>
+        Be the first one! <FontAwesomeIcon icon={faFaceGrinStars} size='1.5x' style={{color: "#FFFF00"}} /></span>
 
     </div>
   );
