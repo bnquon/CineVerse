@@ -20,7 +20,7 @@
 
 #movie-title {
     grid-column: span 2;
-    font-size: 4rem;
+    font-size: 3.3333vw;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@
     grid-column: span 2; /* This will make the div span both columns */
     line-height: 1.5rem;
     font-weight: 500;
-    font-size: 1.6vh;
+    font-size: 1.6vw;
 }
 
 #movie-info #description {
