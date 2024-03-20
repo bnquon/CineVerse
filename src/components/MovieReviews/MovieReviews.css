@@ -38,7 +38,6 @@
 }
 
 #movieReviewContainer {
-    padding-top: 3vh;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -110,6 +109,7 @@
     height: fit-content;
     max-height: 85%;
     box-sizing: border-box;
+    padding-top: 3vh;
     display: grid;
     grid-template-rows: auto;
     overflow-y: auto;
