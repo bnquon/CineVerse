@@ -21,7 +21,7 @@
     height: 10%;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1.04166667vw;
     font-weight: 700;
 }
 
@@ -40,7 +40,7 @@
 #bio-container textarea {
     position: relative;
     border: unset;
-    font-size: 1rem;
+    font-size: 0.8333vw;
     padding: 0.4rem;
     width: 80%;
     height: 52%;
@@ -76,7 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1.04166667vw;
     font-weight: 700;
     margin-bottom: 0.4rem;
 }
