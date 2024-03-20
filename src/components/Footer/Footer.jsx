@@ -11,6 +11,7 @@ export const Footer = () => {
     <div id='footer'> 
       <span>
         <FontAwesomeIcon icon={faGithub}/>
+        &nbsp; &nbsp;
         <FontAwesomeIcon icon={faLinkedin}/>
       </span>
     </div>
