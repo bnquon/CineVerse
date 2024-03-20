@@ -6,9 +6,12 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 //www.linkedin.com/in/brandon-quon
 //https://github.com/bnquon
 
-export const Footer = () => {
+export const Footer = (props) => {
+
+  const { isAbsolute } = props;
+
   return (
-    <div id='footer'> 
+    <div id='footer' style={{ position: isAbsolute ? 'absolute' : 'relative' }}> 
       <span>
 
         <a href="https://github.com/bnquon" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} style={{color: '#ffffff'}}/></a>

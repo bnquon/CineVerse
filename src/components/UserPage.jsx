@@ -25,7 +25,7 @@ export const UserPage = () => {
         <div key={key}>
           <Grid username = {(searchedUserData).username} userID = {(searchedUserData).userID}/> 
         </div>
-        <Footer/>
+        <Footer isAbsolute = {true}/>
     </>
   )
 }

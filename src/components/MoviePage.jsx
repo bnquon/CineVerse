@@ -27,7 +27,7 @@ export const MoviePage = () => {
 
       <div id="page-2">
         <DisplayUserReviews title={movieInfo.title} poster={movieInfo.poster_path}/>
-        <Footer/>
+        <Footer  isAbsolute = {false}/>
       </div>
     </>
   )
