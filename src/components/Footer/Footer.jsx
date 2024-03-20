@@ -11,7 +11,8 @@ export const Footer = (props) => {
   const { isAbsolute } = props;
 
   return (
-    <div id='footer' style={{ position: isAbsolute ? 'absolute' : 'relative' }}> 
+    <div id='footer' style={{ position: isAbsolute ? 'absolute': 'relative',
+                              height: isAbsolute ? '6vh': '8vh' }}> 
       <span>
 
         <a href="https://github.com/bnquon" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} style={{color: '#ffffff'}}/></a>
