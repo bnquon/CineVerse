@@ -19,10 +19,9 @@ const MovieReviewItem = ({ rating, review, username }) => {
 const NoMovieReviews= (props) => {
   return (
     <div id="no-review-message">
-      <h2>
-        There are unfortunately no reviews for {props.title}. <br />
-        Be the first one! <FontAwesomeIcon icon={faFaceGrinStars} size='1.5x' style={{color: "#74C0FC"}} />
-      </h2>
+      <span>There are unfortunately no reviews for {props.title}. <br />
+        Be the first one! <FontAwesomeIcon icon={faFaceGrinStars} size='1.5x' style={{color: "#74C0FC"}} /></span>
+
     </div>
   );
 }
@@ -101,7 +100,7 @@ export const MovieReviews = (props) => {
       <div id="left-cell">
 
         <div id="average">
-            <h2>Average Rating by Users ⭐ {averageRating}/10 </h2>
+            <span>Average Rating by Users ⭐ {averageRating}/10</span>
         </div>
         <div id='graph-Container'>
             <Bar 
@@ -182,7 +181,7 @@ export const MovieReviews = (props) => {
       <div id="movieReviewContainer">
         
         <div id="movieReviewTitle">
-            <h2>{reviews.length} Reviews for this Movie</h2>
+            <span>{reviews.length} Reviews for this Movie</span>
             <button className='btn' onClick={toggleModal}><FontAwesomeIcon icon={faPlus} /> Add a Review!</button>        
         </div>
 
