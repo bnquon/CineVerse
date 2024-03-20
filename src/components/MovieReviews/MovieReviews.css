@@ -19,7 +19,7 @@
     grid-column: 1;
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 1.6667vw;
+    font-size: 1.25vw;
 }
 
 #graph-Container {
@@ -51,7 +51,7 @@
 
 #movieReviewTitle > h2 {
     margin-right: 1rem;
-    font-size: 1.6667vw;
+    font-size: 1.25vw;
 }
 
 .btn {
@@ -142,7 +142,7 @@
 }
 
 #no-review-message {
-    font-size: 1.6667vw;
+    font-size: 1.25vw;
     position: relative;
     box-sizing: border-box;
     background-color: white;
