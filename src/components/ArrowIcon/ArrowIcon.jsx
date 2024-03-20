@@ -29,8 +29,8 @@ export const ArrowIcon = (props) => {
 
             <div id="arrowIcon" onClick={arrowClick}>
               {props.state ? 
-                <FontAwesomeIcon icon={faArrowAltCircleUp} size='2em'/>:              
-                <FontAwesomeIcon icon={faArrowAltCircleDown} size='2em'/>
+                <FontAwesomeIcon icon={faArrowAltCircleUp} />:              
+                <FontAwesomeIcon icon={faArrowAltCircleDown} />
               }
             </div>
 
