@@ -1,7 +1,7 @@
 #NoFavorites {
     position: relative;
     box-sizing: border-box;
-    padding: 1rem 0;
+    padding: 1rem 0.5rem;
     width: 90%;
     margin: 0 auto; /* Center horizontally */
     display: flex;
@@ -12,6 +12,7 @@
 }
 
 #NoFavorites > span {
+    text-align: center;
     font-size: 1.083vw;
     font-weight: 600;
 }
