@@ -3,8 +3,14 @@
     bottom: 0;
     width: 100vw;
     height: 8vh;
+    min-height: 40px;
     background-color: #252422;
     color: white;
-    text-align: center;
-    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer > span {
+    font-size: 1.25vw;
 }
