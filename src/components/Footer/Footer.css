@@ -12,9 +12,6 @@
 }
 
 #footer > span {
+    min-width: 5vw;
     font-size: 2.5vw;   
-}
-
-#footer > span > * {
-    margin-left: 1.5vw;
 }
