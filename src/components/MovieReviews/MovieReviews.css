@@ -38,6 +38,7 @@
 }
 
 #movieReviewContainer {
+    padding-top: 3vh;
     display: flex;
     flex-direction: column;
     height: 100%;
