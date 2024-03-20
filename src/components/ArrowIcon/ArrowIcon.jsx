@@ -24,14 +24,7 @@ export const ArrowIcon = (props) => {
         <div id='icon' style={divStyle}>
 
             <div id="text">
-              {props.state ? "Movie Overview" : "User Reviews"}
-            </div>
-
-            <div id="arrowIcon" onClick={arrowClick}>
-              {props.state ? 
-                <FontAwesomeIcon icon={faArrowAltCircleUp} size='3.75vw'/>:              
-                <FontAwesomeIcon icon={faArrowAltCircleDown} size='3.75vw'/>
-              }
+              <span>{props.state ? "Movie Overview" : "User Reviews"}{props.state ? <FontAwesomeIcon icon={faArrowAltCircleUp} onClick={arrowClick}/>:<FontAwesomeIcon icon={faArrowAltCircleDown} onClick={arrowClick}/>}</span>
             </div>
 
         </div>
