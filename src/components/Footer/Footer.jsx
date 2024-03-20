@@ -17,7 +17,7 @@ export const Footer = (props) => {
 
         <a href="https://github.com/bnquon" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} style={{color: '#ffffff'}}/></a>
         &nbsp; &nbsp;
-        <a href="www.linkedin.com/in/brandon-quon" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} style={{color: '#ffffff'}}/></a>
+        <a href="https://www.linkedin.com/in/brandon-quon/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} style={{color: '#ffffff'}}/></a>
       </span>
     </div>
   )
