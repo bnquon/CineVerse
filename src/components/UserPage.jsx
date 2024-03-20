@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Header } from "./Header/Header.jsx";
 import { Grid } from "./Grid/Grid.jsx";
+import { Footer } from './Footer/Footer.jsx';
 import { useLocation } from 'react-router-dom';
 
 export const UserPage = () => {
@@ -24,6 +25,7 @@ export const UserPage = () => {
         <div key={key}>
           <Grid username = {(searchedUserData).username} userID = {(searchedUserData).userID}/> 
         </div>
+        <Footer/>
     </>
   )
 }
