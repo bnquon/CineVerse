@@ -19,6 +19,7 @@
     grid-column: 1;
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 1.6667vw;
 }
 
 #graph-Container {
@@ -50,15 +51,16 @@
 
 #movieReviewTitle > h2 {
     margin-right: 1rem;
+    font-size: 1.6667vw;
 }
 
 .btn {
     cursor: pointer;
     position: relative;
-    font-size: 1rem;
+    font-size: 0.8333vw;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1rem 1.5rem;
+    padding: 0.8333vw 1.25vw;
     display: inline-block;
     border-radius: 20px;
     transition: all 250ms;
@@ -140,6 +142,7 @@
 }
 
 #no-review-message {
+    font-size: 1.6667vw;
     position: relative;
     box-sizing: border-box;
     background-color: white;
